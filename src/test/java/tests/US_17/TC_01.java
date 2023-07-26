@@ -1,6 +1,7 @@
 package tests.US_17;
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AllovercommercePage;
@@ -134,21 +135,27 @@ public class TC_01 {
 
 
         // Enter the "first name" part
+        page.firstName.clear();
         page.firstName.sendKeys(ConfigReader.getProperty("firstName"));
 
         // Enter the "last name" part
+        page.lastName.clear();
         page.lastName.sendKeys(ConfigReader.getProperty("lastName"));
 
         // "Enter the ""Street address"" part
+        page.address.clear();
         page.address.sendKeys(ConfigReader.getProperty("address"));
 
         // "Enter the ""Postcode/ZIP Code"" part
+        page.zipCode.clear();
         page.zipCode.sendKeys(ConfigReader.getProperty("zipCode"));
 
         // Enter the "Town/City" part
+        page.city.clear();
         page.city.sendKeys(ConfigReader.getProperty("city"));
 
         // Enter the "Phone number" part
+        page.phone.clear();
         page.phone.sendKeys(ConfigReader.getProperty("phone"));
 
         // Enter the "Email address" part
@@ -162,64 +169,55 @@ public class TC_01 {
         // Enter the " State Optional" part
         ReusableMethods.ddmVisibleText(page.stateOptional,"Baden-Württemberg");
 
-        // Verify that the "PLACE ORDER" section is visible
-        Assert.assertTrue(page.placeOrder.isDisplayed());
+        // Verify that the "Payment Methods" section is visible
+        Assert.assertTrue(page.paymentMethods.isDisplayed());
 
         // Verify that "Wire Transfer/EFT" has been selected
-        Assert.assertTrue(page.wireTransfer.isSelected());
+        Assert.assertTrue(page.payAtTheDoor.isSelected());
+
+        ReusableMethods.bekle(2);
 
         // Select "Payment at the door"
-        //page.payAtTheDoor.click();
+        page.wireTransfer.click();
 
         // Verify that "Pay at the door" has not been selected
-        Assert.assertFalse(page.payAtTheDoor.isSelected());
+        Assert.assertTrue(page.wireTransfer.isSelected());
+        ReusableMethods.bekle(1);
+        page.payAtTheDoor.click();
+
+        ReusableMethods.bekle(5);
 
         // Click on the "PLACE ORDER"
         page.placeOrder.click();
 
 
+        // After click on the place order. Verify the message "Thank you. Your order has been received."
+        Assert.assertTrue(page.messageText.isDisplayed());
 
 
+        // Scroll to the bottom of the page
+        Actions action = new Actions(Driver.getDriver());
+        action.scrollToElement(page.myAccount).perform();
 
 
+        // Click on the "My Orders "
+        page.myOrders.click();
+
+        // Verify that there is a selected product under "Orders"
+        Assert.assertTrue(page.view.isDisplayed());
 
 
+        // Click on "VIEW" button
+        page.view.click();
 
 
+        // Verify that "ORDER DETAILS" is open
+        Assert.assertTrue(page.orderDetails.isDisplayed());
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        // Close the WebPage
+        Driver.closeDriver();
 
     }
-
 
 }
