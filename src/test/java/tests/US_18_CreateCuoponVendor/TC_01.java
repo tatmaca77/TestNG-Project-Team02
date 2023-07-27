@@ -1,4 +1,4 @@
-package tests.US_18;
+package tests.US_18_CreateCuoponVendor;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
