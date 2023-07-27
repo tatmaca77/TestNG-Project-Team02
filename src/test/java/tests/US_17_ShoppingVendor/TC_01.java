@@ -199,11 +199,11 @@ public class TC_01 {
 
         // Scroll to the bottom of the page
          action = new Actions(Driver.getDriver());
-        action.scrollToElement(page.myAccount).perform();
+        action.scrollToElement(page.myAccount);
 
 
         // Click on the "My Orders "
-        page.myOrders.click();
+        action.moveToElement(page.myOrders).click().build().perform();
 
         // Verify that there is a selected product under "Orders"
         Assert.assertTrue(page.view.isDisplayed());
