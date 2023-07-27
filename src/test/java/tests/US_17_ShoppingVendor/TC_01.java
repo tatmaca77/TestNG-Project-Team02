@@ -49,15 +49,17 @@ public class TC_01 {
      Select "Wire Transfer/EFT"
      Verify that "Wire Transfer/EFT" has been selected
      Click on the "PLACE ORDER"
-     Scroll to the bottom of the page
-     Verify that the My Account section has been seen
-     Click on the "My Orders "
+     After click on the place order. Verify the message "Thank you. Your order has been received."
+     Click on the "Sign Out"
+     Click on the "Orders"
+     Verify that the "My Account" text has been seen
      Verify that there is a selected product under "Orders"
      Click on "VIEW" button
      Verify that "ORDER DETAILS" is open
+     Close the WebPage
      */
 
-    public static Actions action;
+    public static Actions action ;
 
     @Test
     public void shopVendor() {
@@ -65,43 +67,33 @@ public class TC_01 {
         //  Go to HomePage
         Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
 
-
         // Click the "Sign In" button
         AllovercommercePage page = new AllovercommercePage();
         page.signIn.click();
 
-
         // Enter the "Email address or Username"
         page.emailUsername.sendKeys(ConfigReader.getProperty("email"));
-
 
         // Enter your "Password"
         page.passwordBox.sendKeys(ConfigReader.getProperty("password"));
 
-
         // Select the " Remember Me" button
         page.rememberMe.click();
-
 
         // Click the "Sign In" button
         page.signInButton.click();
 
-
         // Verify the login
         Assert.assertTrue(page.signOut.isDisplayed());
-
 
         // Search for products in Search Box. Enter the "pencil"
         page.searchBox.sendKeys(ConfigReader.getProperty("product1"), Keys.ENTER);
 
-
         // Click on a product image
         page.product1.click();
 
-
         // The "ADD TO CART" button is verified to appear
         Assert.assertTrue(page.addToCart.isDisplayed());
-
 
         // The user increases the number of products with "+" in the Quantity section  1->2
         page.plus.click();
@@ -111,30 +103,23 @@ public class TC_01 {
         // The user decrease the number of products with "-" in the Quantity section   2->1
         page.minus.click();
 
-
         // Click on the "ADD TO CART"
         page.addToCart.click();
-
 
         // Verify that the Number in the Basket Icon has changed  Cart=1
         Assert.assertTrue(page.cart1.isDisplayed());
 
-
         // Click on the "Cart" icon above
         page.cartIcon.click();
-
 
         // Verify that the "SHOPPING CART" section opens on the right side
         Assert.assertTrue(page.shoppingCart.isDisplayed());
 
-
         // Click to "CHECKOUT" button
         page.checkout.click();
 
-
         // Verify the opening of the "BILLING DETAILS" page
         Assert.assertTrue(page.billingDetailsText.isDisplayed());
-
 
         // Enter the "first name" part
         page.firstName.clear();
@@ -164,7 +149,6 @@ public class TC_01 {
         page.emailAddress.clear();
         page.emailAddress.sendKeys(ConfigReader.getProperty("emailAddress"));
 
-
         // Enter the "Country/Region" part
         ReusableMethods.ddmVisibleText(page.country,"Germany");
 
@@ -192,34 +176,31 @@ public class TC_01 {
         // Click on the "PLACE ORDER"
         page.placeOrder.click();
 
-
         // After click on the place order. Verify the message "Thank you. Your order has been received."
         Assert.assertTrue(page.messageText.isDisplayed());
 
+        // Click on the "Sign Out"
+        page.signOut.click();
 
-        // Scroll to the bottom of the page
-         action = new Actions(Driver.getDriver());
-        action.scrollToElement(page.myAccount);
+        // Click on the "Orders"
+        page.orders.click();
 
-
-        // Click on the "My Orders "
-        action.moveToElement(page.myOrders).click().build().perform();
+        // Verify that the "My Account" text has been seen
+        Assert.assertTrue(page.myAccountText.isDisplayed());
 
         // Verify that there is a selected product under "Orders"
         Assert.assertTrue(page.view.isDisplayed());
 
-
         // Click on "VIEW" button
         page.view.click();
-
 
         // Verify that "ORDER DETAILS" is open
         Assert.assertTrue(page.orderDetails.isDisplayed());
 
+        ReusableMethods.bekle(2);
 
         // Close the WebPage
         Driver.closeDriver();
 
     }
-
 }

@@ -444,14 +444,15 @@ public class AllovercommercePage {
     public WebElement paymentMethods;
     @FindBy (xpath = "//p[@class='woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received order-success']")
     public WebElement messageText;
-    @FindBy (xpath = "//div[@data-id='9030f74']")
-    public WebElement myAccount;
-    @FindBy (xpath = "//a[text()='My Orders']")
-    public WebElement myOrders;
     @FindBy (xpath = "(//a[text()='View'])[1]")
     public WebElement view;
     @FindBy (xpath = "//h2[text()='Order details']")
     public WebElement orderDetails;
+    // Sign Out yaptiktan sonra Orders bölümünün locate'i. ( Kayitli Ürünleri Görebilmek icin )
+    @FindBy (xpath = "//a[text()='Orders']")
+    public WebElement orders;
+    @FindBy (xpath = "//h2[text()='My Account']")
+    public WebElement myAccountText;
 
 
 
