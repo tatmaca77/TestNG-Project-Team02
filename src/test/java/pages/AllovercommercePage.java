@@ -48,17 +48,6 @@ public class AllovercommercePage {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
     //ASLI UZUN
     //BETUL SONGUL ARSLANOGLU
 
