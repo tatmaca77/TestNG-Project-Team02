@@ -24,7 +24,7 @@ public abstract class ExtentReport {
         extentHtmlReporter = new ExtentHtmlReporter(dosyaYolu);
         extentReports.attachReporter(extentHtmlReporter);
         extentReports.setSystemInfo("Browser", "Chrome");
-        extentReports.setSystemInfo("Tester", "Erol");
+        extentReports.setSystemInfo("Tester", "Tolgahan");
         extentHtmlReporter.config().setDocumentTitle("Extent Report");
         extentHtmlReporter.config().setReportName("TestNG Reports");
     }
