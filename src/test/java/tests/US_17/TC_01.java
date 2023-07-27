@@ -57,6 +57,8 @@ public class TC_01 {
      Verify that "ORDER DETAILS" is open
      */
 
+    public static Actions action;
+
     @Test
     public void shopVendor() {
 
@@ -196,7 +198,7 @@ public class TC_01 {
 
 
         // Scroll to the bottom of the page
-        Actions action = new Actions(Driver.getDriver());
+         action = new Actions(Driver.getDriver());
         action.scrollToElement(page.myAccount).perform();
 
 
