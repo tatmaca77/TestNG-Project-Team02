@@ -61,6 +61,61 @@ public class AllovercommercePage {
 
     //ASLI UZUN
     //BETUL SONGUL ARSLANOGLU
+    //Kullanıcı Sing Out butonuna tıklar
+    @FindBy(xpath = "//a[@class='login logout inline-type']")
+    public WebElement singOutButonu;
+
+    //Kullanıcı Adress butonuna tıklar
+
+    @FindBy(xpath = "//li[@class='woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address']")
+    public WebElement adressButonu;
+
+    //Kullanıcı Shipping Adress in altındaki ADD butonuna tıklar
+    @FindBy(xpath = "(//a[@class='edit btn btn-link btn-primary btn-underline mb-4'])[2]")
+    public WebElement shippingAdressADDButonu;
+
+    //Kullanıcı FirstName kutusunu doldurur
+    @FindBy(xpath = "//input[@id='shipping_first_name']")
+    public WebElement firstNameKutusu;
+
+    //Kullanıcı LastName kutusunu doldurur
+    @FindBy(xpath = "//input[@id='shipping_last_name']")
+    public WebElement lastNameKutusu;
+
+    //Kullanıcı Country / Region kutusunu tıklar
+    @FindBy(xpath = "select2-shipping_country-container")
+    public WebElement countryRegionKutusu;
+
+    //Kullanıcı Street address kutusunu tıklar
+    @FindBy(xpath = "//input[@id='shipping_address_1']")
+    public WebElement streetAddressKutusu;
+
+    //Kullanıcı Postcode/Zip kutusunu doldurur
+    @FindBy(xpath = "//input[@id='shipping_postcode']")
+    public WebElement postcodeZipKutusu;
+
+    //Kullanıcı Town/City kutusunu doldurur
+    @FindBy(xpath = "//input[@id='shipping_city']")
+    public WebElement townCityKutusu;
+
+    //Kullanıcı Province kutusunu tıklar
+    @FindBy(xpath = "//span[@id='select2-shipping_state-container']")
+    WebElement provinceKutusu;
+
+    //Kullanıcı Save Address butonunu tıklar
+    @FindBy(xpath = "//button[@name='save_address']")
+    public WebElement saveAddress;
+
+    //Kullanıcı vendor shipping adres i kaydettiğini doğrular
+    @FindBy(xpath = "(//a[@class='edit btn btn-link btn-primary btn-underline mb-4'])[2]")
+    public WebElement editYourShippingAddressButonu;
+
+//********  US_14
+
+    //Kullanıcı My Accont tu tıklar
+    @FindBy(xpath = "//li[@id='menu-item-1079']")
+    public WebElement myAccontButonu;
+
 
 
 
