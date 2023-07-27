@@ -397,7 +397,7 @@ public class AllovercommercePage {
     @FindBy (xpath = "(//i[@class='w-icon-cart'])[1]")
     public WebElement cartIcon;
     @FindBy (xpath = "(//span[@class='cart-count'])[1]")
-    public WebElement cart1;
+    public WebElement cartCount;
     @FindBy (xpath = "//h4[text()='Shopping Cart']")
     public WebElement shoppingCart;
     // Ürünlerin siparislerine devam etmek icin Fatura Detaylarina gitmek icin "CheckOut" butonu locate'i.
