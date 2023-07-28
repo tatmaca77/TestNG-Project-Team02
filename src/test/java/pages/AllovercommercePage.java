@@ -9,31 +9,59 @@ public class AllovercommercePage {
 
 
     public AllovercommercePage() {   // Constructor olusturulur !!!
-
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
     //AHMET EFE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //ASLI UZUN
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
