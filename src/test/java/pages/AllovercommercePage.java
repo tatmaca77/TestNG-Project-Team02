@@ -4,12 +4,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
-
+git
 public class AllovercommercePage {
 
 
     public AllovercommercePage() {   // Constructor olusturulur !!!
-
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
