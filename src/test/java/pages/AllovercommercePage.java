@@ -2,7 +2,8 @@ package pages;
 
 public class AllovercommercePage {
 
-
+    //AHMET EFE
+    //TC 01 Vendor sign in butonuna tıklar
 
 
 
