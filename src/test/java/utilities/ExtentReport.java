@@ -20,11 +20,11 @@ public abstract class ExtentReport {
     public void setUpTest() {
         extentReports = new ExtentReports();
         String tarih = new SimpleDateFormat("_hh_mm_ss_ddMMyyyy").format(new Date());
-        String dosyaYolu = "US17_TC01/reports/extentReport_" + tarih + ".html";
+        String dosyaYolu = "TestOutput/reports/extentReport_" + tarih + ".html";
         extentHtmlReporter = new ExtentHtmlReporter(dosyaYolu);
         extentReports.attachReporter(extentHtmlReporter);
         extentReports.setSystemInfo("Browser", "Chrome");
-        extentReports.setSystemInfo("Tester", "Tolgahan");
+        extentReports.setSystemInfo("Tester", "Team02_Users");
         extentHtmlReporter.config().setDocumentTitle("Extent Report");
         extentHtmlReporter.config().setReportName("TestNG Reports");
     }
