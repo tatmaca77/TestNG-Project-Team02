@@ -14,6 +14,7 @@ import utilities.ReusableMethods;
 
 public class US09_Kayit extends ExtentReport {
 
+
     @Test
     public void TestCase01() {
         extentTest = extentReports.createTest("ExtentReport", "Test Raporu");
@@ -27,7 +28,7 @@ public class US09_Kayit extends ExtentReport {
         pageAU.register.click();
         extentTest.info("Register butonuna tıklandı.");
 
-        // Register ekranından, Sign Up sekmesini kullanarak "Become a Vendor" linki ile giriş yapar
+        // "Become a Vendor" linki ile giriş yapar
         pageAU.becomeAVendor.click();
         extentTest.info("Sign Up sekmesini kullanarak 'Become a Vendor' linki ile giriş yapıldı.");
 
@@ -87,6 +88,7 @@ public class US09_Kayit extends ExtentReport {
         pageAU.welcomeToAllowerYazisi.isDisplayed();
         extentTest.info("'Welcome to allower conwers' yazısı görüldü.");
         ReusableMethods.tumSayfaResmi("US_09TC01");
+
 
     }
 
