@@ -591,6 +591,40 @@ public class AllovercommercePage {
     public WebElement orders;
     @FindBy (xpath = "//h2[text()='My Account']")
     public WebElement myAccountText;
+    // Kupon kismina gitmek icin alinan Store Manager locate'i.
+    @FindBy (xpath = "//a[text()='Store Manager']")
+    public WebElement storeManager;
+    // Kupon bölümü locate'i.
+    @FindBy(xpath = "//a[@href='https://allovercommerce.com/store-manager/coupons/']")
+    public WebElement coupons;
+    // Kupon olusturmak icin ekle butonu locate'i.
+    @FindBy (xpath = "//a[@id='add_new_coupon_dashboard']")
+    public WebElement addNew;
+    @FindBy (xpath = "//h2[text()='Add Coupon']")
+    public WebElement blueAddNewText;
+    // Kupon olusturmak icin gerekli yerlerin locateleri.
+    @FindBy (xpath = "(//input[@class='wcfm-text wcfm_ele'])[1]")
+    public WebElement codeSection;
+    @FindBy (xpath = "//select[@id='discount_type']")
+    public WebElement discountType;
+    @FindBy (xpath = "//input[@id='coupon_amount']")
+    public WebElement couponAmount;
+    @FindBy (xpath = "//input[@id='expiry_date']")
+    public WebElement couponExpiryDate;
+    @FindBy (xpath = "//select[@data-handler='selectMonth']")
+    public WebElement month;
+    @FindBy (xpath = "//select[@data-handler='selectYear']")
+    public WebElement year;
+    @FindBy (xpath = "//a[@data-date='25']")
+    public WebElement date;
+    @FindBy (xpath = "//input[@id='free_shipping']")
+    public WebElement allowFreeShipping;
+    @FindBy (xpath = "//input[@id='show_on_store']")
+    public WebElement showOnStore;
+    @FindBy (xpath = "//input[@id='wcfm_coupon_manager_submit_button']")
+    public WebElement submitButton;
+    @FindBy (xpath = "//a[text()='bedava123']")
+    public WebElement codeText;
 
 
 
