@@ -605,6 +605,8 @@ public class AllovercommercePage {
     // Kupon olusturmak icin gerekli yerlerin locateleri.
     @FindBy (xpath = "(//input[@class='wcfm-text wcfm_ele'])[1]")
     public WebElement codeSection;
+    @FindBy (xpath = "description")
+    public WebElement description;
     @FindBy (xpath = "//select[@id='discount_type']")
     public WebElement discountType;
     @FindBy (xpath = "//input[@id='coupon_amount']")
