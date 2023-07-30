@@ -19,7 +19,7 @@ public class PageSA {
     public WebElement passwordTextBox;
     @FindBy(xpath = "(//*[text()='My Account'])[2]")
     public WebElement myAccountButton;
-    @FindBy(xpath = "//section//a[text()='My Account']")
+    @FindBy(xpath = "//span[text()='Sign Out']")
     public WebElement signOutButton;
     @FindBy(xpath = "//*[text()='Account details']")
     public WebElement accountDetailsButton;
@@ -39,12 +39,52 @@ public class PageSA {
     public WebElement userDescriptionIframe;
     @FindBy(xpath = "//*[@role='alert']")
     public WebElement verifyText;
-
-
-
-
-
-
+    @FindBy(xpath = "//*[@id='password_current']")
+    public WebElement currentPasswordTextBox;
+    @FindBy(xpath = "//*[@id='password_1']")
+    public WebElement newPasswordTextBox;
+    @FindBy(xpath = "//*[@id='password_2']")
+    public WebElement confirmPasswordTextBox;
+    @FindBy(xpath = "(//p[@class='submit-status'])[1]")
+    public WebElement wrongPasswordText;
+    @FindBy(xpath = "//*[text()='Lost your password?']")
+    public WebElement lostYourPasswordText;
+    @FindBy(xpath = "//*[@class='submit-status loading']")
+    public WebElement truePasswordText;
+    @FindBy(xpath = "(//*[@type='search'])[1]")
+    public WebElement searchBox;
+    @FindBy(xpath = "(//img)[2]")
+    public WebElement productImage;
+    @FindBy(xpath = "//*[@name='add-to-cart']")
+    public WebElement addToCartButton;
+    @FindBy(xpath = "(//i[@class='w-icon-cart'])[1]")
+    public WebElement cartIcon;
+    @FindBy(xpath = "//a[text()='Pencil6']")
+    public WebElement productText;
+    @FindBy(xpath = "//span[text()='Pencil6']")
+    public WebElement productVerify;
+    @FindBy(xpath = "//*[@class='button wc-forward']")
+    public WebElement viewCartButton;
+    @FindBy(xpath = "//*[@type='number']")
+    public WebElement numberOfProduct;
+    @FindBy(xpath = "//*[@title='Plus']")
+    public WebElement plusButton;
+    @FindBy(xpath = "(//*[@type='submit'])[3]")
+    public WebElement updateButton;
+    @FindBy(xpath = "//*[@title='Minus']")
+    public WebElement minusButton;
+    @FindBy(xpath = "//*[@class='button checkout wc-forward']")
+    public WebElement checkoutButton;
+    @FindBy(xpath = "(//h3)[1]")
+    public WebElement billingDetailsText;
+    @FindBy(xpath = "(//*[@type='radio'])[1]")
+    public WebElement eftButton;
+    @FindBy(xpath = "(//*[@type='radio'])[2]")
+    public WebElement payAtTheDoorButton;
+    @FindBy(xpath = "//*[@id='place_order']")
+    public WebElement placeOrderButton;
+    @FindBy(xpath = "//*[text()='Thank you. Your order has been received.']")
+    public WebElement placeOrderVerifyText;
 
 
 
