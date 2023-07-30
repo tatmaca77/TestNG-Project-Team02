@@ -1,7 +1,9 @@
 package utilities;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -204,5 +206,30 @@ public class ReusableMethods {
         robot.delay(1000);
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
+    }
+
+    public static void login(String username,String password) {
+        WebDriverManager.chromedriver().setup();//chrome driverı projeye yükledik
+        WebDriver driver = new ChromeDriver();//obje oluşturduk
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
+        // Web sitesini açın
+        driver.get("https://allovercommerce.com/");
+
+        //signin butonuna tıkla
+        driver.findElement(By.xpath("//*[text()='Sign In']")).click();
+
+        // Kullanıcı adı ve şifre alanlarını bulun
+        WebElement usernameField = driver.findElement(By.xpath("//*[@id='username']"));
+        WebElement passwordField = driver.findElement(By.xpath("//*[@id='password']"));
+
+        // Kullanıcı adı ve şifre alanlarına bilgileri girin
+        usernameField.sendKeys(username);
+        passwordField.sendKeys(password);
+
+        // Login butonunu bulun ve tıklayın
+        driver.findElement(By.xpath("//*[@name='login']")).click();
+
     }
 }
