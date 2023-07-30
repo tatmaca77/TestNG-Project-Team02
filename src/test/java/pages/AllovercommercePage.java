@@ -465,8 +465,8 @@ public class AllovercommercePage {
     // Arama Kutusunun locate'i.
     @FindBy (xpath = "(//input[@placeholder='Search'])[1]")
     public WebElement searchBox;
-    @FindBy (xpath = "(//img[@class='attachment-woocommerce_thumbnail size-woocommerce_thumbnail']/following-sibling::img)[3]")
-    public WebElement product1;
+    @FindBy (xpath = "(//img[@sizes='(max-width: 300px) 100vw, 300px']/following-sibling::img)[4]")
+    public WebElement product;
     // Add To Cart butonu'nun locate'i.
     @FindBy (xpath = "//button[text()='Add to cart']")
     public WebElement addToCart;

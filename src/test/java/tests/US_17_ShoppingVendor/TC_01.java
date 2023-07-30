@@ -98,12 +98,12 @@ public class TC_01 extends ExtentReport {
         extentTest.info("Basarili giris icin SignOut butonunun görüntülendigi dogrulandi.");
 
         // Search for products in Search Box. Enter the "pencil"
-        page.searchBox.sendKeys(ConfigReader.getProperty("product1"), Keys.ENTER);
+        page.searchBox.sendKeys(ConfigReader.getProperty("product"), Keys.ENTER);
         extentTest.info("Arama Kutusuna 'Pencil' yazildi ve aratildi.");
 
         // Click on a product image
-        page.product1.click();
-        extentTest.info("Arama sonuclarindaki 3.ürünün resmine tiklandi.");
+        ReusableMethods.click(page.product);
+        extentTest.info("Arama sonuclarindaki 4.ürünün resmine tiklandi.");
 
         // The "ADD TO CART" button is verified to appear
         Assert.assertTrue(page.addToCart.isDisplayed());
