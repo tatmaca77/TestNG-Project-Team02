@@ -520,7 +520,7 @@ public class AllovercommercePage {
     // Arama Kutusunun locate'i.
     @FindBy (xpath = "(//input[@placeholder='Search'])[1]")
     public WebElement searchBox;
-    @FindBy (xpath = "(//img[@sizes='(max-width: 300px) 100vw, 300px']/following-sibling::img)[4]")
+    @FindBy (xpath = "//a[text()='Pencil2']")
     public WebElement product;
     // Add To Cart butonu'nun locate'i.
     @FindBy (xpath = "//button[text()='Add to cart']")
@@ -625,6 +625,19 @@ public class AllovercommercePage {
     public WebElement submitButton;
     @FindBy (xpath = "//a[text()='bedava123']")
     public WebElement codeText;
+    // Fatura Bilgileri doldururken alinan hata mesajlari
+    @FindBy (xpath = "//li[contains(@class,'alert alert-simple')]")
+    public WebElement firstNameAlertMessage;
+    @FindBy (xpath = "//li[@data-id='billing_last_name']")
+    public WebElement lastNameAlertMessage;
+    @FindBy (xpath = "(//input[@class='input-text '])[4]")
+    public WebElement addressAlertMessage;
+    @FindBy (xpath = "//li[@data-id='billing_postcode']")
+    public WebElement postCodeAlertMessage;
+    @FindBy (xpath = "//li[@data-id='billing_phone']")
+    public WebElement phoneAlertMessage;
+    @FindBy (xpath = "//li[@data-id='billing_email']")
+    public WebElement emailAlertMessage;
 
 
 

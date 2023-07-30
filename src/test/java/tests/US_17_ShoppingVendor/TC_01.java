@@ -98,12 +98,12 @@ public class TC_01 extends ExtentReport {
         extentTest.info("Basarili giris icin SignOut butonunun görüntülendigi dogrulandi.");
 
         // Search for products in Search Box. Enter the "pencil"
-        page.searchBox.sendKeys(ConfigReader.getProperty("product"), Keys.ENTER);
+        page.searchBox.sendKeys(ConfigReader.getProperty("product1"), Keys.ENTER);
         extentTest.info("Arama Kutusuna 'Pencil' yazildi ve aratildi.");
 
         // Click on a product image
         ReusableMethods.click(page.product);
-        extentTest.info("Arama sonuclarindaki 4.ürünün resmine tiklandi.");
+        extentTest.info("Arama sonuclarindaki 3.ürünün resmine tiklandi.");
 
         // The "ADD TO CART" button is verified to appear
         Assert.assertTrue(page.addToCart.isDisplayed());
@@ -191,21 +191,21 @@ public class TC_01 extends ExtentReport {
         Assert.assertTrue(page.paymentMethods.isDisplayed());
         extentTest.pass("Payment Methods görüldügü dogrulandi.");
 
-        // Verify that "Pay at the door" has been selected
-        Assert.assertTrue(page.payAtTheDoor.isSelected());
-        extentTest.info("Pay at the door secili oldugu dogrulandi");
+        // Verify that "Wire Transfer/EFT" has been selected
+        Assert.assertTrue(page.wireTransfer.isSelected());
+        extentTest.info("Wire Transfer/EFT secili oldugu dogrulandi");
 
         ReusableMethods.bekle(2);
 
-        // Select "Wire Transfer/EFT"
-        page.wireTransfer.click();
-        extentTest.info("Wire Transfer/EFT secildi.");
+        // Select "Pay at the door"
+        page.payAtTheDoor.click();
+        extentTest.info("Pay at the door secildi.");
 
-        // Verify that "Pay at the door" has not been selected
-        Assert.assertTrue(page.wireTransfer.isSelected());
+        // Verify that "Wire Transfer/EFT" has not been selected
+        Assert.assertTrue(page.payAtTheDoor.isSelected());
         extentTest.info("Ayni anda iki seceneginde secilemeyecegi dogrulandi.");
         ReusableMethods.bekle(1);
-        page.payAtTheDoor.click();
+        page.wireTransfer.click();
         extentTest.info("Pay at the door secildi.");
 
         ReusableMethods.bekle(5);
@@ -247,6 +247,7 @@ public class TC_01 extends ExtentReport {
         // Close the WebPage
         Driver.closeDriver();
         extentTest.info("WebPage kapatildi.");
+
 
     }
 }
