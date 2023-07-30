@@ -1,12 +1,16 @@
 package tests.US_18_CreateCuoponVendor;
 
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AllovercommercePage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ExtentReport;
+import utilities.ReusableMethods;
 
-public class TC_01 {
+public class TC_01 extends ExtentReport {
 
     /**
      Go to HomePage
@@ -16,13 +20,13 @@ public class TC_01 {
      Select the " Remember Me" button
      Click the "Sign In" button
      Verify the login
-     Verify that the "Store Manager" text is visible
+     Click on tehe "Store Manager" section
      Click on the Coupons tab under the My Store section
      Click on the "Add New"
      Verify that there is a blue Add Coupon option in the top left corner
-     Verify that something can be written in the Code section
-     Verify that something can be written in the Description section
-     Verify that Discount Type is "Percentage Discount" by default
+     Writte in the "Code" section "bedava123"
+     written in the "Description" section   "Tüm Ürünlerde Gecerli Indirim Kuponu"
+     Select to "Percentage Discount"
      Select "Fixed Product Discount"
      Verify that characters other than numbers are not entered in Coupon Amount
      Enter '10' in Coupon Amount
@@ -39,55 +43,170 @@ public class TC_01 {
      Verify that the generated "Coupon" has been seen
      */
 
+    public static Actions action ;
+
     @Test
     public void couponVendor() {
+        extentTest = extentReports.createTest("TestNGTeam02","Allovercommerce test edebilmeli");
+
         //  Go to HomePage
         Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        extentTest.info("Allovercommerce sayfasina gidildi.");
 
 
         // Click the "Sign In" button
         AllovercommercePage page = new AllovercommercePage();
         page.signIn.click();
+        extentTest.info("Sign In butonuna tiklandi.");
 
 
         // Enter the "Email address or Username"
         page.emailUsername.sendKeys(ConfigReader.getProperty("email"));
+        extentTest.info("Email address or Username bölümüne Email adresi yazildi.");
 
 
         // Enter your "Password"
         page.passwordBox.sendKeys(ConfigReader.getProperty("password"));
+        extentTest.info("Password kismina sifre yazildi.");
 
 
         // Select the " Remember Me" button
         page.rememberMe.click();
+        extentTest.info("Remember Me kutusuna tiklandi.");
 
 
         // Click the "Sign In" button
         page.signInButton.click();
+        extentTest.info("Giris icin SignIn butonuna tiklandi.");
 
 
         // Verify the login
         Assert.assertTrue(page.signOut.isDisplayed());
+        extentTest.info("Basarili giris icin SignOut butonunun görüntülendigi dogrulandi.");
 
 
+        // Click on te "Sign Out"
+        page.signOut.click();
+        extentTest.pass("Sign Out kismina tiklandi.");
 
 
+        // Click on the "Store Manager" section
+        page.storeManager.click();
+        extentTest.info("Store Manager bölümüne tiklandi.");
+
+        // Click on the Coupons tab under the My Store section
+        /** action.sendKeys(Keys.PAGE_DOWN,Keys.PAGE_DOWN).perform();
+         action.moveToElement(page.coupons).contextClick().build().perform();
+         */
+        ReusableMethods.click(page.coupons);
+        extentTest.info("Cuopons bölümüne tiklandi.");
+
+        // Click on the "Add New"
+        ReusableMethods.click(page.addNew);
+        extentTest.info("Kupon eklemek icin Add New tiklandi.");
+
+        // Verify that there is a blue Add Coupon option in the top left corner
+        Assert.assertTrue(page.blueAddNewText.isDisplayed());
+        extentTest.pass("Add New mavi olarak görüldügü dogrulandi.");
+
+        // Write in the "Code" section "bedava123" // written in the "Description" section "Tüm Ürünlerde Gecerli Indirim Kuponu"
+        page.codeSection.sendKeys(ConfigReader.getProperty("code"),Keys.TAB,
+                ConfigReader.getProperty("description"),Keys.TAB);
+        extentTest.info("Code ve Description bölümleri dolduruldu.");
+
+        ReusableMethods.bekle(1);
+
+        // Verify that Discount Type is "Percentage Discount" by default
+        Assert.assertTrue(page.discountType.isDisplayed());
+        extentTest.info("Percentage Discount secenegi default olarak görüldügü dogrulandi.");
+
+        ReusableMethods.bekle(2);
+
+        // Select to "Fixed Product Discount"
+        ReusableMethods.ddmVisibleText(page.discountType,"Fixed Product Discount");
+        extentTest.info("Fixed Product Discount secildi.");
+
+        ReusableMethods.bekle(2);
+
+        // Select "Percentage Discount"
+        ReusableMethods.ddmIndex(page.discountType,1);
+        extentTest.info("Percentage Discount secildi.");
 
 
+        // Verify that characters other than numbers are not entered in Coupon Amount
+        page.couponAmount.clear();
+        ReusableMethods.bekle(2);
+        page.couponAmount.sendKeys(ConfigReader.getProperty("wrongCouponAmount"));
+        extentTest.pass("CouponAmount bölümü temizledi, sonra coklu karakterden olusan deger yazildi.");
+        Assert.assertTrue(page.couponAmount.getText() !="15tt+.$%0");
+        extentTest.info("couponAmount bölümüne rakamlar disinda baska bir karakter girilemeyecegi dogrulandi.");
 
+        ReusableMethods.bekle(2);
 
+        // Enter '10' in Coupon Amount
+        page.couponAmount.clear();
+        ReusableMethods.bekle(2);
+        page.couponAmount.sendKeys(ConfigReader.getProperty("rightCouponAmount"));
+        extentTest.pass("couponAmount bölümü temizledi ve 10 sayisi yazildi.");
 
+        // Verify Coupon Amount 10
+        String expectedResult = "10";
+        String actualResult = ConfigReader.getProperty("rightCouponAmount");
+        Assert.assertEquals(actualResult, expectedResult);
+        extentTest.pass("couponAmount bölümünün 10 icerdigi dogrulandi.");
 
+        // Enter coupon expiration date 2025.5.25
+        page.couponExpiryDate.click();
+        extentTest.pass("Gecerlilik tarihi icin couponExpiryDate bölümüne tiklandi");
+        page.month.click();
+        ReusableMethods.ddmVisibleText(page.month, ConfigReader.getProperty("month"));
+        extentTest.info("Ay bölümüne tiklandi ve degeri girildi.");
+        ReusableMethods.bekle(1);
+        page.year.click();
+        ReusableMethods.ddmVisibleText(page.year,ConfigReader.getProperty("year"));
+        extentTest.info("Yil bölümüne tiklandi ve degeri girildi.");
+        ReusableMethods.bekle(1);
+        page.date.click();
+        extentTest.info("Yil bölümüne tiklandi ve degeri girildi.");
+        ReusableMethods.bekle(1);
 
+        // Verify that the coupon expiration date is 2025.5.25
+        String expected = "2025-05-25";
+        String actual = ConfigReader.getProperty("couponExpiryDate");
+        Assert.assertEquals(actual,expected);
+        extentTest.info("Istenilen tarihin görüldügü dogrulandi.");
 
+        // Select "Allow free shipping"
+        page.allowFreeShipping.click();
+        extentTest.info("aallowFreeShipping kutucugu isaretlendi.");
 
+        // Verify that "Allow free shipping" is selected
+        Assert.assertTrue(page.allowFreeShipping.isSelected());
+        extentTest.pass("allowFreeShipping secili oldugu dogrulandi.");
 
+        // Select "Show on store"
+        page.showOnStore.click();
+        extentTest.pass("Show on store kutucugu secildi.");
 
+        // Verify that "Show on store" is selected
+        Assert.assertTrue(page.showOnStore.isSelected());
+        extentTest.info("Show on store secili oldugu dogrulandi.");
 
+        ReusableMethods.bekle(2);
 
+        // Scroll down until the "SUBMIT" button appears
+        //action.scrollToElement(page.submitButton).click(page.submitButton).perform();
 
+        // Click on the "Coupons"
+        ReusableMethods.click(page.coupons);
+        extentTest.info("Coupons tiklandi.");
 
+        // Verify that the generated "Coupon" has been seen
+        Assert.assertTrue(page.codeText.isDisplayed());
+        extentTest.info("Coupons bölümünde kupon olusturuldugu dogrulandi.");
 
+        // Close the WebPage
+        Driver.closeDriver();
+        extentTest.pass("WebPage kapatildi.");
     }
-
 }
