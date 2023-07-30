@@ -50,7 +50,7 @@ public class TC_02_NegativesTests extends ExtentReport {
         extentTest.info("Basarili giris icin SignOut butonunun görüntülendigi dogrulandi.");
 
         // Search for products in Search Box. Enter the "pencil"
-        page.searchBox.sendKeys(ConfigReader.getProperty("product1"), Keys.ENTER);
+        page.searchBox.sendKeys(ConfigReader.getProperty("product"), Keys.ENTER);
         extentTest.info("Arama Kutusuna 'Pencil' yazildi ve aratildi.");
 
         ReusableMethods.bekle(2);
@@ -214,7 +214,7 @@ public class TC_02_NegativesTests extends ExtentReport {
         extentTest.info("Basarili giris icin SignOut butonunun görüntülendigi dogrulandi.");
 
         // Search for products in Search Box. Enter the "pencil"
-        page.searchBox.sendKeys(ConfigReader.getProperty("product1"), Keys.ENTER);
+        page.searchBox.sendKeys(ConfigReader.getProperty("product"), Keys.ENTER);
         extentTest.info("Arama Kutusuna 'Pencil' yazildi ve aratildi.");
 
         ReusableMethods.bekle(2);
@@ -378,7 +378,7 @@ public class TC_02_NegativesTests extends ExtentReport {
         extentTest.info("Basarili giris icin SignOut butonunun görüntülendigi dogrulandi.");
 
         // Search for products in Search Box. Enter the "pencil"
-        page.searchBox.sendKeys(ConfigReader.getProperty("product1"), Keys.ENTER);
+        page.searchBox.sendKeys(ConfigReader.getProperty("product"), Keys.ENTER);
         extentTest.info("Arama Kutusuna 'Pencil' yazildi ve aratildi.");
 
         ReusableMethods.bekle(2);
@@ -542,7 +542,7 @@ public class TC_02_NegativesTests extends ExtentReport {
         extentTest.info("Basarili giris icin SignOut butonunun görüntülendigi dogrulandi.");
 
         // Search for products in Search Box. Enter the "pencil"
-        page.searchBox.sendKeys(ConfigReader.getProperty("product1"), Keys.ENTER);
+        page.searchBox.sendKeys(ConfigReader.getProperty("product"), Keys.ENTER);
         extentTest.info("Arama Kutusuna 'Pencil' yazildi ve aratildi.");
 
         ReusableMethods.bekle(2);
@@ -706,7 +706,7 @@ public class TC_02_NegativesTests extends ExtentReport {
         extentTest.info("Basarili giris icin SignOut butonunun görüntülendigi dogrulandi.");
 
         // Search for products in Search Box. Enter the "pencil"
-        page.searchBox.sendKeys(ConfigReader.getProperty("product1"), Keys.ENTER);
+        page.searchBox.sendKeys(ConfigReader.getProperty("product"), Keys.ENTER);
         extentTest.info("Arama Kutusuna 'Pencil' yazildi ve aratildi.");
 
         ReusableMethods.bekle(2);
@@ -870,7 +870,7 @@ public class TC_02_NegativesTests extends ExtentReport {
         extentTest.info("Basarili giris icin SignOut butonunun görüntülendigi dogrulandi.");
 
         // Search for products in Search Box. Enter the "pencil"
-        page.searchBox.sendKeys(ConfigReader.getProperty("product1"), Keys.ENTER);
+        page.searchBox.sendKeys(ConfigReader.getProperty("product"), Keys.ENTER);
         extentTest.info("Arama Kutusuna 'Pencil' yazildi ve aratildi.");
 
         ReusableMethods.bekle(2);
