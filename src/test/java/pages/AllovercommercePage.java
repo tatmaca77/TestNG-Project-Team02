@@ -89,63 +89,118 @@ public class AllovercommercePage {
 
     //ASLI UZUN
     //BETUL SONGUL ARSLANOGLU
+    @FindBy(xpath = "//*[@id='username']")
+    public WebElement signinUsername;//
+    @FindBy(xpath = "//*[@id='password']")
+    public WebElement signinPassword;//
+    @FindBy(xpath = "//*[@name='login']")
+    public WebElement signinLogin;//
+    @FindBy(xpath = "//*[text()='Sign In']")
+    public WebElement signin;//
+    //********* US13
     //Kullanıcı Sing Out butonuna tıklar
     @FindBy(xpath = "//a[@class='login logout inline-type']")
-    public WebElement singOutButonu;
-
+    public static WebElement singOutButonu;
     //Kullanıcı Adress butonuna tıklar
-
     @FindBy(xpath = "//li[@class='woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address']")
-    public WebElement adressButonu;
-
+    public static WebElement adressButonu;
     //Kullanıcı Shipping Adress in altındaki ADD butonuna tıklar
     @FindBy(xpath = "(//a[@class='edit btn btn-link btn-primary btn-underline mb-4'])[2]")
-    public WebElement shippingAdressADDButonu;
-
+    public static WebElement shippingAdressADDButonu;
     //Kullanıcı FirstName kutusunu doldurur
     @FindBy(xpath = "//input[@id='shipping_first_name']")
-    public WebElement firstNameKutusu;
-
+    public static WebElement firstNameKutusu;
     //Kullanıcı LastName kutusunu doldurur
     @FindBy(xpath = "//input[@id='shipping_last_name']")
-    public WebElement lastNameKutusu;
-
+    public static WebElement lastNameKutusu;
     //Kullanıcı Country / Region kutusunu tıklar
-    @FindBy(xpath = "select2-shipping_country-container")
-    public WebElement countryRegionKutusu;
-
+    @FindBy(xpath = "//select[@id='shipping_country']")
+    public static WebElement countryRegion1;
     //Kullanıcı Street address kutusunu tıklar
     @FindBy(xpath = "//input[@id='shipping_address_1']")
-    public WebElement streetAddressKutusu;
-
-    //Kullanıcı Postcode/Zip kutusunu doldurur
-    @FindBy(xpath = "//input[@id='shipping_postcode']")
-    public WebElement postcodeZipKutusu;
-
+    public static WebElement streetAddressKutusu;
     //Kullanıcı Town/City kutusunu doldurur
     @FindBy(xpath = "//input[@id='shipping_city']")
-    public WebElement townCityKutusu;
-
+    public static WebElement townCityKutusu;
+    //Kullanıcı Postcode/Zip kutusunu doldurur
+    @FindBy(xpath = "//input[@id='shipping_postcode']")
+    public static WebElement postCodeZipKutusu;
     //Kullanıcı Province kutusunu tıklar
-    @FindBy(xpath = "//span[@id='select2-shipping_state-container']")
-    WebElement provinceKutusu;
-
+    @FindBy(xpath = "//select[@id='shipping_state']")
+    public WebElement provinceKutusu;
     //Kullanıcı Save Address butonunu tıklar
     @FindBy(xpath = "//button[@name='save_address']")
-    public WebElement saveAddress;
+    public static WebElement saveAddress;
+    //********  US_14
+    //Kullanıcı 'Store Manager' butnuna tiklar
+    @FindBy(xpath = "//li[@class='woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--wcfm-store-manager']")
+    public static WebElement storeManagerButonu;
+    // Kullanıcı 'Products' butonuna tiklar
+    @FindBy(xpath = "(//span[@class='text'])[4]")
+    public static WebElement productsButonu;
+    //Kullanıcı çıkan Add New butonuna tıklar
+    @FindBy(xpath = "//*[text()='Add New']")
+    public static WebElement addNewButonu;
+    //Kullanıcı Simple Product kutusunu tıklar
+    @FindBy(xpath = "//select[@id='product_type']")
+    public static WebElement simpleProductKutusu;
+    //Kullanıcı 'Product Title' kutusunu doldurur
+    @FindBy(xpath = "//input[@id='pro_title']")
+    public static WebElement productTitleKutusu;
+    //Kullanıcı 'Short Description' kutusunu doldurur
+    @FindBy(xpath = "(//body[@id='tinymce'])[1]")
+    public static WebElement shortDescriptionKutusu;
+    //Kullanıcı 'Description' kutusunu doldurur
+    @FindBy(xpath = "//body[@data-id='description']")
+    public static WebElement descriptionKutusu;
+    //Kullanıcı  büyük resim kutusuna  tıklar
+    @FindBy(xpath = "//img[@id='featured_img_display']")
+    public static WebElement buyukResimKutusu;
+    //Kullanıcı "Select files" butonuna tiklar
+    @FindBy(xpath = "//button[@class='browser button button-hero']")
+    public static WebElement selectFilesButonu;
+    //Kullanıcı "Select " butonuna tiklar
+    @FindBy(xpath = "//button[@class='button media-button button-primary button-large media-button-select']")
+    public static WebElement selectButonu1;
+    //Kullanıcı küçük resim kutusuna tıklar
+    @FindBy(xpath = "//span[@class='wcfm-wp-fields-uploader wcfm_gallery_upload multi_input_block_element wcfm_img_uploader']")
+    public static WebElement kucukresimKutusu;
+    //Kullanıcı 'Appointment' secenegine tiklar
+    @FindBy(xpath = "//input[@value='446']")
+    public static WebElement besinTakviyesiiSecenegi;
+    //Kullanıcı 'Add new category' butonuna tıklar
+    @FindBy(xpath = "(//p[@class='description wcfm_full_ele wcfm_side_add_new_category wcfm_add_new_category wcfm_add_new_taxonomy'])[1]")
+    public static WebElement addNewCategoryButonu;
+    //Kullanıcı 'Category name' butonuna tıklar
+    @FindBy(xpath = "//input[@id='wcfm_new_cat']")
+    public static WebElement categoryNameKutusu;
+    //Kullanıcı ''ADD' butonuna tıklar
+    @FindBy(xpath = "//button[@class='button wcfm_add_category_bt wcfm_add_taxonomy_bt']")
+    public static WebElement addButonu1;
+    //Kullanıcı Products Brands seçeneklerinden 'Apple' seçeneğine tıklar
+    @FindBy(xpath = "(//input[@value='335']")
+    public static WebElement aCKSecenegi;
 
-    //Kullanıcı vendor shipping adres i kaydettiğini doğrular
-    @FindBy(xpath = "(//a[@class='edit btn btn-link btn-primary btn-underline mb-4'])[2]")
-    public WebElement editYourShippingAddressButonu;
 
-//********  US_14
+    @FindBy(xpath = "//button[@id='__wp-uploader-id-1']")
+    public static WebElement selectFiles;
 
-    //Kullanıcı My Accont tu tıklar
-    @FindBy(xpath = "//li[@id='menu-item-1079']")
-    public WebElement myAccontButonu;
-
-
-
+    @FindBy(xpath = "//button[@id='__wp-uploader-id-1']")
+    public static WebElement selectFiles1;
+    @FindBy(xpath = "(//*[text()='Catalog visibility:'])[1]")
+    public static WebElement catalogVisibilitiButonu;
+    //Kullanıcı 'Add new Product Brands' yazizina tiklar
+    @FindBy(xpath = "(//p)[17]")
+    public static WebElement addNewProductBrandsKutusu;
+    //Kullanıcı 'Product Brands name' yazizina tiklar
+    @FindBy(xpath = "//input[@id='wcfm_new_product_brand']")
+    public static WebElement productBrandsNameKutusu;
+    //Kullanıcı 'ADD' butonuna tiklar
+    @FindBy(xpath = "(//button[@class='button wcfm_add_category_bt wcfm_add_taxonomy_bt'])[2]")
+    public static WebElement addButonu2;
+    //Kullanıcı 'SUBMIT' butonuna tiklar
+    @FindBy(xpath = "//input[@id='wcfm_products_simple_submit_button']")
+    public static WebElement submitButonu;
 
 
 
