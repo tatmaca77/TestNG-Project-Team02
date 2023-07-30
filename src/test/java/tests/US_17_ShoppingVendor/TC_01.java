@@ -27,7 +27,7 @@ public class TC_01 extends ExtentReport {
      The user decrease the number of products with "-" in the Quantity section   2->1
      Click on the "ADD TO CART"
      Verify that the Number in the Basket Icon has changed
-     Search for products in Seach Box
+     Search for products in Search Box
      Click on a product image
      The "ADD TO CART" button is verified to appear
      Click on the "ADD TO CART"
@@ -98,7 +98,7 @@ public class TC_01 extends ExtentReport {
         extentTest.info("Basarili giris icin SignOut butonunun görüntülendigi dogrulandi.");
 
         // Search for products in Search Box. Enter the "pencil"
-        page.searchBox.sendKeys(ConfigReader.getProperty("product1"), Keys.ENTER);
+        ReusableMethods.sendKeysJS(page.searchBox,ConfigReader.getProperty("product"));
         extentTest.info("Arama Kutusuna 'Pencil' yazildi ve aratildi.");
 
         // Click on a product image
