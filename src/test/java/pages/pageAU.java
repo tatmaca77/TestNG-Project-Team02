@@ -40,4 +40,31 @@ public class pageAU {
     public WebElement verificationCodeCopy;//verificationcode copykopyala
     @FindBy(xpath = "//*[@class='wcfm-message wcfm-error']")
     public WebElement vendorPasswordHataMesaji;//Password strength should be atleast "Good". locati
+    @FindBy(xpath = "//*[@class='short']")
+    public WebElement shortYazisi;//short yazısı locati
+    @FindBy(xpath = "//*[@class='weak']")
+    public WebElement weakYazisi;//weak yazısı locati
+    @FindBy(xpath = "//*[@class='good']")
+    public WebElement goodYazisi;//good yazısı locati
+    @FindBy(xpath = "//*[@class='strong']")
+    public WebElement strongYazisi;//strong yazısı locati
+
+    @FindBy(xpath = "//*[@id='username']")
+    public WebElement signinUsername;//
+    @FindBy(xpath = "//*[@id='password']")
+    public WebElement signinPassword;//
+    @FindBy(xpath = "//*[@name='login']")
+    public WebElement signinLogin;//
+    @FindBy(xpath = "//*[text()='Sign In']")
+    public WebElement signin;//
+
+
+
+
+
+
+
+
+
+
 }
