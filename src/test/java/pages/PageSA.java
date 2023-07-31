@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -45,16 +46,8 @@ public class PageSA {
     public WebElement newPasswordTextBox;
     @FindBy(xpath = "//*[@id='password_2']")
     public WebElement confirmPasswordTextBox;
-    @FindBy(xpath = "(//p[@class='submit-status'])[1]")
-    public WebElement wrongPasswordText;
-    @FindBy(xpath = "//*[text()='Lost your password?']")
-    public WebElement lostYourPasswordText;
-    @FindBy(xpath = "//*[@class='submit-status loading']")
-    public WebElement truePasswordText;
     @FindBy(xpath = "(//*[@type='search'])[1]")
     public WebElement searchBox;
-    @FindBy(xpath = "(//img)[2]")
-    public WebElement productImage;
     @FindBy(xpath = "//*[@name='add-to-cart']")
     public WebElement addToCartButton;
     @FindBy(xpath = "(//i[@class='w-icon-cart'])[1]")

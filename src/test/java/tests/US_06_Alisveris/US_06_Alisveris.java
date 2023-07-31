@@ -1,42 +1,50 @@
 package tests.US_06_Alisveris;
 
+import com.github.javafaker.Faker;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.PageSA;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ExcelReader;
 import utilities.ReusableMethods;
 
 public class US_06_Alisveris {
     PageSA pageSA;
+    String filePath = "src/test/java/resources/musteriverileri.xlsx";
+    String pageName = "Sayfa1";
+    ExcelReader excelReader = new ExcelReader(filePath,pageName);
+    Actions action;
 
-    @Test
+    @Test(priority = 0)
     public void TC01_Sepete_Urun_Ekleme() {
-       // Belirtilen adrese git.
+        // Belirtilen adrese git.
         Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
         pageSA = new PageSA();
-       // Sign In butonuna tıkla.
-       // Müşteri olarak sign in yap.
+        // Sign In butonuna tıkla.
+        // Müşteri olarak sign in yap.
         loginMethod();
 
-       // Arama kutusunda listelenmiş bir ürün ara.
+        // Arama kutusunda listelenmiş bir ürün ara.
         ReusableMethods.visibleWait(pageSA.signOutButton,10);
         pageSA.searchBox.sendKeys("pencil",Keys.ENTER);
 
-       // Listelenen ürünlerden birini seç.
+        // Listelenen ürünlerden birini seç.
         pageSA.productText.click();
 
-       // ADD TO CART butonuna tıkla.
+        // ADD TO CART butonuna tıkla.
         pageSA.addToCartButton.click();
 
-       // Sağ üstte bulunan Cart ikonuna tıkla.
+        // Sağ üstte bulunan Cart ikonuna tıkla.
         pageSA.cartIcon.click();
 
-       // Çıkan ekranda seçilen ürünün görünür olduğunu doğrula.
+        // Çıkan ekranda seçilen ürünün görünür olduğunu doğrula.
         Assert.assertTrue(pageSA.productVerify.isDisplayed());
     }
 
-    @Test
+    @Test(priority = 1)
     public void TC02_Sepet_Urun_Miktari() {
         // Belirtilen adrese git.
         Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
@@ -89,7 +97,7 @@ public class US_06_Alisveris {
         Assert.assertTrue(numberOfProduct3<numberOfProduct2);
     }
 
-    @Test
+    @Test(priority = 2)
     public void TC03_Fatura_Adresi() {
         // Belirtilen adrese git.
         Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
@@ -113,13 +121,17 @@ public class US_06_Alisveris {
 
         //CHECKOUT butonuna tıkla.
         pageSA.checkoutButton.click();
+        action = new Actions(Driver.getDriver());
+        action.scrollByAmount(0,300).perform();
+
+
 
         //Fatura bilgilerinin görünür olduğunu doğrula.
         Assert.assertTrue(pageSA.billingDetailsText.isDisplayed());
 
     }
 
-    @Test
+    @Test(priority = 3)
     public void TC04_Odeme_Secenekleri() {
         // Belirtilen adrese git.
         Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
@@ -163,7 +175,7 @@ public class US_06_Alisveris {
 
     }
 
-    @Test
+    @Test(priority = 4)
     public void testTC05_Odeme_Islemi() {
         // Belirtilen adrese git.
         Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
@@ -203,7 +215,7 @@ public class US_06_Alisveris {
 
     }
 
-    @Test
+    @Test(priority = 5)
     public void TC06_Odeme_Islemi() {
         // Belirtilen adrese git.
         Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
@@ -241,8 +253,8 @@ public class US_06_Alisveris {
 
     public void loginMethod(){
         pageSA.signInButton.click();
-        pageSA.usernameTextBox.sendKeys(ConfigReader.getProperty("usernameSA"));
-        pageSA.passwordTextBox.sendKeys(ConfigReader.getProperty("password1SA"), Keys.ENTER);
+        pageSA.usernameTextBox.sendKeys(excelReader.getCellData(1,0));
+        pageSA.passwordTextBox.sendKeys(excelReader.getCellData(1,1), Keys.ENTER);
 
     }
 }
