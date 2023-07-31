@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.AllovercommercePage;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
@@ -209,27 +210,33 @@ public class ReusableMethods {
     }
 
     public static void login(String username,String password) {
-        WebDriverManager.chromedriver().setup();//chrome driverı projeye yükledik
-        WebDriver driver = new ChromeDriver();//obje oluşturduk
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
         // Web sitesini açın
-        driver.get("https://allovercommerce.com/");
+        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
 
         //signin butonuna tıkla
-        driver.findElement(By.xpath("//*[text()='Sign In']")).click();
+        Driver.getDriver().findElement(By.xpath("//*[text()='Sign In']")).click();
 
         // Kullanıcı adı ve şifre alanlarını bulun
-        WebElement usernameField = driver.findElement(By.xpath("//*[@id='username']"));
-        WebElement passwordField = driver.findElement(By.xpath("//*[@id='password']"));
+        WebElement usernameField = Driver.getDriver().findElement(By.xpath("//*[@id='username']"));
+        WebElement passwordField = Driver.getDriver().findElement(By.xpath("//*[@id='password']"));
 
         // Kullanıcı adı ve şifre alanlarına bilgileri girin
         usernameField.sendKeys(username);
         passwordField.sendKeys(password);
 
         // Login butonunu bulun ve tıklayın
-        driver.findElement(By.xpath("//*[@name='login']")).click();
+        Driver.getDriver().findElement(By.xpath("//*[@name='login']")).click();
 
+    }
+
+    public static void signInMethod(String email, String password) {
+        Driver.getDriver().get("https://www.allovercommerce.com/");
+        AllovercommercePage page = new AllovercommercePage();
+        page.signIn.click();
+        ReusableMethods.bekle(3);
+        page.emailUsername.sendKeys(ConfigReader.getProperty("email"));
+        page.passwordBox.sendKeys(ConfigReader.getProperty("password"));
+        page.signInButton.click();
     }
 }
