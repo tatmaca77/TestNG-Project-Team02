@@ -47,37 +47,17 @@ public class TC_01 extends ExtentReport {
 
     @Test
     public void couponVendor() {
+
         extentTest = extentReports.createTest("TestNGTeam02","Allovercommerce test edebilmeli");
 
-        //  Go to HomePage
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
-        extentTest.info("Allovercommerce sayfasina gidildi.");
+        ReusableMethods.login(ConfigReader.getProperty("email"),ConfigReader.getProperty("password"));
+        extentTest.info("Sign In islemi ile kullanici girisi yapildi.");
 
+        ReusableMethods.bekle(5);
 
-        // Click the "Sign In" button
         AllovercommercePage page = new AllovercommercePage();
-        page.signIn.click();
-        extentTest.info("Sign In butonuna tiklandi.");
-
-
-        // Enter the "Email address or Username"
-        page.emailUsername.sendKeys(ConfigReader.getProperty("email"));
-        extentTest.info("Email address or Username bölümüne Email adresi yazildi.");
-
-
-        // Enter your "Password"
-        page.passwordBox.sendKeys(ConfigReader.getProperty("password"));
-        extentTest.info("Password kismina sifre yazildi.");
-
-
-        // Select the " Remember Me" button
-        page.rememberMe.click();
-        extentTest.info("Remember Me kutusuna tiklandi.");
-
-
-        // Click the "Sign In" button
-        page.signInButton.click();
-        extentTest.info("Giris icin SignIn butonuna tiklandi.");
+        ReusableMethods.click(page.signOut);
+        extentTest.info("Sign Out kismina tiklandi.");
 
 
         // Verify the login
@@ -108,6 +88,10 @@ public class TC_01 extends ExtentReport {
         // Verify that there is a blue Add Coupon option in the top left corner
         Assert.assertTrue(page.blueAddNewText.isDisplayed());
         extentTest.pass("Add New mavi olarak görüldügü dogrulandi.");
+
+        // Scroll down until the "SUBMIT" button appears
+        ReusableMethods.scroll(page.submitButton);
+        extentTest.info("Submit butonuna kadar sayfa asagiya dogru (Scroll down) kaydirildi.");
 
         // Write in the "Code" section "bedava123" // written in the "Description" section "Tüm Ürünlerde Gecerli Indirim Kuponu"
         page.codeSection.sendKeys(ConfigReader.getProperty("code"),Keys.TAB,
@@ -155,8 +139,8 @@ public class TC_01 extends ExtentReport {
         Assert.assertEquals(actualResult, expectedResult);
         extentTest.pass("couponAmount bölümünün 10 icerdigi dogrulandi.");
 
-        // Enter coupon expiration date 2025.5.25
-        page.couponExpiryDate.click();
+        // Enter coupon expiration date 2025-5-25
+        ReusableMethods.click(page.couponExpiryDate);
         extentTest.pass("Gecerlilik tarihi icin couponExpiryDate bölümüne tiklandi");
         page.month.click();
         ReusableMethods.ddmVisibleText(page.month, ConfigReader.getProperty("month"));
@@ -177,7 +161,7 @@ public class TC_01 extends ExtentReport {
         extentTest.info("Istenilen tarihin görüldügü dogrulandi.");
 
         // Select "Allow free shipping"
-        page.allowFreeShipping.click();
+        ReusableMethods.click(page.allowFreeShipping);
         extentTest.info("aallowFreeShipping kutucugu isaretlendi.");
 
         // Verify that "Allow free shipping" is selected
@@ -194,9 +178,6 @@ public class TC_01 extends ExtentReport {
 
         ReusableMethods.bekle(2);
 
-        // Scroll down until the "SUBMIT" button appears
-        //action.scrollToElement(page.submitButton).click(page.submitButton).perform();
-
         // Click on the "Coupons"
         ReusableMethods.click(page.coupons);
         extentTest.info("Coupons tiklandi.");
@@ -205,8 +186,11 @@ public class TC_01 extends ExtentReport {
         Assert.assertTrue(page.codeText.isDisplayed());
         extentTest.info("Coupons bölümünde kupon olusturuldugu dogrulandi.");
 
+        ReusableMethods.bekle(2);
+
         // Close the WebPage
         Driver.closeDriver();
         extentTest.pass("WebPage kapatildi.");
+
     }
 }
