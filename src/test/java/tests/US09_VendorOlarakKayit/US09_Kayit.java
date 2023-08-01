@@ -85,7 +85,7 @@ public class US09_Kayit extends ExtentReport {
         extentTest.info("Register butonuna tıklandı.");
 
         //Welcome to allower conwers yazısını görüldüğünü test eder
-        pageAU.welcomeToAllowerYazisi.isDisplayed();
+        Assert.assertTrue(pageAU.welcomeToAllowerYazisi.isDisplayed());
         extentTest.info("'Welcome to allower conwers' yazısı görüldü.");
         ReusableMethods.tumSayfaResmi("US_09TC01");
 
@@ -591,7 +591,7 @@ public class US09_Kayit extends ExtentReport {
         extentTest.info("Register butonuna tıklandı.");
 
         //"Password and Confirm-password are not same." yazısını görüldüğünü test eder
-        pageAU.vendorPasswordHataMesaji.isDisplayed();
+       Assert.assertTrue(pageAU.vendorPasswordHataMesaji.isDisplayed());
         extentTest.info("'Password and Confirm-password are not same.' yazısı görüldü.");
         ReusableMethods.tumSayfaResmi("US_09TC08");
     }
@@ -663,7 +663,7 @@ public class US09_Kayit extends ExtentReport {
         extentTest.info("Register butonuna tıklandı.");
 
         //"Password and Confirm-password are not same." yazısını görüldüğünü test eder
-        pageAU.vendorPasswordHataMesaji.isDisplayed();
+        Assert.assertTrue(pageAU.vendorPasswordHataMesaji.isDisplayed());
         extentTest.info("'Password and Confirm-password are not same.' yazısı görüldü.");
         ReusableMethods.tumSayfaResmi("US_09TC09");
     }
@@ -735,7 +735,7 @@ public class US09_Kayit extends ExtentReport {
         extentTest.info("Register butonuna tıklandı.");
 
         //"Password and Confirm-password are not same." yazısını görüldüğünü test eder
-        pageAU.vendorPasswordHataMesaji.isDisplayed();
+       Assert.assertTrue(pageAU.vendorPasswordHataMesaji.isDisplayed());
         extentTest.info("'Password and Confirm-password are not same.' yazısı görüldü.");
         ReusableMethods.tumSayfaResmi("US_09TC10");
     }
