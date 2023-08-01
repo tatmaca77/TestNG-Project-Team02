@@ -706,6 +706,35 @@ public class AllovercommercePage {
     //TOLGAHAN ATMACA
     //ZEYNEP GUL KAYA
 
+    @FindBy(xpath = "//input[@placeholder='Search'][1]")//      MacBookAir
+    public WebElement aramaKutusuzk;
+
+
+    @FindBy(xpath = "(//button[@type='submit'])[1]")
+    public WebElement searchButonuzk;
+
+    //Compare butonunun gorunurlugunu dogrula
+    @FindBy(xpath = "//a[@class='compare btn-product-icon'][1]")
+    public WebElement compareButonzk;
+
+
+    //Start compare butonunun gorunurlugunu dogrula
+    @FindBy(xpath = "//a[text()='Start Compare !']")
+    public WebElement startcompareButonzk;
+
+
+    //kullanici ekledigi urunleri siler
+    @FindBy(xpath = "(//i[@class='w-icon-times-solid'])[1]")
+    public WebElement carpiSilmezk;
+
+
+    //Go Shop butonuna tiklar
+    @FindBy(xpath = "//a[@class='woocommerce-Button button']")
+    public WebElement goShopButonuzk;
+
+    //ilk urun locator
+    @FindBy(xpath = "//img[@class='attachment-woocommerce_thumbnail size-woocommerce_thumbnail']")
+    public WebElement ilkUrunzk;
 
 
 
