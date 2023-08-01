@@ -449,7 +449,32 @@ public class AllovercommercePage {
 
     //M.SERBULENT ARSLAN
     //SULTAN GOKTAS
-
+    @FindBy(xpath = "//span[.='Register']")
+    public WebElement register;
+    @FindBy(xpath = "//a[@href='signup']")
+    public WebElement ustSIGNUP;
+    @FindBy(xpath = "(//input[@id='reg_username'])[1]")
+    public WebElement Username;
+    @FindBy(xpath = "(//input[@id='reg_email'])[1]")
+    public WebElement Email;
+    @FindBy(xpath = "(//input[@id='reg_password'])[1]")
+    public WebElement password;
+    @FindBy(xpath = "(//input[@id='register-policy'])[1]")
+    public WebElement sart;
+    @FindBy(xpath = "(//button[@name='register'])[1]")
+    public WebElement altSIGNUP;
+    @FindBy(xpath = "//*[text()='Sign Out']")
+    public WebElement SIGNOUT;
+   // @FindBy(xpath = "(//small[@class='woocommerce-password-hint'])[1]")
+    //public WebElement gecersiz;
+    @FindBy (xpath="//*[@class='color cetc']")
+    public WebElement fakeMailCopy;//fake mail adresini kopyala
+    @FindBy(xpath = "//a[@class='color cetc hidden-mobile']")
+    public WebElement sahtepasword;//sahtepassword kopyala
+    @FindBy(xpath = "(//p[@class='submit-status'])[2]")
+    public WebElement alreadymesaji;//An account is already registered with your email address.'  mesaji locate'i
+    @FindBy(xpath = "//a[@class='showlogin']")
+    public WebElement pleaseLogInmesaji;//'Pleaselog in'  mesaji locate'i
 
 
 

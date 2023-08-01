@@ -26,4 +26,5 @@ public class ConfigReader {
         return properties.getProperty(key);//-->String olarak girdiğim key'in değerini return eder
     }
 
+
 }
