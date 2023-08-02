@@ -237,4 +237,13 @@ public class ReusableMethods {
         page.passwordBox.sendKeys(ConfigReader.getProperty("password"));
         page.signInButton.click();
     }
+    public static String onikiKarakterliKullaniciAdiGirisi() {
+        String veri = "";
+        String karakter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!/?$%^&).abcdefghijklmnopqrstuvwxyz1234567890";
+        for (int i = 0; i < 12; i++) {
+
+            veri += karakter.charAt(1 + (int) (Math.random() * karakter.length() - 1));
+        }
+        return veri;
+    }
 }

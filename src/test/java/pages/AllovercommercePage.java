@@ -127,7 +127,7 @@ public class AllovercommercePage {
     public static WebElement postCodeZipKutusu;
     //Kullanıcı Province kutusunu tıklar
     @FindBy(xpath = "//select[@id='shipping_state']")
-    public WebElement provinceKutusu;
+    public static WebElement provinceKutusu;
     //Kullanıcı Save Address butonunu tıklar
     @FindBy(xpath = "//button[@name='save_address']")
     public static WebElement saveAddress;
@@ -166,8 +166,8 @@ public class AllovercommercePage {
     @FindBy(xpath = "//span[@class='wcfm-wp-fields-uploader wcfm_gallery_upload multi_input_block_element wcfm_img_uploader']")
     public static WebElement kucukresimKutusu;
     //Kullanıcı 'Appointment' secenegine tiklar
-    @FindBy(xpath = "//input[@value='446']")
-    public static WebElement besinTakviyesiiSecenegi;
+    @FindBy(xpath = "//input[@value='645']")
+    public static WebElement aaaSecenegi;
     //Kullanıcı 'Add new category' butonuna tıklar
     @FindBy(xpath = "(//p[@class='description wcfm_full_ele wcfm_side_add_new_category wcfm_add_new_category wcfm_add_new_taxonomy'])[1]")
     public static WebElement addNewCategoryButonu;
@@ -175,11 +175,12 @@ public class AllovercommercePage {
     @FindBy(xpath = "//input[@id='wcfm_new_cat']")
     public static WebElement categoryNameKutusu;
     //Kullanıcı ''ADD' butonuna tıklar
-    @FindBy(xpath = "//button[@class='button wcfm_add_category_bt wcfm_add_taxonomy_bt']")
+    @FindBy(xpath = "//button[@data-taxonomy='product_cat']")
     public static WebElement addButonu1;
-    //Kullanıcı Products Brands seçeneklerinden 'Apple' seçeneğine tıklar
-    @FindBy(xpath = "(//input[@value='335']")
-    public static WebElement aCKSecenegi;
+    //Kullanıcı Products Brands seçeneklerinden 'ack' seçeneğine tıklar
+
+    @FindBy(xpath = "(//input[@value='468']")
+    public static WebElement yirmiBirGunTarhanaSecenegi;
 
 
     @FindBy(xpath = "//button[@id='__wp-uploader-id-1']")
@@ -196,7 +197,7 @@ public class AllovercommercePage {
     @FindBy(xpath = "//input[@id='wcfm_new_product_brand']")
     public static WebElement productBrandsNameKutusu;
     //Kullanıcı 'ADD' butonuna tiklar
-    @FindBy(xpath = "(//button[@class='button wcfm_add_category_bt wcfm_add_taxonomy_bt'])[2]")
+    @FindBy(xpath = "//button[@data-taxonomy='product_brand']")
     public static WebElement addButonu2;
     //Kullanıcı 'SUBMIT' butonuna tiklar
     @FindBy(xpath = "//input[@id='wcfm_products_simple_submit_button']")
@@ -449,7 +450,32 @@ public class AllovercommercePage {
 
     //M.SERBULENT ARSLAN
     //SULTAN GOKTAS
-
+    @FindBy(xpath = "//span[.='Register']")
+    public WebElement register;
+    @FindBy(xpath = "//a[@href='signup']")
+    public WebElement ustSIGNUP;
+    @FindBy(xpath = "(//input[@id='reg_username'])[1]")
+    public WebElement Username;
+    @FindBy(xpath = "(//input[@id='reg_email'])[1]")
+    public WebElement Email;
+    @FindBy(xpath = "(//input[@id='reg_password'])[1]")
+    public WebElement password;
+    @FindBy(xpath = "(//input[@id='register-policy'])[1]")
+    public WebElement sart;
+    @FindBy(xpath = "(//button[@name='register'])[1]")
+    public WebElement altSIGNUP;
+    @FindBy(xpath = "//*[text()='Sign Out']")
+    public WebElement SIGNOUT;
+   // @FindBy(xpath = "(//small[@class='woocommerce-password-hint'])[1]")
+    //public WebElement gecersiz;
+    @FindBy (xpath="//*[@class='color cetc']")
+    public WebElement fakeMailCopy;//fake mail adresini kopyala
+    @FindBy(xpath = "//a[@class='color cetc hidden-mobile']")
+    public WebElement sahtepasword;//sahtepassword kopyala
+    @FindBy(xpath = "(//p[@class='submit-status'])[2]")
+    public WebElement alreadymesaji;//An account is already registered with your email address.'  mesaji locate'i
+    @FindBy(xpath = "//a[@class='showlogin']")
+    public WebElement pleaseLogInmesaji;//'Pleaselog in'  mesaji locate'i
 
 
 
