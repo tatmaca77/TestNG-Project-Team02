@@ -5,7 +5,14 @@ import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.PageSA;
+<<<<<<< HEAD
+import utilities.ConfigReader;
+import utilities.Driver;
+import utilities.ExtentReport;
+import utilities.ReusableMethods;
+=======
 import utilities.*;
+>>>>>>> master
 
 public class US_05_Acoount_Details extends ExtentReport {
 
