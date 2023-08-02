@@ -4,12 +4,13 @@ import com.github.javafaker.Faker;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.AllovercommercePage;
 import pages.PageSA;
 import utilities.*;
 
 public class US_05_Acoount_Details extends ExtentReport {
 
-    PageSA pageSA;
+    AllovercommercePage pageSA;
     Faker faker = new Faker();
     String randomWord = faker.lorem().word();
     String randomNumber = faker.number().digits(8);
@@ -22,9 +23,9 @@ public class US_05_Acoount_Details extends ExtentReport {
     @Test(priority = 0)
     public void TC01_Acoount_Details() {
 
-        extentTest = extentReports.createTest("TestNGTeam02","Test Raporu");
+        extentTest = extentReports.createTest("US05_TC01","Test Raporu");
         //Belirtilen adrese git.
-        pageSA = new PageSA();
+        pageSA = new AllovercommercePage();
         Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Sign In butonuna tıkla.
@@ -78,9 +79,9 @@ public class US_05_Acoount_Details extends ExtentReport {
 
     @Test(priority = 1)
     public void TC02_Acoount_Details() {
-        extentTest = extentReports.createTest("TestNGTeam02","Test Raporu");
+        extentTest = extentReports.createTest("US05_TC02","Test Raporu");
         //Belirtilen adrese git.
-        pageSA = new PageSA();
+        pageSA = new AllovercommercePage();
         Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
 
@@ -134,9 +135,9 @@ public class US_05_Acoount_Details extends ExtentReport {
 
     @Test(priority = 2)
     public void TC03_Acoount_Details() {
-        extentTest = extentReports.createTest("TestNGTeam02","Test Raporu");
+        extentTest = extentReports.createTest("US05_TC03","Test Raporu");
         //Belirtilen adrese git.
-        pageSA = new PageSA();
+        pageSA = new AllovercommercePage();
         Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Sign In butonuna tıkla.
@@ -189,9 +190,9 @@ public class US_05_Acoount_Details extends ExtentReport {
 
     @Test(priority = 3)
     public void TC04_Acoount_Details() {
-        extentTest = extentReports.createTest("TestNGTeam02","Test Raporu");
+        extentTest = extentReports.createTest("US05_TC04","Test Raporu");
         //Belirtilen adrese git.
-        pageSA = new PageSA();
+        pageSA = new AllovercommercePage();
         Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Sign In butonuna tıkla.
@@ -244,9 +245,9 @@ public class US_05_Acoount_Details extends ExtentReport {
 
     @Test(priority = 4)
     public void TC05_Acoount_Details() {
-        extentTest = extentReports.createTest("TestNGTeam02","Test Raporu");
+        extentTest = extentReports.createTest("US05_TC05","Test Raporu");
         //Belirtilen adrese git.
-        pageSA = new PageSA();
+        pageSA = new AllovercommercePage();
         Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Sign In butonuna tıkla.
@@ -300,9 +301,9 @@ public class US_05_Acoount_Details extends ExtentReport {
 
     @Test(priority = 5)
     public void TC06_PasswordTest() {
-        extentTest = extentReports.createTest("TestNGTeam02","Test Raporu");
+        extentTest = extentReports.createTest("US05_TC06","Test Raporu");
         //Belirtilen adrese git.
-        pageSA = new PageSA();
+        pageSA = new AllovercommercePage();
         Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Sign In butonuna tıkla.
