@@ -706,6 +706,35 @@ public class AllovercommercePage {
     //TOLGAHAN ATMACA
     //ZEYNEP GUL KAYA
 
+    @FindBy(xpath = "//input[@placeholder='Search'][1]")//      MacBookAir
+    public WebElement aramaKutusuzk;
+
+
+    @FindBy(xpath = "(//button[@type='submit'])[1]")
+    public WebElement searchButonuzk;
+
+    //Compare butonunun gorunurlugunu dogrula
+    @FindBy(xpath = "//a[@class='compare btn-product-icon'][1]")
+    public WebElement compareButonzk;
+
+
+    //Start compare butonunun gorunurlugunu dogrula
+    @FindBy(xpath = "//a[text()='Start Compare !']")
+    public WebElement startcompareButonzk;
+
+
+    //kullanici ekledigi urunleri siler
+    @FindBy(xpath = "(//i[@class='w-icon-times-solid'])[1]")
+    public WebElement carpiSilmezk;
+
+
+    //Go Shop butonuna tiklar
+    @FindBy(xpath = "//a[@class='woocommerce-Button button']")
+    public WebElement goShopButonuzk;
+
+    //ilk urun locator
+    @FindBy(xpath = "//img[@class='attachment-woocommerce_thumbnail size-woocommerce_thumbnail']")
+    public WebElement ilkUrunzk;
 
 
 
@@ -754,5 +783,66 @@ public class AllovercommercePage {
 
 
     //ZEYNEP GUL KAYA
+
+    //aslı uzun
+    @FindBy(xpath = "//*[@class='register inline-type']")
+    public WebElement register;//Registerin locati
+    @FindBy(xpath = "(//*[@class='nav-link active'])[1]")
+    public WebElement signUp;//Sign up locati
+    @FindBy(xpath = "(//*[@href='https://allovercommerce.com/vendor-register/'])[2]")
+    public WebElement becomeAVendor;//Become a Vendor locati
+    @FindBy(xpath = "//*[@id='user_email']")
+    public WebElement eMailKutusu;//email kutusu locati
+    @FindBy(xpath = "(//*[@type='text'])[2]")
+    public WebElement verificationCode;//Verification Code kutusu locati
+    @FindBy(xpath = "(//*[@tabindex='-1'])[1]")
+    public WebElement verificationCodeSentYourMailYazisi;//"Verification code sent to your email: abc@abc.com." mesajının locati
+    @FindBy(xpath = "(//*[@type='password'])[1]")
+    public WebElement vendorPassword;//Vendor password kutusu locati
+    @FindBy(xpath = "(//*[@type='password'])[2]")
+    public WebElement vendorConfirmPassword;//Vendor  Confirm password kutusu locati
+    @FindBy(xpath = "//*[@value='Register']")
+    public WebElement registrationRegister;// vendor registration sayfasındaki register butonu locati
+    @FindBy(xpath = "(//h1)[2]")
+    public WebElement welcomeToAllowerYazisi;//Welcome to allower conwers yazısının locati
+    @FindBy(xpath = "//*[@id='email']")
+    public WebElement fakeMail;//fakemail sitesinde mail kutusu locati
+    @FindBy(xpath = "//*[@class='color cetc']")
+    public WebElement fakeMailCopy;//fake mail adresini kopyala
+    @FindBy(xpath = "(//*[@class='glyphicon glyphicon-download-alt'])[2]")
+    public WebElement verificationcodeac;
+    @FindBy(xpath = "//*[@id='predmet']")
+    public WebElement verificationCodeCopy;//verificationcode copykopyala
+    @FindBy(xpath = "//*[@class='wcfm-message wcfm-error']")
+    public WebElement vendorPasswordHataMesaji;//Password strength should be atleast "Good". locati
+    @FindBy(xpath = "//*[@class='short']")
+    public WebElement shortYazisi;//short yazısı locati
+    @FindBy(xpath = "//*[@class='weak']")
+    public WebElement weakYazisi;//weak yazısı locati
+    @FindBy(xpath = "//*[@class='good']")
+    public WebElement goodYazisi;//good yazısı locati
+    @FindBy(xpath = "//*[@class='strong']")
+    public WebElement strongYazisi;//strong yazısı locati
+    @FindBy(xpath = " //*[@class='wcfm-message wcfm-error']")
+    public WebElement thisEmailAlreadyExistsYazisi;
+    @FindBy(xpath = "//*[@data-action='sign in']")
+    public WebElement gmailOturumAc;
+    @FindBy(xpath = "//*[@class='BHzsHc']")
+    public WebElement gmailBaskaHesap;
+    @FindBy(xpath = "//*[@id='identifierId']")
+    public WebElement gmailMailKutusu;
+    @FindBy(xpath = "(//*[@class='VfPpkd-RLmnJb'])[2]")
+    public WebElement gmailmailIleriButonu;
+    @FindBy(xpath = "//*[@name='password']")
+    public WebElement gmailPassword;
+    @FindBy(xpath = " (//*[@class='VfPpkd-vQzf8d'])[2]")
+    public WebElement gmailpasswordIleriButonu;
+    @FindBy(xpath = " (//*[@class='VfPpkd-vQzf8d'])[2]")
+    public WebElement gmailSimdiDegil;
+    @FindBy(xpath = "(//*[text()='Allover Commerce'])[2]")
+    public WebElement alloverGelenMail;
+    @FindBy(xpath = "//h2[@jsname='r4nke']")
+    public WebElement maileGelenKod;
+
 
 }
