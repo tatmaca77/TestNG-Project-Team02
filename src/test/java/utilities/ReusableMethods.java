@@ -1,9 +1,7 @@
 package utilities;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -238,5 +236,14 @@ public class ReusableMethods {
         page.emailUsername.sendKeys(ConfigReader.getProperty("email"));
         page.passwordBox.sendKeys(ConfigReader.getProperty("password"));
         page.signInButton.click();
+    }
+    public static String onikiKarakterliKullaniciAdiGirisi() {
+        String veri = "";
+        String karakter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!/?$%^&).abcdefghijklmnopqrstuvwxyz1234567890";
+        for (int i = 0; i < 12; i++) {
+
+            veri += karakter.charAt(1 + (int) (Math.random() * karakter.length() - 1));
+        }
+        return veri;
     }
 }
