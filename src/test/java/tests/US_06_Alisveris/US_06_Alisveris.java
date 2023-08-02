@@ -1,12 +1,10 @@
 package tests.US_06_Alisveris;
 
-import com.github.javafaker.Faker;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AllovercommercePage;
-import pages.PageSA;
 import utilities.*;
 
 public class US_06_Alisveris extends ExtentReport {
@@ -30,7 +28,7 @@ public class US_06_Alisveris extends ExtentReport {
 
         // Arama kutusunda listelenmiş bir ürün ara.
         ReusableMethods.visibleWait(pageSA.signOutButton,10);
-        pageSA.searchBox.sendKeys("pencil",Keys.ENTER);
+        pageSA.searchBoxSA.sendKeys("pencil",Keys.ENTER);
         extentTest.info("Arama kutusunda pencil aratıldı.");
 
         // Listelenen ürünlerden birini seç.
@@ -42,7 +40,7 @@ public class US_06_Alisveris extends ExtentReport {
         extentTest.info("ADD TO CART butonuna tıklandı.");
 
         // Sağ üstte bulunan Cart ikonuna tıkla.
-        pageSA.cartIcon.click();
+        pageSA.cartIconSA.click();
         extentTest.info("Sağ üstte bulunan Cart ikonuna tıklandı.");
 
         // Çıkan ekranda seçilen ürünün görünür olduğunu doğrula.
@@ -65,7 +63,7 @@ public class US_06_Alisveris extends ExtentReport {
 
         // Arama kutusunda listelenmiş bir ürün ara.
         ReusableMethods.visibleWait(pageSA.signOutButton,10);
-        pageSA.searchBox.sendKeys("pencil",Keys.ENTER);
+        pageSA.searchBoxSA.sendKeys("pencil",Keys.ENTER);
         extentTest.info("Arama kutusunda pencil aratıldı.");
 
         // Listelenen ürünlerden birini seç.
@@ -77,7 +75,7 @@ public class US_06_Alisveris extends ExtentReport {
         extentTest.info("ADD TO CART butonuna tıklandı.");
 
         // Sağ üstte bulunan Cart ikonuna tıkla.
-        pageSA.cartIcon.click();
+        pageSA.cartIconSA.click();
         extentTest.info("Sağ üstte bulunan Cart ikonuna tıklandı.");
 
         //VIEW CART butonuna tıkla.
@@ -135,7 +133,7 @@ public class US_06_Alisveris extends ExtentReport {
 
         // Arama kutusunda listelenmiş bir ürün ara.
         ReusableMethods.visibleWait(pageSA.signOutButton,10);
-        pageSA.searchBox.sendKeys("pencil",Keys.ENTER);
+        pageSA.searchBoxSA.sendKeys("pencil",Keys.ENTER);
         extentTest.info("Arama kutusunda pencil aratıldı.");
 
         // Listelenen ürünlerden birini seç.
@@ -147,7 +145,7 @@ public class US_06_Alisveris extends ExtentReport {
         extentTest.info("ADD TO CART butonuna tıklandı.");
 
         // Sağ üstte bulunan Cart ikonuna tıkla.
-        pageSA.cartIcon.click();
+        pageSA.cartIconSA.click();
         extentTest.info("Sağ üstte bulunan Cart ikonuna tıklandı.");
 
         //CHECKOUT butonuna tıkla.
@@ -157,7 +155,7 @@ public class US_06_Alisveris extends ExtentReport {
         extentTest.info("CHECKOUT butonuna tıklandı.");
 
         //Fatura bilgilerinin görünür olduğunu doğrula.
-        Assert.assertTrue(pageSA.billingDetailsText.isDisplayed());
+        Assert.assertTrue(pageSA.billingDetailsTextSA.isDisplayed());
         extentTest.pass("Fatura bilgilerinin görünür olduğu doğrulandı.");
         ReusableMethods.tumSayfaResmi("US06_TC03");
 
@@ -177,7 +175,7 @@ public class US_06_Alisveris extends ExtentReport {
 
         // Arama kutusunda listelenmiş bir ürün ara.
         ReusableMethods.visibleWait(pageSA.signOutButton,10);
-        pageSA.searchBox.sendKeys("pencil",Keys.ENTER);
+        pageSA.searchBoxSA.sendKeys("pencil",Keys.ENTER);
         extentTest.info("Arama kutusunda pencil aratıldı.");
 
         // Listelenen ürünlerden birini seç.
@@ -189,7 +187,7 @@ public class US_06_Alisveris extends ExtentReport {
         extentTest.info("ADD TO CART butonuna tıklandı.");
 
         // Sağ üstte bulunan Cart ikonuna tıkla.
-        pageSA.cartIcon.click();
+        pageSA.cartIconSA.click();
         extentTest.info("Sağ üstte bulunan Cart ikonuna tıklandı.");
 
         //CHECKOUT butonuna tıkla.
@@ -235,7 +233,7 @@ public class US_06_Alisveris extends ExtentReport {
 
         // Arama kutusunda listelenmiş bir ürün ara.
         ReusableMethods.visibleWait(pageSA.signOutButton,10);
-        pageSA.searchBox.sendKeys("pencil",Keys.ENTER);
+        pageSA.searchBoxSA.sendKeys("pencil",Keys.ENTER);
         extentTest.info("Arama kutusunda pencil aratıldı.");
 
         // Listelenen ürünlerden birini seç.
@@ -247,7 +245,7 @@ public class US_06_Alisveris extends ExtentReport {
         extentTest.info("ADD TO CART butonuna tıklandı.");
 
         // Sağ üstte bulunan Cart ikonuna tıkla.
-        pageSA.cartIcon.click();
+        pageSA.cartIconSA.click();
         extentTest.info("Sağ üstte bulunan Cart ikonuna tıklandı.");
 
         //CHECKOUT butonuna tıkla.
@@ -283,7 +281,7 @@ public class US_06_Alisveris extends ExtentReport {
         extentTest.info("Müşteri olarak giriş yapıldı.");
         // Arama kutusunda listelenmiş bir ürün ara.
         ReusableMethods.visibleWait(pageSA.signOutButton,10);
-        pageSA.searchBox.sendKeys("pencil",Keys.ENTER);
+        pageSA.searchBoxSA.sendKeys("pencil",Keys.ENTER);
         extentTest.info("Arama kutusunda pencil aratıldı.");
 
         // Listelenen ürünlerden birini seç.
@@ -295,7 +293,7 @@ public class US_06_Alisveris extends ExtentReport {
         extentTest.info("ADD TO CART butonuna tıklandı.");
 
         // Sağ üstte bulunan Cart ikonuna tıkla.
-        pageSA.cartIcon.click();
+        pageSA.cartIconSA.click();
         extentTest.info("Sağ üstte bulunan Cart ikonuna tıklandı.");
 
         //CHECKOUT butonuna tıkla.
@@ -318,7 +316,7 @@ public class US_06_Alisveris extends ExtentReport {
     }
 
     public void loginMethod(){
-        pageSA.signInButton.click();
+        pageSA.signInButtonSA.click();
         pageSA.usernameTextBox.sendKeys(excelReader.getCellData(1,0));
         pageSA.passwordTextBox.sendKeys(excelReader.getCellData(1,1), Keys.ENTER);
 

@@ -5,8 +5,12 @@ import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AllovercommercePage;
-import pages.PageSA;
+import utilities.ConfigReader;
+import utilities.Driver;
+import utilities.ExtentReport;
+import utilities.ReusableMethods;
 import utilities.*;
+
 
 public class US_05_Acoount_Details extends ExtentReport {
 
@@ -349,7 +353,7 @@ public class US_05_Acoount_Details extends ExtentReport {
 
     }
     public void loginMethod(){
-        pageSA.signInButton.click();
+        pageSA.signInButtonSA.click();
         pageSA.usernameTextBox.sendKeys(excelReader.getCellData(1,0));
         pageSA.passwordTextBox.sendKeys(excelReader.getCellData(1,1), Keys.ENTER);
     }
