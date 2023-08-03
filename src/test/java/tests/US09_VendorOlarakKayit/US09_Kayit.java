@@ -17,7 +17,7 @@ public class US09_Kayit extends ExtentReport {
     public void TestCase01() {
         extentTest = extentReports.createTest("ExtentReport", "TestCase01");
         //Kullanıcı adrese gider
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Register a tıklar
         pageAU.registerAU.click();
@@ -77,7 +77,7 @@ public class US09_Kayit extends ExtentReport {
     public void TestCase02() {
         extentTest = extentReports.createTest("ExtentReport", "TestCase02");
         //Kullanıcı adrese gider
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Register a tıklar
         pageAU.registerAU.click();
@@ -135,7 +135,7 @@ public class US09_Kayit extends ExtentReport {
     public void TestCase03() {
         extentTest = extentReports.createTest("ExtentReport", "TestCase03");
         //Kullanıcı adrese gider
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Register a tıklar
         pageAU.registerAU.click();
@@ -193,7 +193,7 @@ public class US09_Kayit extends ExtentReport {
     public void TestCase04() {
         extentTest = extentReports.createTest("ExtentReport", "TestCase04");
         //Kullanıcı adrese gider
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Register a tıklar
         pageAU.registerAU.click();
@@ -251,7 +251,7 @@ public class US09_Kayit extends ExtentReport {
     public void TestCase05() {
         extentTest = extentReports.createTest("ExtentReport", "TestCase05");
         //Kullanıcı adrese gider
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Register a tıklar
         pageAU.registerAU.click();
@@ -309,7 +309,7 @@ public class US09_Kayit extends ExtentReport {
     public void TestCase06() {
         extentTest = extentReports.createTest("ExtentReport", "TestCase06");
         //Kullanıcı adrese gider
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Register a tıklar
         pageAU.registerAU.click();
@@ -367,7 +367,7 @@ public class US09_Kayit extends ExtentReport {
     public void TestCase07() {
         extentTest = extentReports.createTest("ExtentReport", "TestCase07");
         //Kullanıcı adrese gider
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Register a tıklar
         pageAU.registerAU.click();
@@ -425,7 +425,7 @@ public class US09_Kayit extends ExtentReport {
     public void TestCase08() {
         extentTest = extentReports.createTest("ExtentReport", "TestCase08");
         //Kullanıcı adrese gider
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Register a tıklar
         pageAU.registerAU.click();
@@ -483,7 +483,7 @@ public class US09_Kayit extends ExtentReport {
     public void TestCase09() {
         extentTest = extentReports.createTest("ExtentReport", "TestCase09");
         //Kullanıcı adrese gider
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Register a tıklar
         pageAU.registerAU.click();
@@ -541,7 +541,7 @@ public class US09_Kayit extends ExtentReport {
     public void TestCase10() {
         extentTest = extentReports.createTest("ExtentReport", "TestCase10");
         //Kullanıcı adrese gider
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Register a tıklar
         pageAU.registerAU.click();
@@ -599,7 +599,7 @@ public class US09_Kayit extends ExtentReport {
     public void TestCase11() {
         extentTest = extentReports.createTest("ExtentReport", "TestCase11");
         //Kullanıcı adrese gider
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Register a tıklar
         pageAU.registerAU.click();
@@ -657,7 +657,7 @@ public class US09_Kayit extends ExtentReport {
     public void TestCase12() {
         extentTest = extentReports.createTest("ExtentReport", "TestCase12");
         //Kullanıcı adrese gider
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Register a tıklar
         pageAU.registerAU.click();
@@ -715,7 +715,7 @@ public class US09_Kayit extends ExtentReport {
     public void TestCase13() {
         extentTest = extentReports.createTest("ExtentReport", "TestCase13");
         //Kullanıcı adrese gider
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Register a tıklar
         pageAU.registerAU.click();
