@@ -27,13 +27,13 @@ public class TC01_BillingAdresEkleme extends ExtentReport {
         ReusableMethods.bekle(1);
 
         //3 "Username or email address" alanına geçerli bir mail adresi girer.
-        page.usernameKutusu.sendKeys(ConfigReader.getProperty("billingmail"));
-        //extentTest.info("Geçerli bir email adresi girildi");
+        page.usernameKutusu.sendKeys(ConfigReader.getProperty("vendorEmail"));
+        extentTest.info("Geçerli bir email adresi girildi");
         ReusableMethods.bekle(1);
 
         //4 "Password" alanına geçerli bir şifre girer.
-        page.passwordKutusu.sendKeys(ConfigReader.getProperty("billingpassword"));
-        //extentTest.info("Geçerli bir password girildi");
+        page.passwordKutusu.sendKeys(ConfigReader.getProperty("vendorPassword"));
+        extentTest.info("Geçerli bir password girildi");
         ReusableMethods.bekle(1);
 
         //5- "Popup sign in butonuna tıklar.

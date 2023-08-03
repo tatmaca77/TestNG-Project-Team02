@@ -18,53 +18,45 @@ public class TC02_DashboardMenu extends ExtentReport {
         // 1 Vendor anasayfaya gider.
         Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         ReusableMethods.bekle(2);
-
         extentTest.info("Anasayfaya gidildi");
         PageAE page = new PageAE();
 
         // 2 Sign In butonuna tıklar
         ReusableMethods.click(page.signInRegister);
         extentTest.info("Sign in butonuna tıklandı");
-
         ReusableMethods.bekle(1);
 
         //3 Sign in pop-up penceresinde bulunan "SIGN-IN" butonunun görünür ve ulaşılabilir olduğunu doğrula
         page.signInPopUp.isEnabled();//Ulasilabilir
         extentTest.info("Sign In PopUp penceresinin erişilebildiği doğrulandı");
-
         ReusableMethods.bekle(1);
 
         //4 "Username or email address" alanına geçerli bir mail adresi girer.
         page.usernameKutusu.sendKeys(ConfigReader.getProperty("vendorEmail"));
         extentTest.info("Geçerli bir email adresi girildi");
-
         ReusableMethods.bekle(1);
 
         //5 "Password" alanına geçerli bir şifre girer.
         page.passwordKutusu.sendKeys(ConfigReader.getProperty("vendorPassword"));
         extentTest.info("Geçerli bir password girildi");
-
         ReusableMethods.bekle(1);
 
         //6 "Popup sign in butonuna tıklar.
         page.popUpsignIn.click();
         ReusableMethods.bekle(1);
         extentTest.info("PopUp penceresi Sign In butonuna tıklandı");
-
         ReusableMethods.bekle(1);
 
         //7 "Sign out butonuna tıkla (Sign in yapıldığını doğrula)
         Assert.assertTrue(page.signOutButonu.isDisplayed());
         page.signOutButonu.click();
         extentTest.info("Sign out butonuna tıklandı");
-
         ReusableMethods.bekle(1);
 
         //8 My Account yazısının göründüğünü doğrula
         Assert.assertTrue(page.myAccountYazisi.isDisplayed());
         extentTest.info("Vendor olarak kendi hesabına gidilidiği doğrulandı.");
         ReusableMethods.bekle(1);
-
 
         //9 My Account sayfasında "Dashboard" yazısının olduğunu doğrula.
         Assert.assertTrue(page.dashboardText.isDisplayed());
@@ -113,15 +105,10 @@ public class TC02_DashboardMenu extends ExtentReport {
         extentTest.info("Account Details menüsüne girildiği görüldü");
         ReusableMethods.bekle(1);
 
-
-
         //15 Dashboard altında, Wishlist yazısının olduğunu doğrula.
-
         ReusableMethods.scroll(page.wishlistText);
-
         Assert.assertTrue(page.wishlistText.isDisplayed());
         ReusableMethods.click(page.wishlistText);
-        //page.wishlistText.click();
         extentTest.info("Dashboard altında, Wishlist yazısının olduğunu doğrulandı");
         page.wishlistBaslik.isDisplayed();
         extentTest.info("Wishlist menüsüne girildiği görüldü");
@@ -132,7 +119,6 @@ public class TC02_DashboardMenu extends ExtentReport {
         ReusableMethods.scroll(page.supportTicketsText);
         Assert.assertTrue(page.supportTicketsText.isDisplayed());
         ReusableMethods.click(page.supportTicketsText);
-        //page.supportTicketsText.click();
         extentTest.info("Dashboard altında, Supoort Tickets yazısının olduğunu doğrulandı");
         page.ticketsStatus.isDisplayed();
         ReusableMethods.bekle(1);
@@ -141,7 +127,6 @@ public class TC02_DashboardMenu extends ExtentReport {
         ReusableMethods.scroll(page.followingsText);
         Assert.assertTrue(page.followingsText.isDisplayed());
         ReusableMethods.click(page.followingsText);
-        //page.followingsText.click();
         page.followingStore.isDisplayed();
         extentTest.info("Dashboard altında, Followings yazısının olduğunu doğrulandı");
         ReusableMethods.bekle(1);
@@ -150,13 +135,13 @@ public class TC02_DashboardMenu extends ExtentReport {
         ReusableMethods.scroll(page.logoutText);
         Assert.assertTrue(page.logoutText.isDisplayed());
         ReusableMethods.click(page.logoutText);
-        //page.logoutText.click();
         extentTest.info("Dashboard altında, logout yazısının olduğunu doğrulandı");
 
 
         //19 Sign in pop-up penceresinde bulunan "SIGN-IN" butonunun görünür ve ulaşılabilir olduğunu doğrula
         Assert.assertTrue(page.signInPopUp.isDisplayed());
         ReusableMethods.bekle(1);
+        extentTest.info("Sayfadan logout yapıldı");
 
 
 

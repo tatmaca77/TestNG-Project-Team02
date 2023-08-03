@@ -5,7 +5,11 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.AllovercommercePage;
 
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -178,5 +182,68 @@ public class ReusableMethods {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         String attribute_Value = (String) js.executeScript("return document.getElementById('" + id + "')." + attributeName);
         System.out.println("Attribute Value: = " + attribute_Value);
+    }
+    public static void uploadFileFromPc(String dosyaYolu){
+        StringSelection stringSelection = new StringSelection(dosyaYolu);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        Robot robot = null;
+        try {
+            robot = new Robot();
+        } catch (AWTException e) {
+            throw new RuntimeException(e);
+        }
+        robot.delay(1000);
+        robot.keyPress(KeyEvent.VK_CONTROL);
+        robot.keyPress(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_CONTROL);
+        robot.delay(1000);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+    }
+
+    public static void login(String username,String password) {
+
+        // Web sitesini açın
+        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+
+        //signin butonuna tıkla
+        Driver.getDriver().findElement(By.xpath("//*[text()='Sign In']")).click();
+
+        // Kullanıcı adı ve şifre alanlarını bulun
+        WebElement usernameField = Driver.getDriver().findElement(By.xpath("//*[@id='username']"));
+        WebElement passwordField = Driver.getDriver().findElement(By.xpath("//*[@id='password']"));
+
+        // Kullanıcı adı ve şifre alanlarına bilgileri girin
+        usernameField.sendKeys(username);
+        passwordField.sendKeys(password);
+
+        // Login butonunu bulun ve tıklayın
+        Driver.getDriver().findElement(By.xpath("//*[@name='login']")).click();
+
+    }
+
+    public static void signInMethod(String email, String password) {
+        Driver.getDriver().get("https://www.allovercommerce.com/");
+        AllovercommercePage page = new AllovercommercePage();
+        page.signIn.click();
+        ReusableMethods.bekle(3);
+        page.emailUsername.sendKeys(ConfigReader.getProperty("email"));
+        page.passwordBox.sendKeys(ConfigReader.getProperty("password"));
+        page.signInButton.click();
+    }
+    public static String onikiKarakterliKullaniciAdiGirisi() {
+        String veri = "";
+        String karakter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!/?$%^&).abcdefghijklmnopqrstuvwxyz1234567890";
+        for (int i = 0; i < 12; i++) {
+
+            veri += karakter.charAt(1 + (int) (Math.random() * karakter.length() - 1));
+        }
+        return veri;
     }
 }
