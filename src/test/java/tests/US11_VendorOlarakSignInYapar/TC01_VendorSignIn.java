@@ -2,7 +2,7 @@ package tests.US11_VendorOlarakSignInYapar;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.PageAE;
+import pages.AllovercommercePage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ExtentReport;
@@ -21,7 +21,7 @@ public class TC01_VendorSignIn extends ExtentReport {
         ReusableMethods.bekle(2);
 
         extentTest.info("Anasayfaya gidildi");
-        PageAE page = new PageAE();
+        AllovercommercePage page = new AllovercommercePage();
 
         // 2 Sign In butonuna tıklar
         ReusableMethods.click(page.signInRegister);

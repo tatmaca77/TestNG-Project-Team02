@@ -2,7 +2,7 @@ package tests.US11_VendorOlarakSignInYapar;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.PageAE;
+import pages.AllovercommercePage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ExtentReport;
@@ -10,7 +10,7 @@ import utilities.ReusableMethods;
 
 public class TC02_DashboardMenu extends ExtentReport {
 
-
+    AllovercommercePage page = new AllovercommercePage();
     @Test
     public void tc_01_vendorSignIn() {
         extentTest = extentReports.createTest("TestNGTeam02","Dashboard Menüsüne Giriş");
@@ -19,7 +19,6 @@ public class TC02_DashboardMenu extends ExtentReport {
         Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         ReusableMethods.bekle(2);
         extentTest.info("Anasayfaya gidildi");
-        PageAE page = new PageAE();
 
         // 2 Sign In butonuna tıklar
         ReusableMethods.click(page.signInRegister);

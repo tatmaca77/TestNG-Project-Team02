@@ -3,18 +3,17 @@ package tests.US12_VendorBillingAdresEkler;
 import com.github.javafaker.Faker;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.PageAE;
+import pages.AllovercommercePage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ExtentReport;
 import utilities.ReusableMethods;
 
 public class TC01_BillingAdresEkleme extends ExtentReport {
-    PageAE page = new PageAE();
+    AllovercommercePage page = new AllovercommercePage();
     @Test
     public void TC_01_BillingAddressEkleme() {
         extentTest = extentReports.createTest("TestNGTeam02","VendorBilling");
-        PageAE page = new PageAE();
 
         // 1 Vendor anasayfaya gider.
         Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
@@ -61,7 +60,7 @@ public class TC01_BillingAdresEkleme extends ExtentReport {
 
         //10- Name bilgisi gir.
         Faker faker=new Faker();
-        page.firstNameKutusu.sendKeys(faker.name().firstName());
+        page.firstNameKutu.sendKeys(faker.name().firstName());
         ReusableMethods.bekle(1);
         extentTest.info("First Name girildi.");
 
@@ -71,7 +70,7 @@ public class TC01_BillingAdresEkleme extends ExtentReport {
         extentTest.info("Last Name girildi.");
 
         //12- Kullanıcı Country/Region alanını doldurur
-        ReusableMethods.ddmVisibleText(page.country, "Turkey");
+        ReusableMethods.ddmVisibleText(page.countryRegion, "Turkey");
         ReusableMethods.bekle(1);
         extentTest.info("Ülke seçimi yapıldı");
 
@@ -81,7 +80,7 @@ public class TC01_BillingAdresEkleme extends ExtentReport {
 */
         //13-  Street address alanına adres bilgilerini gir.
         String addres = faker.address().fullAddress();
-        page.streetAddressKutusu.sendKeys(addres);
+        page.streetAddressKutu.sendKeys(addres);
         ReusableMethods.bekle(1);
         extentTest.info("Adres bilgisi girildi");
 
