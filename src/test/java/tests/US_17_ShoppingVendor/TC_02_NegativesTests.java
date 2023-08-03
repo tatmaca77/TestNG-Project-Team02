@@ -150,14 +150,14 @@ public class TC_02_NegativesTests extends ExtentReport {
         ReusableMethods.bekle(2);
 
         // Select "Pay at the door"
-        page.payAtTheDoor.click();
+        ReusableMethods.click(page.payAtTheDoor);
         extentTest.info("Pay at the door secildi.");
 
         // Verify that "Wire Transfer/EFT" has not been selected
         Assert.assertTrue(page.payAtTheDoor.isSelected());
         extentTest.info("Ayni anda iki seceneginde secilemeyecegi dogrulandi.");
         ReusableMethods.bekle(1);
-        page.wireTransfer.click();
+        ReusableMethods.click(page.wireTransfer);
         extentTest.info("Pay at the door secildi.");
 
         ReusableMethods.bekle(5);
