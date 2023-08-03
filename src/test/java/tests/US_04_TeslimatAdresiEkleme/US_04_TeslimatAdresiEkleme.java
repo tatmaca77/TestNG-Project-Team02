@@ -8,7 +8,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AllovercommercePage;
-import pages.PageBO;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ExtentReport;
@@ -17,7 +16,7 @@ import utilities.ReusableMethods;
 public class US_04_TeslimatAdresiEkleme extends ExtentReport {
 
     Actions action;
-    PageBO pageBO;
+    AllovercommercePage allovercommercePage;
     ReusableMethods reusableMethods;
 
 
@@ -25,7 +24,7 @@ public class US_04_TeslimatAdresiEkleme extends ExtentReport {
     public void TC_01ShippingAddressKayitYapilmasi() {
 
         action = new Actions(Driver.getDriver());
-        pageBO = new PageBO();
+        allovercommercePage = new AllovercommercePage();
         reusableMethods = new ReusableMethods();
         extentTest = extentReports.createTest("ShippingAddressKayitYapilmasi", "Allovercommerce web sayfasi test raporu");
 
@@ -35,38 +34,38 @@ public class US_04_TeslimatAdresiEkleme extends ExtentReport {
         extentTest.info("Login olundu");
 
         //Sing Out butona tikla
-        pageBO.singOutButton.click();
+        allovercommercePage.singOutButton1.click();
         extentTest.info("Sing Out butona tiklandi.");
 
 
         ReusableMethods.bekle(3);
         //"Are you sure you want to log out? Confirm and log out" yazisini dogrula
-        Assert.assertTrue(pageBO.dogrulamaYazisiAreYouSure.getText().contains("Are you sure you want to log out? Confirm and log out"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiAreYouSure1.getText().contains("Are you sure you want to log out? Confirm and log out"));
         extentTest.info("\"Are you sure you want to log out? Confirm and log out\" dogrulama yazsisi goruldu.");
 
         //Addresses butonuna tikla
-        pageBO.adressButton.click();
+        allovercommercePage.adressButton1.click();
         extentTest.info("Address butonuna clik yapildi.");
 
         action.sendKeys(Keys.PAGE_DOWN).perform();
         extentTest.info("Sayfada bir page down assagi inildi.");
 
         //Add butonuna tikla
-        pageBO.shippingAdressAddButonu.click();
+        allovercommercePage.shippingAdressAddButonu1.click();
         extentTest.info("Shipping (Teslimat) Adres kayit sayfasi icin add butonuna tiklandi.");
 
         //“Shipping address” yazisini gor
-        pageBO.shippingAdressSayfasinaGirisDogrulamaYazisi.isDisplayed();
+        allovercommercePage.shippingAdressSayfasinaGirisDogrulamaYazisi1.isDisplayed();
         extentTest.info("Shipping address yazisinin gorundugu dorulandi.");
 
         //First name gir
-        pageBO.shippingFirstName.clear();
-        pageBO.shippingFirstName.sendKeys(ConfigReader.getProperty("firstName1"));
+        allovercommercePage.shippingFirstName1.clear();
+        allovercommercePage.shippingFirstName1.sendKeys(ConfigReader.getProperty("firstName1"));
         extentTest.info("Firs name girisi yapildi.");
 
         //Last name gir
-        pageBO.shippingLastName.clear();
-        pageBO.shippingLastName.sendKeys(ConfigReader.getProperty("lastName1"));
+        allovercommercePage.shippingLastName1.clear();
+        allovercommercePage.shippingLastName1.sendKeys(ConfigReader.getProperty("lastName1"));
         extentTest.info("Last name giris yapildi. ");
 
         action.sendKeys(Keys.PAGE_DOWN).perform();
@@ -76,7 +75,7 @@ public class US_04_TeslimatAdresiEkleme extends ExtentReport {
         ReusableMethods.bekle(3);
 
         //Country / Region gir
-        WebElement shippingselect = pageBO.shippingCountry;
+        WebElement shippingselect = allovercommercePage.shippingCountry1;
         Select select = new Select(shippingselect);
        select.selectByVisibleText("Turkey");
 
@@ -85,33 +84,33 @@ public class US_04_TeslimatAdresiEkleme extends ExtentReport {
         ReusableMethods.bekle(2);
 
         //Street address gir
-        pageBO.shippingStreetAddress.clear();
-        pageBO.shippingStreetAddress.sendKeys(ConfigReader.getProperty("adress"));
+        allovercommercePage.shippingStreetAddress1.clear();
+        allovercommercePage.shippingStreetAddress1.sendKeys(ConfigReader.getProperty("adress"));
         extentTest.info("Street adres girisi yapildi.");
 
         //Postcode / ZIP gir
-        pageBO.shippingPostcode.clear();
-        pageBO.shippingPostcode.sendKeys(ConfigReader.getProperty("postcode"));
+        allovercommercePage.shippingPostcode1.clear();
+        allovercommercePage.shippingPostcode1.sendKeys(ConfigReader.getProperty("postcode"));
         extentTest.info("Postcode girisi yapildi.");
 
         //Town / City gir
-        pageBO.shippingCity.clear();
-        pageBO.shippingCity.sendKeys(ConfigReader.getProperty("city1"));
+        allovercommercePage.shippingCity1.clear();
+        allovercommercePage.shippingCity1.sendKeys(ConfigReader.getProperty("city1"));
         extentTest.info("City girisi yapildi");
 
         //Province’ i secim yap
-        WebElement shippingselect1 = pageBO.shippingProvince;
+        WebElement shippingselect1 = allovercommercePage.shippingProvince1;
         Select select1 = new Select(shippingselect1);
         select1.selectByVisibleText("Adana");
         extentTest.info("Contry sekmesinde Adana sekmesi secildi");
 
         //Save Address butona tikla
-        pageBO.shippingSaveAddressButon.click();
+        allovercommercePage.shippingSaveAddressButon1.click();
         extentTest.info("Save Address butonuna tiklandi.");
 
         ReusableMethods.bekle(3);
         //“First name is a required field.” metninin gorunulebilirligini dogrula
-        Assert.assertTrue(pageBO.dogrulaYazisiAddressChangedSuccessfully.isDisplayed());
+        Assert.assertTrue(allovercommercePage.dogrulaYazisiAddressChangedSuccessfully1.isDisplayed());
         extentTest.info("\"First name is a required field.\" yazisinin gorunurlugu dogrulandi.");
 
         //Sayfayi kapatalim
@@ -128,7 +127,7 @@ public class US_04_TeslimatAdresiEkleme extends ExtentReport {
     public void TC_02_FirstNameBosBirakilmasi() {
 
         action = new Actions(Driver.getDriver());
-        pageBO = new PageBO();
+        allovercommercePage = new AllovercommercePage();
         reusableMethods = new ReusableMethods();
         extentTest = extentReports.createTest("FirstNameBosBirakilmasi", "Allovercommerce web sayfasi test raporu");
 
@@ -138,37 +137,37 @@ public class US_04_TeslimatAdresiEkleme extends ExtentReport {
         extentTest.info("Login olundu");
 
         //Sing Out butona tikla
-        pageBO.singOutButton.click();
+        allovercommercePage.singOutButton1.click();
         extentTest.info("Sing Out butona tiklandi.");
 
 
         ReusableMethods.bekle(3);
         //"Are you sure you want to log out? Confirm and log out" yazisini dogrula
-        Assert.assertTrue(pageBO.dogrulamaYazisiAreYouSure.getText().contains("Are you sure you want to log out? Confirm and log out"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiAreYouSure1.getText().contains("Are you sure you want to log out? Confirm and log out"));
         extentTest.info("\"Are you sure you want to log out? Confirm and log out\" dogrulama yazsisi goruldu.");
 
         //Addresses butonuna tikla
-        pageBO.adressButton.click();
+        allovercommercePage.adressButton1.click();
         extentTest.info("Address butonuna clik yapildi.");
 
         action.sendKeys(Keys.PAGE_DOWN).perform();
         extentTest.info("Sayfada bir page down assagi inildi.");
 
         //Add butonuna tikla
-        pageBO.shippingAdressAddButonu.click();
+        allovercommercePage.shippingAdressAddButonu1.click();
         extentTest.info("Shipping (Teslimat) Adres kayit sayfasi icin add butonuna tiklandi.");
 
         //“Shipping address” yazisini gor
-        pageBO.shippingAdressSayfasinaGirisDogrulamaYazisi.isDisplayed();
+        allovercommercePage.shippingAdressSayfasinaGirisDogrulamaYazisi1.isDisplayed();
         extentTest.info("Shipping address yazisinin gorundugu dorulandi.");
 
         //First name gir
-        pageBO.shippingFirstName.clear();
+        allovercommercePage.shippingFirstName1.clear();
         extentTest.info("Firs name bos birakildi.");
 
         //Last name gir
-        pageBO.shippingLastName.clear();
-        pageBO.shippingLastName.sendKeys(ConfigReader.getProperty("lastName1"));
+        allovercommercePage.shippingLastName1.clear();
+        allovercommercePage.shippingLastName1.sendKeys(ConfigReader.getProperty("lastName1"));
         extentTest.info("Last name giris yapildi. ");
 
         action.sendKeys(Keys.PAGE_DOWN).perform();
@@ -178,7 +177,7 @@ public class US_04_TeslimatAdresiEkleme extends ExtentReport {
         ReusableMethods.bekle(2);
 
         //Country / Region gir
-        WebElement shippingselect = pageBO.shippingCountry;
+        WebElement shippingselect = allovercommercePage.shippingCountry1;
         Select select = new Select(shippingselect);
         select.selectByVisibleText("Turkey");
 
@@ -187,33 +186,33 @@ public class US_04_TeslimatAdresiEkleme extends ExtentReport {
         ReusableMethods.bekle(2);
 
         //Street address gir
-        pageBO.shippingStreetAddress.clear();
-        pageBO.shippingStreetAddress.sendKeys(ConfigReader.getProperty("adress"));
+        allovercommercePage.shippingStreetAddress1.clear();
+        allovercommercePage.shippingStreetAddress1.sendKeys(ConfigReader.getProperty("adress"));
         extentTest.info("Street adres girisi yapildi.");
 
         //Postcode / ZIP gir
-        pageBO.shippingPostcode.clear();
-        pageBO.shippingPostcode.sendKeys(ConfigReader.getProperty("postcode"));
+        allovercommercePage.shippingPostcode1.clear();
+        allovercommercePage.shippingPostcode1.sendKeys(ConfigReader.getProperty("postcode"));
         extentTest.info("Postcode girisi yapildi.");
 
         //Town / City gir
-        pageBO.shippingCity.clear();
-        pageBO.shippingCity.sendKeys(ConfigReader.getProperty("city1"));
+        allovercommercePage.shippingCity1.clear();
+        allovercommercePage.shippingCity1.sendKeys(ConfigReader.getProperty("city1"));
         extentTest.info("City girisi yapildi");
 
         //Province’ i secim yap
-        WebElement shippingselect1 = pageBO.shippingProvince;
+        WebElement shippingselect1 = allovercommercePage.shippingProvince1;
         Select select1 = new Select(shippingselect1);
         select1.selectByVisibleText("Adana");
         extentTest.info("Contry sekmesinde Adana sekmesi secildi");
 
         //Save Address butona tikla
-        pageBO.shippingSaveAddressButon.click();
+        allovercommercePage.shippingSaveAddressButon1.click();
         extentTest.info("Save Address butonuna tiklandi.");
 
 
         //“First name is a required field.” metninin gorunulebilirligini dogrula
-        Assert.assertTrue(pageBO.shippingAdresFirstNameBosBirakilmasDogrulamaYazisi.isDisplayed());
+        Assert.assertTrue(allovercommercePage.shippingAdresFirstNameBosBirakilmasDogrulamaYazisi1.isDisplayed());
         extentTest.info("\"First name is a required field.\" yazisinin gorunurlugu dogrulandi.");
 
         //Sayfayi kapatalim
@@ -232,7 +231,7 @@ public class US_04_TeslimatAdresiEkleme extends ExtentReport {
     public void TC_03_FirstNameRakamGirilmesi() {
 
         action = new Actions(Driver.getDriver());
-        pageBO = new PageBO();
+        allovercommercePage = new AllovercommercePage();
         reusableMethods = new ReusableMethods();
         extentTest = extentReports.createTest("FirstNameRakamGirilmesi", "Allovercommerce web sayfasi test raporu");
 
@@ -242,38 +241,38 @@ public class US_04_TeslimatAdresiEkleme extends ExtentReport {
         extentTest.info("Login olundu");
 
         //Sing Out butona tikla
-        pageBO.singOutButton.click();
+        allovercommercePage.singOutButton1.click();
         extentTest.info("Sing Out butona tiklandi.");
 
 
         ReusableMethods.bekle(3);
         //"Are you sure you want to log out? Confirm and log out" yazisini dogrula
-        Assert.assertTrue(pageBO.dogrulamaYazisiAreYouSure.getText().contains("Are you sure you want to log out? Confirm and log out"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiAreYouSure1.getText().contains("Are you sure you want to log out? Confirm and log out"));
         extentTest.info("\"Are you sure you want to log out? Confirm and log out\" dogrulama yazsisi goruldu.");
 
         //Addresses butonuna tikla
-        pageBO.adressButton.click();
+        allovercommercePage.adressButton1.click();
         extentTest.info("Address butonuna clik yapildi.");
 
         action.sendKeys(Keys.PAGE_DOWN).perform();
         extentTest.info("Sayfada bir page down assagi inildi.");
 
         //Add butonuna tikla
-        pageBO.shippingAdressAddButonu.click();
+        allovercommercePage.shippingAdressAddButonu1.click();
         extentTest.info("Shipping (Teslimat) Adres kayit sayfasi icin add butonuna tiklandi.");
 
         //“Shipping address” yazisini gor
-        pageBO.shippingAdressSayfasinaGirisDogrulamaYazisi.isDisplayed();
+        allovercommercePage.shippingAdressSayfasinaGirisDogrulamaYazisi1.isDisplayed();
         extentTest.info("Shipping address yazisinin gorundugu dorulandi.");
 
         //First name gir
-        pageBO.shippingFirstName.clear();
-        pageBO.shippingFirstName.sendKeys(ConfigReader.getProperty("firstName1"));
+        allovercommercePage.shippingFirstName1.clear();
+        allovercommercePage.shippingFirstName1.sendKeys(ConfigReader.getProperty("firstName1"));
         extentTest.info("Firs name giris yapildi.");
 
         //Last name rakam veri gir
-        pageBO.shippingLastName.clear();
-        pageBO.shippingLastName.sendKeys("11111");
+        allovercommercePage.shippingLastName1.clear();
+        allovercommercePage.shippingLastName1.sendKeys("11111");
         extentTest.fail("Last name rakam veri girildi. ");
 
 
@@ -283,41 +282,41 @@ public class US_04_TeslimatAdresiEkleme extends ExtentReport {
         ReusableMethods.bekle(3);
 
         //Country / Region gir
-        WebElement shippingselect = pageBO.shippingCountry;
+        WebElement shippingselect = allovercommercePage.shippingCountry1;
         Select select = new Select(shippingselect);
         select.selectByVisibleText("Turkey");
         extentTest.info("Country sekmesinde Turkey secildi.");
         ReusableMethods.bekle(2);
 
         //Street address gir
-        pageBO.shippingStreetAddress.clear();
-        pageBO.shippingStreetAddress.sendKeys(ConfigReader.getProperty("adress"));
+        allovercommercePage.shippingStreetAddress1.clear();
+        allovercommercePage.shippingStreetAddress1.sendKeys(ConfigReader.getProperty("adress"));
         extentTest.info("Street adres girisi yapildi.");
 
         //Postcode / ZIP gir
-        pageBO.shippingPostcode.clear();
-        pageBO.shippingPostcode.sendKeys(ConfigReader.getProperty("postcode"));
+        allovercommercePage.shippingPostcode1.clear();
+        allovercommercePage.shippingPostcode1.sendKeys(ConfigReader.getProperty("postcode"));
         extentTest.info("Postcode girisi yapildi.");
 
         //Town / City gir
-        pageBO.shippingCity.clear();
-        pageBO.shippingCity.sendKeys(ConfigReader.getProperty("city1"));
+        allovercommercePage.shippingCity1.clear();
+        allovercommercePage.shippingCity1.sendKeys(ConfigReader.getProperty("city1"));
         extentTest.info("City girisi yapildi");
 
         //Province’ i secim yap
-        WebElement shippingselect1 = pageBO.shippingProvince;
+        WebElement shippingselect1 = allovercommercePage.shippingProvince1;
         Select select1 = new Select(shippingselect1);
         select1.selectByVisibleText("Adana");
         extentTest.info("Contry sekmesinde Adana sekmesi secildi");
 
         //Save Address butona tikla
-        pageBO.shippingSaveAddressButon.click();
+        allovercommercePage.shippingSaveAddressButon1.click();
         extentTest.info("Save Address butonuna tiklandi.");
 
 
         ReusableMethods.bekle(3);
         //“Address changed successfully.” metninin gorunulebilirligini dogrula
-        Assert.assertTrue(pageBO.dogrulaYazisiAddressChangedSuccessfully.isDisplayed());
+        Assert.assertTrue(allovercommercePage.dogrulaYazisiAddressChangedSuccessfully1.isDisplayed());
         extentTest.info("\"Address changed successfully.\" yazisinin gorunurlugu dogrulandi.");
 
         action.sendKeys(Keys.PAGE_DOWN).perform();
@@ -342,7 +341,7 @@ public class US_04_TeslimatAdresiEkleme extends ExtentReport {
     public void TC_04_LastNameBosBirakilmasi() {
 
         action = new Actions(Driver.getDriver());
-        pageBO = new PageBO();
+        allovercommercePage = new AllovercommercePage();
         reusableMethods = new ReusableMethods();
         extentTest = extentReports.createTest("LastNameBosBirakilmasi", "Allovercommerce web sayfasi test raporu");
 
@@ -352,37 +351,37 @@ public class US_04_TeslimatAdresiEkleme extends ExtentReport {
         extentTest.info("Login olundu");
 
         //Sing Out butona tikla
-        pageBO.singOutButton.click();
+        allovercommercePage.singOutButton1.click();
         extentTest.info("Sing Out butona tiklandi.");
 
 
         ReusableMethods.bekle(3);
         //"Are you sure you want to log out? Confirm and log out" yazisini dogrula
-        Assert.assertTrue(pageBO.dogrulamaYazisiAreYouSure.getText().contains("Are you sure you want to log out? Confirm and log out"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiAreYouSure1.getText().contains("Are you sure you want to log out? Confirm and log out"));
         extentTest.info("\"Are you sure you want to log out? Confirm and log out\" dogrulama yazsisi goruldu.");
 
         //Addresses butonuna tikla
-        pageBO.adressButton.click();
+        allovercommercePage.adressButton1.click();
         extentTest.info("Address butonuna clik yapildi.");
 
         action.sendKeys(Keys.PAGE_DOWN).perform();
         extentTest.info("Sayfada bir page down assagi inildi.");
 
         //Add butonuna tikla
-        pageBO.shippingAdressAddButonu.click();
+        allovercommercePage.shippingAdressAddButonu1.click();
         extentTest.info("Shipping (Teslimat) Adres kayit sayfasi icin add butonuna tiklandi.");
 
         //“Shipping address” yazisini gor
-        pageBO.shippingAdressSayfasinaGirisDogrulamaYazisi.isDisplayed();
+        allovercommercePage.shippingAdressSayfasinaGirisDogrulamaYazisi1.isDisplayed();
         extentTest.info("Shipping address yazisinin gorundugu dorulandi.");
 
         //First name gir
-        pageBO.shippingFirstName.clear();
-        pageBO.shippingFirstName.sendKeys(ConfigReader.getProperty("firstName1"));
+        allovercommercePage.shippingFirstName1.clear();
+        allovercommercePage.shippingFirstName1.sendKeys(ConfigReader.getProperty("firstName1"));
         extentTest.info("Firs name giris yapildi.");
 
         //Last name bos birak
-        pageBO.shippingLastName.clear();
+        allovercommercePage.shippingLastName1.clear();
         extentTest.info("Last name rakam veri girildi. ");
 
 
@@ -392,40 +391,40 @@ public class US_04_TeslimatAdresiEkleme extends ExtentReport {
         ReusableMethods.bekle(3);
 
         //Country / Region gir
-        WebElement shippingselect = pageBO.shippingCountry;
+        WebElement shippingselect = allovercommercePage.shippingCountry1;
         Select select = new Select(shippingselect);
         select.selectByVisibleText("Turkey");
         extentTest.info("Country sekmesinde Turkey secildi.");
         ReusableMethods.bekle(2);
 
         //Street address gir
-        pageBO.shippingStreetAddress.clear();
-        pageBO.shippingStreetAddress.sendKeys(ConfigReader.getProperty("adress"));
+        allovercommercePage.shippingStreetAddress1.clear();
+        allovercommercePage.shippingStreetAddress1.sendKeys(ConfigReader.getProperty("adress"));
         extentTest.info("Street adres girisi yapildi.");
 
         //Postcode / ZIP gir
-        pageBO.shippingPostcode.clear();
-        pageBO.shippingPostcode.sendKeys(ConfigReader.getProperty("postcode"));
+        allovercommercePage.shippingPostcode1.clear();
+        allovercommercePage.shippingPostcode1.sendKeys(ConfigReader.getProperty("postcode"));
         extentTest.info("Postcode girisi yapildi.");
 
         //Town / City gir
-        pageBO.shippingCity.clear();
-        pageBO.shippingCity.sendKeys(ConfigReader.getProperty("city1"));
+        allovercommercePage.shippingCity1.clear();
+        allovercommercePage.shippingCity1.sendKeys(ConfigReader.getProperty("city1"));
         extentTest.info("City girisi yapildi");
 
         //Province’ i secim yap
-        WebElement shippingselect1 = pageBO.shippingProvince;
+        WebElement shippingselect1 = allovercommercePage.shippingProvince1;
         Select select1 = new Select(shippingselect1);
         select1.selectByVisibleText("Adana");
         extentTest.info("Contry sekmesinde Adana sekmesi secildi");
 
         //Save Address butona tikla
-        pageBO.shippingSaveAddressButon.click();
+        allovercommercePage.shippingSaveAddressButon1.click();
         extentTest.info("Save Address butonuna tiklandi.");
 
 
         //“Last name is a required field.” metninin gorunulebilirligini dogrula
-        Assert.assertTrue(pageBO.shippingAdresFirstNameBosBirakilmasDogrulamaYazisi.isDisplayed());
+        Assert.assertTrue(allovercommercePage.shippingAdresFirstNameBosBirakilmasDogrulamaYazisi1.isDisplayed());
         extentTest.info("\"Last name is a required field.\" yazisinin gorunurlugu dogrulandi.");
 
 
@@ -442,7 +441,7 @@ public class US_04_TeslimatAdresiEkleme extends ExtentReport {
     public void TC_05_StreetAddressRakamGirilmesi() {
 
         action = new Actions(Driver.getDriver());
-        pageBO = new PageBO();
+        allovercommercePage = new AllovercommercePage();
         reusableMethods = new ReusableMethods();
         extentTest = extentReports.createTest("StreetAddressRakamGirilmesi", "Allovercommerce web sayfasi test raporu");
 
@@ -452,38 +451,38 @@ public class US_04_TeslimatAdresiEkleme extends ExtentReport {
         extentTest.info("Login olundu");
 
         //Sing Out butona tikla
-        pageBO.singOutButton.click();
+        allovercommercePage.singOutButton1.click();
         extentTest.info("Sing Out butona tiklandi.");
 
 
         ReusableMethods.bekle(3);
         //"Are you sure you want to log out? Confirm and log out" yazisini dogrula
-        Assert.assertTrue(pageBO.dogrulamaYazisiAreYouSure.getText().contains("Are you sure you want to log out? Confirm and log out"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiAreYouSure1.getText().contains("Are you sure you want to log out? Confirm and log out"));
         extentTest.info("\"Are you sure you want to log out? Confirm and log out\" dogrulama yazsisi goruldu.");
 
         //Addresses butonuna tikla
-        pageBO.adressButton.click();
+        allovercommercePage.adressButton1.click();
         extentTest.info("Address butonuna clik yapildi.");
 
         action.sendKeys(Keys.PAGE_DOWN).perform();
         extentTest.info("Sayfada bir page down assagi inildi.");
 
         //Add butonuna tikla
-        pageBO.shippingAdressAddButonu.click();
+        allovercommercePage.shippingAdressAddButonu1.click();
         extentTest.info("Shipping (Teslimat) Adres kayit sayfasi icin add butonuna tiklandi.");
 
         //“Shipping address” yazisini gor
-        pageBO.shippingAdressSayfasinaGirisDogrulamaYazisi.isDisplayed();
+        allovercommercePage.shippingAdressSayfasinaGirisDogrulamaYazisi1.isDisplayed();
         extentTest.info("Shipping address yazisinin gorundugu dorulandi.");
 
         //First name gir
-        pageBO.shippingFirstName.clear();
-        pageBO.shippingFirstName.sendKeys(ConfigReader.getProperty("firstName1"));
+        allovercommercePage.shippingFirstName1.clear();
+        allovercommercePage.shippingFirstName1.sendKeys(ConfigReader.getProperty("firstName1"));
         extentTest.info("Firs name giris yapildi.");
 
         //Last name gir
-        pageBO.shippingLastName.clear();
-        pageBO.shippingLastName.sendKeys(ConfigReader.getProperty("lastName1"));
+        allovercommercePage.shippingLastName1.clear();
+        allovercommercePage.shippingLastName1.sendKeys(ConfigReader.getProperty("lastName1"));
         extentTest.info("Last name rakam veri girildi. ");
 
 
@@ -493,36 +492,36 @@ public class US_04_TeslimatAdresiEkleme extends ExtentReport {
         ReusableMethods.bekle(3);
 
         //Country / Region gir
-        WebElement shippingselect = pageBO.shippingCountry;
+        WebElement shippingselect = allovercommercePage.shippingCountry1;
         Select select = new Select(shippingselect);
         select.selectByVisibleText("Turkey");
         extentTest.info("Country sekmesinde Turkey secildi.");
         ReusableMethods.bekle(2);
 
         //Street Address rakam veri gir
-        pageBO.shippingStreetAddress.clear();
-        pageBO.shippingStreetAddress.sendKeys("123456");
+        allovercommercePage.shippingStreetAddress1.clear();
+        allovercommercePage.shippingStreetAddress1.sendKeys("123456");
         extentTest.fail("Street adres rakam veri girisi yapildi.");
 
 
         //Postcode / ZIP gir
-        pageBO.shippingPostcode.clear();
-        pageBO.shippingPostcode.sendKeys(ConfigReader.getProperty("postcode"));
+        allovercommercePage.shippingPostcode1.clear();
+        allovercommercePage.shippingPostcode1.sendKeys(ConfigReader.getProperty("postcode"));
         extentTest.info("Postcode girisi yapildi.");
 
         //Town / City gir
-        pageBO.shippingCity.clear();
-        pageBO.shippingCity.sendKeys(ConfigReader.getProperty("city1"));
+        allovercommercePage.shippingCity1.clear();
+        allovercommercePage.shippingCity1.sendKeys(ConfigReader.getProperty("city1"));
         extentTest.info("City girisi yapildi");
 
         //Province’ i secim yap
-        WebElement shippingselect1 = pageBO.shippingProvince;
+        WebElement shippingselect1 = allovercommercePage.shippingProvince1;
         Select select1 = new Select(shippingselect1);
         select1.selectByVisibleText("Adana");
         extentTest.info("Contry sekmesinde Adana sekmesi secildi");
 
         //Save Address butona tikla
-        pageBO.shippingSaveAddressButon.click();
+        allovercommercePage.shippingSaveAddressButon1.click();
         extentTest.info("Save Address butonuna tiklandi.");
 
         action.sendKeys(Keys.PAGE_DOWN).perform();
@@ -532,7 +531,7 @@ public class US_04_TeslimatAdresiEkleme extends ExtentReport {
         extentTest.info("Tum ekran resmi alindi");
 
         //“Address changed successfully.” metninin gorunulebilirligini dogrula
-        Assert.assertTrue(pageBO.dogrulaYazisiAddressChangedSuccessfully.isDisplayed());
+        Assert.assertTrue(allovercommercePage.dogrulaYazisiAddressChangedSuccessfully1.isDisplayed());
         extentTest.info("\"Address changed successfully.\" yazisinin gorunurlugu dogrulandi.");
 
 
@@ -548,7 +547,7 @@ public class US_04_TeslimatAdresiEkleme extends ExtentReport {
     public void TC_06_StreetAddressBosBirakilmasi() {
 
         action = new Actions(Driver.getDriver());
-        pageBO = new PageBO();
+        allovercommercePage = new AllovercommercePage();
         reusableMethods = new ReusableMethods();
         extentTest = extentReports.createTest("StreetAddressBosBirakilmasi", "Allovercommerce web sayfasi test raporu");
 
@@ -558,38 +557,38 @@ public class US_04_TeslimatAdresiEkleme extends ExtentReport {
         extentTest.info("Login olundu");
 
         //Sing Out butona tikla
-        pageBO.singOutButton.click();
+        allovercommercePage.singOutButton1.click();
         extentTest.info("Sing Out butona tiklandi.");
 
 
         ReusableMethods.bekle(3);
         //"Are you sure you want to log out? Confirm and log out" yazisini dogrula
-        Assert.assertTrue(pageBO.dogrulamaYazisiAreYouSure.getText().contains("Are you sure you want to log out? Confirm and log out"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiAreYouSure1.getText().contains("Are you sure you want to log out? Confirm and log out"));
         extentTest.info("\"Are you sure you want to log out? Confirm and log out\" dogrulama yazsisi goruldu.");
 
         //Addresses butonuna tikla
-        pageBO.adressButton.click();
+        allovercommercePage.adressButton1.click();
         extentTest.info("Address butonuna clik yapildi.");
 
         action.sendKeys(Keys.PAGE_DOWN).perform();
         extentTest.info("Sayfada bir page down assagi inildi.");
 
         //Add butonuna tikla
-        pageBO.shippingAdressAddButonu.click();
+        allovercommercePage.shippingAdressAddButonu1.click();
         extentTest.info("Shipping (Teslimat) Adres kayit sayfasi icin add butonuna tiklandi.");
 
         //“Shipping address” yazisini gor
-        pageBO.shippingAdressSayfasinaGirisDogrulamaYazisi.isDisplayed();
+        allovercommercePage.shippingAdressSayfasinaGirisDogrulamaYazisi1.isDisplayed();
         extentTest.info("Shipping address yazisinin gorundugu dorulandi.");
 
         //First name gir
-        pageBO.shippingFirstName.clear();
-        pageBO.shippingFirstName.sendKeys(ConfigReader.getProperty("firstName1"));
+        allovercommercePage.shippingFirstName1.clear();
+        allovercommercePage.shippingFirstName1.sendKeys(ConfigReader.getProperty("firstName1"));
         extentTest.info("Firs name giris yapildi.");
 
         //Last name gir
-        pageBO.shippingLastName.clear();
-        pageBO.shippingLastName.sendKeys(ConfigReader.getProperty("lastName1"));
+        allovercommercePage.shippingLastName1.clear();
+        allovercommercePage.shippingLastName1.sendKeys(ConfigReader.getProperty("lastName1"));
         extentTest.info("Last name rakam veri girildi. ");
 
 
@@ -599,40 +598,40 @@ public class US_04_TeslimatAdresiEkleme extends ExtentReport {
         ReusableMethods.bekle(3);
 
         //Country / Region gir
-        WebElement shippingselect = pageBO.shippingCountry;
+        WebElement shippingselect = allovercommercePage.shippingCountry1;
         Select select = new Select(shippingselect);
         select.selectByVisibleText("Turkey");
         extentTest.info("Country sekmesinde Turkey secildi.");
         ReusableMethods.bekle(2);
 
         //Street Address bos birak
-        pageBO.shippingStreetAddress.clear();
+        allovercommercePage.shippingStreetAddress1.clear();
         extentTest.fail("Street adres bos birakildi.");
 
 
         //Postcode / ZIP gir
-        pageBO.shippingPostcode.clear();
-        pageBO.shippingPostcode.sendKeys(ConfigReader.getProperty("postcode"));
+        allovercommercePage.shippingPostcode1.clear();
+        allovercommercePage.shippingPostcode1.sendKeys(ConfigReader.getProperty("postcode"));
         extentTest.info("Postcode girisi yapildi.");
 
         //Town / City gir
-        pageBO.shippingCity.clear();
-        pageBO.shippingCity.sendKeys(ConfigReader.getProperty("city1"));
+        allovercommercePage.shippingCity1.clear();
+        allovercommercePage.shippingCity1.sendKeys(ConfigReader.getProperty("city1"));
         extentTest.info("City girisi yapildi");
 
         //Province’ i secim yap
-        WebElement shippingselect1 = pageBO.shippingProvince;
+        WebElement shippingselect1 = allovercommercePage.shippingProvince1;
         Select select1 = new Select(shippingselect1);
         select1.selectByVisibleText("Adana");
         extentTest.info("Contry sekmesinde Adana sekmesi secildi");
 
         //Save Address butona tikla
-        pageBO.shippingSaveAddressButon.click();
+        allovercommercePage.shippingSaveAddressButon1.click();
         extentTest.info("Save Address butonuna tiklandi.");
 
 
         //“Street address is a required field.” metninin gorunulebilirligini dogrula
-        Assert.assertTrue(pageBO.shippingAdresAdressBosBirakmaDogrulamaYazisi.isDisplayed());
+        Assert.assertTrue(allovercommercePage.shippingAdresAdressBosBirakmaDogrulamaYazisi1.isDisplayed());
         extentTest.info("\"Street address is a required field.\" yazisinin gorunurlugu dogrulandi.");
 
 
@@ -648,7 +647,7 @@ public class US_04_TeslimatAdresiEkleme extends ExtentReport {
     public void TC_07_PostcodeHarfKarakterGirilmesi() {
 
         action = new Actions(Driver.getDriver());
-        pageBO = new PageBO();
+        allovercommercePage = new AllovercommercePage();
         reusableMethods = new ReusableMethods();
         extentTest = extentReports.createTest("PostcodeHarfKarakterGirilmesi", "Allovercommerce web sayfasi test raporu");
 
@@ -658,40 +657,40 @@ public class US_04_TeslimatAdresiEkleme extends ExtentReport {
         extentTest.info("Login olundu");
 
         //Sing Out butona tikla
-        pageBO.singOutButton.click();
+        allovercommercePage.singOutButton1.click();
         extentTest.info("Sing Out butona tiklandi.");
 
 
         ReusableMethods.bekle(3);
         //"Are you sure you want to log out? Confirm and log out" yazisini dogrula
-        Assert.assertTrue(pageBO.dogrulamaYazisiAreYouSure.getText().contains("Are you sure you want to log out? Confirm and log out"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiAreYouSure1.getText().contains("Are you sure you want to log out? Confirm and log out"));
         extentTest.info("\"Are you sure you want to log out? Confirm and log out\" dogrulama yazsisi goruldu.");
 
         //Addresses butonuna tikla
-        pageBO.adressButton.click();
+        allovercommercePage.adressButton1.click();
         extentTest.info("Address butonuna clik yapildi.");
 
         action.sendKeys(Keys.PAGE_DOWN).perform();
         extentTest.info("Sayfada bir page down assagi inildi.");
 
         //Add butonuna tikla
-        pageBO.shippingAdressAddButonu.click();
+        allovercommercePage.shippingAdressAddButonu1.click();
         extentTest.info("Shipping (Teslimat) Adres kayit sayfasi icin add butonuna tiklandi.");
 
 
         //“Shipping address” yazisini gor
-        pageBO.shippingAdressSayfasinaGirisDogrulamaYazisi.isDisplayed();
+        allovercommercePage.shippingAdressSayfasinaGirisDogrulamaYazisi1.isDisplayed();
         extentTest.info("Shipping address yazisinin gorundugu dorulandi.");
 
         ReusableMethods.bekle(1);
         //First name gir
-        pageBO.shippingFirstName.clear();
-        pageBO.shippingFirstName.sendKeys(ConfigReader.getProperty("firstName1"));
+        allovercommercePage.shippingFirstName1.clear();
+        allovercommercePage.shippingFirstName1.sendKeys(ConfigReader.getProperty("firstName1"));
         extentTest.info("Firs name giris yapildi.");
 
         //Last name gir
-        pageBO.shippingLastName.clear();
-        pageBO.shippingLastName.sendKeys(ConfigReader.getProperty("lastName1"));
+        allovercommercePage.shippingLastName1.clear();
+        allovercommercePage.shippingLastName1.sendKeys(ConfigReader.getProperty("lastName1"));
         extentTest.info("Last name rakam veri girildi. ");
 
 
@@ -701,41 +700,41 @@ public class US_04_TeslimatAdresiEkleme extends ExtentReport {
         ReusableMethods.bekle(3);
 
         //Country / Region gir
-        WebElement shippingselect = pageBO.shippingCountry;
+        WebElement shippingselect = allovercommercePage.shippingCountry1;
         Select select = new Select(shippingselect);
         select.selectByVisibleText("Turkey");
         extentTest.info("Country sekmesinde Turkey secildi.");
         ReusableMethods.bekle(2);
 
         //Street Address gir
-        pageBO.shippingStreetAddress.clear();
-        pageBO.shippingStreetAddress.sendKeys(ConfigReader.getProperty("adress"));
+        allovercommercePage.shippingStreetAddress1.clear();
+        allovercommercePage.shippingStreetAddress1.sendKeys(ConfigReader.getProperty("adress"));
         extentTest.info("Street adres girisi yapildi.");
 
 
         //Postcode / ZIP harf karakter gir
-        pageBO.shippingPostcode.clear();
-        pageBO.shippingPostcode.sendKeys("aaaaaaa");
+        allovercommercePage.shippingPostcode1.clear();
+        allovercommercePage.shippingPostcode1.sendKeys("aaaaaaa");
         extentTest.fail("Postcode harf karakter girisi yapildi.");
 
         //Town / City gir
-        pageBO.shippingCity.clear();
-        pageBO.shippingCity.sendKeys(ConfigReader.getProperty("city1"));
+        allovercommercePage.shippingCity1.clear();
+        allovercommercePage.shippingCity1.sendKeys(ConfigReader.getProperty("city1"));
         extentTest.info("City girisi yapildi");
 
         //Province’ i secim yap
-        WebElement shippingselect1 = pageBO.shippingProvince;
+        WebElement shippingselect1 = allovercommercePage.shippingProvince1;
         Select select1 = new Select(shippingselect1);
         select1.selectByVisibleText("Adana");
         extentTest.info("Contry sekmesinde Adana sekmesi secildi");
 
         //Save Address butona tikla
-        pageBO.shippingSaveAddressButon.click();
+        allovercommercePage.shippingSaveAddressButon1.click();
         extentTest.info("Save Address butonuna tiklandi.");
 
 
         //“Address changed successfully.” metninin gorunulebilirligini dogrula
-        Assert.assertTrue(pageBO.dogrulaYazisiAddressChangedSuccessfully.isDisplayed());
+        Assert.assertTrue(allovercommercePage.dogrulaYazisiAddressChangedSuccessfully1.isDisplayed());
         extentTest.info("\"Address changed successfully.\" yazisinin gorunurlugu dogrulandi.");
 
         ReusableMethods.bekle(2);
