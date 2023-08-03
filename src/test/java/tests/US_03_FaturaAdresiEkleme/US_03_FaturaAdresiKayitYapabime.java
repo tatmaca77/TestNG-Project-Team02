@@ -7,7 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.PageBO;
+import pages.AllovercommercePage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ExtentReport;
@@ -17,7 +17,7 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
 
 
     Actions action;
-    PageBO pageBO;
+    AllovercommercePage allovercommercePage;
     ReusableMethods reusableMethods;
 
 
@@ -25,8 +25,11 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
     public void TC_01_FaturaAdresiniEkleyebilme() {
 
         action =new Actions(Driver.getDriver());
-        pageBO = new PageBO();
+        allovercommercePage = new AllovercommercePage();
         reusableMethods = new ReusableMethods();
+
+
+
         extentTest =extentReports.createTest("TC_01_FaturaAdresiniEkleyebilme","Allovercommerce web sayfasi test raporu");
 
 
@@ -35,17 +38,17 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Login olundu");
 
         //Sing Out butona tikla
-        pageBO.singOutButton.click();
+        allovercommercePage.singOutButton1.click();
         extentTest.info("Sing Out butona tiklandi.");
 
 
         ReusableMethods.bekle(3);
         //"Are you sure you want to log out? Confirm and log out" yazisini dogrula
-        Assert.assertTrue(pageBO.dogrulamaYazisiAreYouSure.getText().contains("Are you sure you want to log out? Confirm and log out"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiAreYouSure1.getText().contains("Are you sure you want to log out? Confirm and log out"));
         extentTest.info("\"Are you sure you want to log out? Confirm and log out\" dogrulama yazsisi goruldu.");
 
         //Addresses butonuna tikla
-        pageBO.adressButton.click();
+        allovercommercePage.adressButton1.click();
         extentTest.info("Address butonuna clik yapildi.");
 
 
@@ -53,22 +56,22 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Sayfada bir page down assagi inildi.");
 
         //Add butonuna tikla
-        pageBO.editYourBillingAddressButton.click();
+        allovercommercePage.editYourBillingAddressButton1.click();
         extentTest.info("Edit Your Billing Address butonuna tiklandi.");
 
         ReusableMethods.bekle(3);
         //“Billing address” yazisini gor
-        Assert.assertTrue(pageBO.dogrulamaYazisiBullingAdress.getText().contains("Billing address"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiBullingAdress1.getText().contains("Billing address"));
         extentTest.info("Billing adress yazisi goruldu");
 
         //First name gir
-        pageBO.bullingFirstName.clear();
-        pageBO.bullingFirstName.sendKeys(ConfigReader.getProperty("firstName1"));
+        allovercommercePage.bullingFirstName1.clear();
+        allovercommercePage.bullingFirstName1.sendKeys(ConfigReader.getProperty("firstName1"));
         extentTest.info("First name girisi yapildi");
 
         //Last name gir
-        pageBO.bullingLanstName.clear();
-        pageBO.bullingLanstName.sendKeys(ConfigReader.getProperty("lastName1"));
+        allovercommercePage.bullingLanstName1.clear();
+        allovercommercePage.bullingLanstName1.sendKeys(ConfigReader.getProperty("lastName1"));
         extentTest.info("Last name girisi yapildi");
 
         action.sendKeys(Keys.PAGE_DOWN).perform();
@@ -76,28 +79,28 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
 
 
         //Country / Region gir
-        WebElement countrySelect = pageBO.billingCountrySelect;
+        WebElement countrySelect = allovercommercePage.billingCountrySelect1;
         Select select = new Select(countrySelect);
         select.selectByVisibleText("Turkey");
         extentTest.info("Country sekmesinde Turkey secildi.");
 
         //Street address gir(Fatih mh 10. sk)
-        pageBO.streetAddress.clear();
-        pageBO.streetAddress.sendKeys(ConfigReader.getProperty("adress"));
+        allovercommercePage.streetAddress1.clear();
+        allovercommercePage.streetAddress1.sendKeys(ConfigReader.getProperty("adress"));
         extentTest.info("Street adress girisi yapildi.");
 
         //Postcode / ZIP gir
-        pageBO.postcode.clear();
-        pageBO.postcode.sendKeys(ConfigReader.getProperty("postcode"));
+        allovercommercePage.postcode1.clear();
+        allovercommercePage.postcode1.sendKeys(ConfigReader.getProperty("postcode1"));
         extentTest.info("Postcode girisi yapildi.");
 
         //Town / City gir
-        pageBO.city.clear();
-        pageBO.city.sendKeys(ConfigReader.getProperty("city1"));
+        allovercommercePage.city1.clear();
+        allovercommercePage.city1.sendKeys(ConfigReader.getProperty("city1"));
         extentTest.info("City girisi yapildi");
 
         //Province gir
-        WebElement countrySelect1 = pageBO.bullingProvince;
+        WebElement countrySelect1 = allovercommercePage.bullingProvince1;
         Select select1 = new Select(countrySelect1);
         select1.selectByVisibleText("Adana");
         extentTest.info("Contry sekmesinde Adana sekmesi secildi");
@@ -105,23 +108,23 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         ReusableMethods.bekle(2);
 
         //Phone gir
-        pageBO.phone.clear();
-        pageBO.phone.sendKeys(ConfigReader.getProperty("phone1"));
+        allovercommercePage.phone.clear();
+        allovercommercePage.phone.sendKeys(ConfigReader.getProperty("phone1"));
         extentTest.info("Phone girisi yapildi.");
 
         ReusableMethods.bekle(3);
 
         //Email address gor
-        Assert.assertTrue(pageBO.emailKutusu.isDisplayed());
+        Assert.assertTrue(allovercommercePage.emailKutusu1.isDisplayed());
         extentTest.info("Email adresi goruldu.");
 
         //Save Address butona tikla
-        pageBO.saveAdress1Button.click();
+        allovercommercePage.saveAdress1Button1.click();
         extentTest.info("Save Address butonuna tiklandi.");
 
         ReusableMethods.bekle(3);
         // “Address changed successfully.” yazisinin gorunurlugunu dogrula
-        Assert.assertTrue(pageBO.dogrulaYazisiAddressChangedSuccessfully.getText().contains("Address changed successfully."));
+        Assert.assertTrue(allovercommercePage.dogrulaYazisiAddressChangedSuccessfully1.getText().contains("Address changed successfully."));
         extentTest.info("\"Address changed successfully.\" Dogrulama yazisi gorunurlugu dogrulandi.");
 
 
@@ -142,7 +145,7 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
 
 
         action =new Actions(Driver.getDriver());
-        pageBO = new PageBO();
+        allovercommercePage = new AllovercommercePage();
         reusableMethods = new ReusableMethods();
 
         //Login ol
@@ -150,16 +153,16 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Login olundu");
 
         //Sing Out butona tikla
-        pageBO.singOutButton.click();
+        allovercommercePage.singOutButton1.click();
         extentTest.info("Sing Out butonuna tiklandi.");
 
         ReusableMethods.bekle(3);
         //“Are you sure you want to log out? Confirm and log out” yazisi dogrula
-        Assert.assertTrue(pageBO.dogrulamaYazisiAreYouSure.getText().contains("Are you sure you want to log out? Confirm and log out"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiAreYouSure1.getText().contains("Are you sure you want to log out? Confirm and log out"));
         extentTest.info("“Are you sure you want to log out? Confirm and log out” yazisi goruldu.");
 
         //Addresses butonuna tikla
-        pageBO.adressButton.click();
+        allovercommercePage.adressButton1.click();
         extentTest.info("Address butonuna clik yapildi.");
 
 
@@ -167,22 +170,22 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Sayfada bir page down assagi inildi.");
 
         //Add butonuna tikla
-        pageBO.editYourBillingAddressButton.click();
+        allovercommercePage.editYourBillingAddressButton1.click();
         extentTest.info("Edit Your Billing Address butonuna tiklandi.");
 
         ReusableMethods.bekle(3);
         //“Billing address” yazisini gor
-        Assert.assertTrue(pageBO.dogrulamaYazisiBullingAdress.getText().contains("Billing address"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiBullingAdress1.getText().contains("Billing address"));
         extentTest.info("\"Billing adress\" yazisi goruldu");
 
         //First name gir
-        pageBO.bullingFirstName.clear();
-        pageBO.bullingFirstName.sendKeys(ConfigReader.getProperty("firstName1"));
+        allovercommercePage.bullingFirstName1.clear();
+        allovercommercePage.bullingFirstName1.sendKeys(ConfigReader.getProperty("firstName1"));
         extentTest.info("First name girisi yapildi");
 
         //Last name gir
-        pageBO.bullingLanstName.clear();
-        pageBO.bullingLanstName.sendKeys(ConfigReader.getProperty("lastName1"));
+        allovercommercePage.bullingLanstName1.clear();
+        allovercommercePage.bullingLanstName1.sendKeys(ConfigReader.getProperty("lastName1"));
         extentTest.info("Last name girisi yapildi");
 
 
@@ -190,49 +193,50 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Sayfada bir page down assagi inildi.");
 
         //Country / Region gir
-        WebElement countrySelect = pageBO.billingCountrySelect;
+        WebElement countrySelect = allovercommercePage.billingCountrySelect1;
         Select select = new Select(countrySelect);
         select.selectByVisibleText("Turkey");
         extentTest.info("Country sekmesinde Turkey secildi.");
 
         //Street address gir(Fatih mh 10. sk)
-        pageBO.streetAddress.clear();
-        pageBO.streetAddress.sendKeys(ConfigReader.getProperty("adress"));
+        allovercommercePage.streetAddress1.clear();
+        allovercommercePage.streetAddress1.sendKeys(ConfigReader.getProperty("adress"));
         extentTest.info("Street adress girisi yapildi.");
 
         //Postcode / ZIP gir
-        pageBO.postcode.clear();
-        pageBO.postcode.sendKeys(ConfigReader.getProperty("postcode"));
+        allovercommercePage.postcode.clear();
+        allovercommercePage.postcode.sendKeys(ConfigReader.getProperty("postcode1"));
         extentTest.info("Postcode girisi yapildi.");
 
         //Town / City gir
-        pageBO.city.clear();
-        pageBO.city.sendKeys(ConfigReader.getProperty("city1"));
+        allovercommercePage.city1.clear();
+        allovercommercePage.city1.sendKeys(ConfigReader.getProperty("city1"));
         extentTest.info("Ctiy girisi yapildi.");
 
         //Province gir
-        WebElement countrySelect1 = pageBO.bullingProvince;
+        WebElement countrySelect1 = allovercommercePage.bullingProvince1;
         Select select1 = new Select(countrySelect1);
         select1.selectByVisibleText("Adana");
         extentTest.info("Contry sekmesine Adana sekmesi secildi.");
 
         //Phone gir
-        pageBO.phone.clear();
-        pageBO.phone.sendKeys(ConfigReader.getProperty("phone1"));
+        allovercommercePage.phone.clear();
+        allovercommercePage.phone.sendKeys(ConfigReader.getProperty("phone1"));
         extentTest.info("Phone girisi yapildi.");
 
         ReusableMethods.bekle(3);
         //Email address gor
-        Assert.assertTrue(pageBO.emailKutusu.isDisplayed());
+        Assert.assertTrue(allovercommercePage.emailKutusu1.isDisplayed());
         extentTest.info("Email adresi goruldu.");
 
+
         //Save Address butona tikla
-        pageBO.saveAdress1Button.click();
+        allovercommercePage.saveAdress1Button1.click();
         extentTest.info("Save Address butonuna tiklandi.");
 
         ReusableMethods.bekle(3);
         // “Address changed successfully.” yazisinin gorunurlugunu dogrula
-        Assert.assertTrue(pageBO.dogrulaYazisiAddressChangedSuccessfully.getText().contains("Address changed successfully."));
+        Assert.assertTrue(allovercommercePage.dogrulaYazisiAddressChangedSuccessfully1.getText().contains("Address changed successfully."));
         extentTest.info("\"Address changed successfully.\" yazisinin gorunurlugu dogrulandi.");
 
 
@@ -251,7 +255,7 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
 
 
         action =new Actions(Driver.getDriver());
-        pageBO = new PageBO();
+        allovercommercePage = new AllovercommercePage();
         reusableMethods = new ReusableMethods();
         extentTest =extentReports.createTest("TC_03_EmailAdresinKayitOlunandanFarkliOlmasi","Allovercommerce web sayfasi test raporu");
 
@@ -260,17 +264,17 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Login olundu");
 
         //Sing Out butona tikla
-        pageBO.singOutButton.click();
+        allovercommercePage.singOutButton1.click();
         extentTest.info("Sing Out butona tiklandi.");
 
 
         ReusableMethods.bekle(3);
         //"Are you sure you want to log out? Confirm and log out" yazisini dogrula
-        Assert.assertTrue(pageBO.dogrulamaYazisiAreYouSure.getText().contains("Are you sure you want to log out? Confirm and log out"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiAreYouSure1.getText().contains("Are you sure you want to log out? Confirm and log out"));
         extentTest.info("\"Are you sure you want to log out? Confirm and log out\" dogrulama yazsisi goruldu.");
 
         //Addresses butonuna tikla
-        pageBO.adressButton.click();
+        allovercommercePage.adressButton1.click();
         extentTest.info("Addresses butonuna tiklandi");
 
 
@@ -279,22 +283,22 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
 
 
         //Add butonuna tikla
-        pageBO.editYourBillingAddressButton.click();
+        allovercommercePage.editYourBillingAddressButton1.click();
         extentTest.info("Adres kayit sayfasina gecis icin add butonuna tiklandi");
 
         ReusableMethods.bekle(3);
         //“Billing address” yazisini gor
-        Assert.assertTrue(pageBO.dogrulamaYazisiBullingAdress.getText().contains("Billing address"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiBullingAdress1.getText().contains("Billing address"));
         extentTest.info("\"Billing address\" yazisinin gorunulurlugu dogrulandi");
 
         //First name gir
-        pageBO.bullingFirstName.clear();
-        pageBO.bullingFirstName.sendKeys(ConfigReader.getProperty("lastName1"));
+        allovercommercePage.bullingFirstName1.clear();
+        allovercommercePage.bullingFirstName1.sendKeys(ConfigReader.getProperty("lastName1"));
         extentTest.info("First name yazildi");
 
         //Last name gir
-        pageBO.bullingLanstName.clear();
-        pageBO.bullingLanstName.sendKeys(ConfigReader.getProperty("firstName1"));
+        allovercommercePage.bullingLanstName1.clear();
+        allovercommercePage.bullingLanstName1.sendKeys(ConfigReader.getProperty("firstName1"));
         extentTest.info("Last name yazildi");
 
 
@@ -303,56 +307,56 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
 
 
         //Country / Region gir
-        WebElement countrySelect = pageBO.billingCountrySelect;
+        WebElement countrySelect = allovercommercePage.billingCountrySelect1;
         Select select = new Select(countrySelect);
         select.selectByVisibleText("Turkey");
         extentTest.info("Country sekmesinde Turkiye secildi.");
 
         //Street address gir(Fatih mh 10. sk)
-        pageBO.streetAddress.clear();
-        pageBO.streetAddress.sendKeys(ConfigReader.getProperty("adress"));
+        allovercommercePage.streetAddress1.clear();
+        allovercommercePage.streetAddress1.sendKeys(ConfigReader.getProperty("adress"));
         extentTest.info("Street address verisi yazildi.");
 
         //Postcode / ZIP gir
-        pageBO.postcode.clear();
-        pageBO.postcode.sendKeys(ConfigReader.getProperty("postcode"));
+        allovercommercePage.postcode.clear();
+        allovercommercePage.postcode.sendKeys(ConfigReader.getProperty("postcode1"));
         extentTest.info("Postcode verisi yazildi.");
 
         //Town / City gir
-        pageBO.city.clear();
-        pageBO.city.sendKeys(ConfigReader.getProperty("city1"));
+        allovercommercePage.city1.clear();
+        allovercommercePage.city1.sendKeys(ConfigReader.getProperty("city1"));
         extentTest.info("City verisi yazildi.");
 
         //Province gir
-        WebElement countrySelect1 = pageBO.bullingProvince;
+        WebElement countrySelect1 = allovercommercePage.bullingProvince1;
         Select select1 = new Select(countrySelect1);
         select1.selectByVisibleText("Adana");
         extentTest.info("Country acilir sekmede Adana secimi yapildi.");
 
 
         //Phone gir
-        pageBO.phone.clear();
-        pageBO.phone.sendKeys(ConfigReader.getProperty("phone1"));
+        allovercommercePage.phone.clear();
+        allovercommercePage.phone.sendKeys(ConfigReader.getProperty("phone1"));
         extentTest.info("Phone verisi yazildi.");
 
 
         //Email sekmesine gel var olan email adresi sil
-        pageBO.emailKutusu.clear();
+        allovercommercePage.emailKutusu1.clear();
         extentTest.info("Email sekmesinde var olan bilgi silindi.");
 
         //Yeni Email address gir
-        pageBO.emailKutusu.sendKeys(ConfigReader.getProperty("yeniemail"));
+        allovercommercePage.emailKutusu1.sendKeys(ConfigReader.getProperty("yeniemail"));
         extentTest.info("Yeni bir email adres veri girisi yapildi.");
 
 
         //Save Address butona tikla
-        pageBO.saveAdress1Button.click();
+        allovercommercePage.saveAdress1Button1.click();
         extentTest.info("Save Addresses butonuna tiklandi.");
 
 
         ReusableMethods.bekle(3);
         // “Address changed successfully.” yazisinin gorunurlugunu dogrula
-        Assert.assertTrue(pageBO.dogrulaYazisiAddressChangedSuccessfully.getText().contains("Address changed successfully."));
+        Assert.assertTrue(allovercommercePage.dogrulaYazisiAddressChangedSuccessfully1.getText().contains("Address changed successfully."));
         extentTest.info("\"Address changed successfully.\"");
 
 
@@ -370,7 +374,7 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
 
 
         action =new Actions(Driver.getDriver());
-        pageBO = new PageBO();
+        allovercommercePage = new AllovercommercePage();
         reusableMethods = new ReusableMethods();
         extentTest =extentReports.createTest("TC_04_FirstNameBosBirakilmasi","Allovercommerce web sayfasi test raporu");
 
@@ -379,38 +383,38 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Login olundu");
 
         //Sing Out butona tikla
-        pageBO.singOutButton.click();
+        allovercommercePage.singOutButton1.click();
         extentTest.info("Sing Out butona tiklandi.");
 
 
         ReusableMethods.bekle(3);
         //"Are you sure you want to log out? Confirm and log out" yazisini dogrula
-        Assert.assertTrue(pageBO.dogrulamaYazisiAreYouSure.getText().contains("Are you sure you want to log out? Confirm and log out"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiAreYouSure1.getText().contains("Are you sure you want to log out? Confirm and log out"));
         extentTest.info("\"Are you sure you want to log out? Confirm and log out\" dogrulama yazsisi goruldu.");
 
         //Addresses butonuna tikla
-        pageBO.adressButton.click();
+        allovercommercePage.adressButton1.click();
         extentTest.info("Addresses butonuna tiklandi");
 
         action.sendKeys(Keys.PAGE_DOWN).perform();
         extentTest.info("Sayfada bir page down assagi inildi.");
 
         //Add butonuna tikla
-        pageBO.editYourBillingAddressButton.click();
+        allovercommercePage.editYourBillingAddressButton1.click();
         extentTest.info("Adres kayit sayfasina gecis icin add butonuna tiklandi");
 
         ReusableMethods.bekle(3);
         //“Billing address” yazisini gor
-        Assert.assertTrue(pageBO.dogrulamaYazisiBullingAdress.getText().contains("Billing address"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiBullingAdress1.getText().contains("Billing address"));
         extentTest.info("\"Billing address\" yazisinin gorunulurlugu dogrulandi");
 
         //First name bos birak
-        pageBO.bullingFirstName.clear();
+        allovercommercePage.bullingFirstName1.clear();
         extentTest.info("Firs name bos birakildi");
 
         //Last name gir
-        pageBO.bullingLanstName.clear();
-        pageBO.bullingLanstName.sendKeys(ConfigReader.getProperty("lastName1"));
+        allovercommercePage.bullingLanstName1.clear();
+        allovercommercePage.bullingLanstName1.sendKeys(ConfigReader.getProperty("lastName1"));
         extentTest.info("Last name yazildi");
 
 
@@ -418,48 +422,48 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Sayfada bir page down assagi inildi.");
 
         //Country / Region gir
-        WebElement countrySelect = pageBO.billingCountrySelect;
+        WebElement countrySelect = allovercommercePage.billingCountrySelect1;
         Select select = new Select(countrySelect);
         select.selectByVisibleText("Turkey");
         extentTest.info("Country sekmesinde Turkey  secildi.");
 
         //Street address gir(Fatih mh 10. sk)
-        pageBO.streetAddress.clear();
-        pageBO.streetAddress.sendKeys(ConfigReader.getProperty("adress"));
+        allovercommercePage.streetAddress1.clear();
+        allovercommercePage.streetAddress1.sendKeys(ConfigReader.getProperty("adress"));
         extentTest.info("Street address verisi yazildi.");
 
         //Postcode / ZIP gir
-        pageBO.postcode.clear();
-        pageBO.postcode.sendKeys(ConfigReader.getProperty("postcode"));
+        allovercommercePage.postcode.clear();
+        allovercommercePage.postcode.sendKeys(ConfigReader.getProperty("postcode1"));
         extentTest.info("Postcode verisi yazildi.");
 
         //Town / City gir
-        pageBO.city.clear();
-        pageBO.city.sendKeys(ConfigReader.getProperty("city1"));
+        allovercommercePage.city1.clear();
+        allovercommercePage.city1.sendKeys(ConfigReader.getProperty("city1"));
         extentTest.info("City verisi yazildi.");
 
         //Province gir
-        WebElement countrySelect1 = pageBO.bullingProvince;
+        WebElement countrySelect1 = allovercommercePage.bullingProvince1;
         Select select1 = new Select(countrySelect1);
         select1.selectByVisibleText("Adana");
         extentTest.info("Country acilir sekmede Adana secimi yapildi.");
 
         //Phone gir
-        pageBO.phone.clear();
-        pageBO.phone.sendKeys(ConfigReader.getProperty("phone1"));
+        allovercommercePage.phone.clear();
+        allovercommercePage.phone.sendKeys(ConfigReader.getProperty("phone1"));
         extentTest.info("Phone girisi yapildi.");
 
         //Email i gor
-        Assert.assertTrue(pageBO.emailKutusu.isDisplayed());
+        Assert.assertTrue(allovercommercePage.emailKutusu1.isDisplayed());
         extentTest.info("Email adresi goruldu.");
 
         //Save Address butona tikla
-        pageBO.saveAdress1Button.click();
+        allovercommercePage.saveAdress1Button1.click();
         extentTest.info("Save Address butonuna tiklandi.");
 
         ReusableMethods.bekle(3);
         // “First name is a required field.” metnin gorunelebilirligini dogurula
-        Assert.assertTrue(pageBO.dogrulamaYazisiFirstNameIsRequiredField.isDisplayed());
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiFirstNameIsRequiredField1.isDisplayed());
         extentTest.info("\"First name is a required field.\" yazisi dogrulandi." );
 
 
@@ -476,7 +480,7 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
     public void TC_05_LastNameBosBirakilmasi() {
 
         action =new Actions(Driver.getDriver());
-        pageBO = new PageBO();
+        allovercommercePage = new AllovercommercePage();
         reusableMethods = new ReusableMethods();
         extentTest =extentReports.createTest("TC_05_LastNameBosBirakilmasi","Allovercommerce web sayfasi test raporu");
 
@@ -485,16 +489,16 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Login olundu");
 
         //Sing Out butona tikla
-        pageBO.singOutButton.click();
+        allovercommercePage.singOutButton1.click();
         extentTest.info("Sing Out butona tiklandi.");
 
         ReusableMethods.bekle(3);
         //"Are you sure you want to log out? Confirm and log out" yazisini dogrula
-        Assert.assertTrue(pageBO.dogrulamaYazisiAreYouSure.getText().contains("Are you sure you want to log out? Confirm and log out"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiAreYouSure1.getText().contains("Are you sure you want to log out? Confirm and log out"));
         extentTest.info("\"Are you sure you want to log out? Confirm and log out\" dogrulama yazsisi goruldu.");
 
         //Addresses butonuna tikla
-        pageBO.adressButton.click();
+        allovercommercePage.adressButton1.click();
         extentTest.info("Addresses butonuna tiklandi.");
 
 
@@ -503,68 +507,68 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
 
 
         //Add butonuna tikla
-        pageBO.editYourBillingAddressButton.click();
+        allovercommercePage.editYourBillingAddressButton1.click();
         extentTest.info("Adres bilgilerini kayit sayfasina gecis icin add butonuna tiklandi");
 
         ReusableMethods.bekle(3);
         //“Billing address” yazisini gor
-        Assert.assertTrue(pageBO.dogrulamaYazisiBullingAdress.getText().contains("Billing address"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiBullingAdress1.getText().contains("Billing address"));
         extentTest.info("\"Billing address\" yazisinin gorunulurlugu dogrulandi");
 
         ReusableMethods.bekle(3);
         //First name gir
-        pageBO.bullingFirstName.clear();
-        pageBO.bullingFirstName.sendKeys(ConfigReader.getProperty("firstName1"));
+        allovercommercePage.bullingFirstName1.clear();
+        allovercommercePage.bullingFirstName1.sendKeys(ConfigReader.getProperty("firstName1"));
         extentTest.info("First name yazildi");
 
         //Last name bos birak
-        pageBO.bullingLanstName.clear();
+        allovercommercePage.bullingLanstName1.clear();
         extentTest.info("Last name bos birakildi.");
 
         action.sendKeys(Keys.PAGE_DOWN).perform();
         extentTest.info("Sayfada bir page down assagi inildi.");
 
         //Country / Region gir
-        WebElement countrySelect = pageBO.billingCountrySelect;
+        WebElement countrySelect = allovercommercePage.billingCountrySelect1;
         Select select = new Select(countrySelect);
         select.selectByVisibleText("Turkey");
         extentTest.info("Country sekmesinde Turkey  secildi.");
 
         //Street address gir(Fatih mh 10. sk)
-        pageBO.streetAddress.clear();
-        pageBO.streetAddress.sendKeys(ConfigReader.getProperty("adress"));
+        allovercommercePage.streetAddress1.clear();
+        allovercommercePage.streetAddress1.sendKeys(ConfigReader.getProperty("adress"));
         extentTest.info("Street address verisi yazildi.");
 
         //Postcode / ZIP gir
-        pageBO.postcode.clear();
-        pageBO.postcode.sendKeys(ConfigReader.getProperty("postcode"));
+        allovercommercePage.postcode.clear();
+        allovercommercePage.postcode.sendKeys(ConfigReader.getProperty("postcode1"));
         extentTest.info("Postcode verisi yazildi.");
 
         //Town / City gir
-        pageBO.city.clear();
-        pageBO.city.sendKeys(ConfigReader.getProperty("city1"));
+        allovercommercePage.city.clear();
+        allovercommercePage.city.sendKeys(ConfigReader.getProperty("city1"));
         extentTest.info("City verisi yazildi.");
 
         //Province gir
-        WebElement countrySelect1 = pageBO.bullingProvince;
+        WebElement countrySelect1 = allovercommercePage.bullingProvince1;
         Select select1 = new Select(countrySelect1);
         select1.selectByVisibleText("Adana");
         extentTest.info("Country acilir sekmede Adana secimi yapildi.");
 
         //Phone gir
-        pageBO.phone.clear();
-        pageBO.phone.sendKeys(ConfigReader.getProperty("phone1"));
+        allovercommercePage.phone.clear();
+        allovercommercePage.phone.sendKeys(ConfigReader.getProperty("phone1"));
         extentTest.info("Phone girisi yapildi.");
 
         ReusableMethods.bekle(3);
         //Email i gor
-        pageBO.emailKutusu.clear();
-        pageBO.emailKutusu.sendKeys(ConfigReader.getProperty("alloverEmail"));
-        Assert.assertTrue(pageBO.emailKutusu.isDisplayed());
+        allovercommercePage.emailKutusu1.clear();
+        allovercommercePage.emailKutusu1.sendKeys(ConfigReader.getProperty("alloverEmail"));
+        Assert.assertTrue(allovercommercePage.emailKutusu1.isDisplayed());
         extentTest.info("Email adresi goruldu.");
 
         //Save Address butona tikla
-        pageBO.saveAdress1Button.click();
+        allovercommercePage.saveAdress1Button1.click();
         extentTest.info("Save Address butonuna tiklandi.");
 
 
@@ -587,7 +591,7 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
     public void TC_06_StreetAddressBosBirakilmasi() {
 
         action =new Actions(Driver.getDriver());
-        pageBO = new PageBO();
+        allovercommercePage = new AllovercommercePage();
         reusableMethods = new ReusableMethods();
         extentTest =extentReports.createTest("TC_06_StreetAddressBosBirakilmasi","Allovercommerce web sayfasi test raporu");
 
@@ -596,18 +600,18 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Login olundu");
 
         //Sing Out butona tikla
-        pageBO.singOutButton.click();
+        allovercommercePage.singOutButton1.click();
         extentTest.info("Sing Out butona tiklandi.");
 
 
         ReusableMethods.bekle(3);
         //"Are you sure you want to log out? Confirm and log out" yazisini dogrula
-        Assert.assertTrue(pageBO.dogrulamaYazisiAreYouSure.getText().contains("Are you sure you want to log out? Confirm and log out"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiAreYouSure1.getText().contains("Are you sure you want to log out? Confirm and log out"));
         extentTest.info("\"Are you sure you want to log out? Confirm and log out\" dogrulama yazsisi goruldu.");
 
 
         //Addresses butonuna tikla
-        pageBO.adressButton.click();
+        allovercommercePage.adressButton1.click();
         extentTest.info("Addresses butonuna tiklandi");
 
 
@@ -615,22 +619,22 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Sayfada bir page down assagi inildi.");
 
         //Add butonuna tikla
-        pageBO.editYourBillingAddressButton.click();
+        allovercommercePage.editYourBillingAddressButton1.click();
         extentTest.info("Adres bilgilerini kayit sayfasina gecis icin add butonuna tiklandi");
 
         ReusableMethods.bekle(3);
         //“Billing address” yazisini gor
-        Assert.assertTrue(pageBO.dogrulamaYazisiBullingAdress.getText().contains("Billing address"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiBullingAdress1.getText().contains("Billing address"));
         extentTest.info("\"Billing address\" yazisinin gorunulurlugu dogrulandi");
 
         //First name gir
-        pageBO.bullingFirstName.clear();
-        pageBO.bullingFirstName.sendKeys(ConfigReader.getProperty("firstName1"));
+        allovercommercePage.bullingFirstName1.clear();
+        allovercommercePage.bullingFirstName1.sendKeys(ConfigReader.getProperty("firstName1"));
         extentTest.info("First name yazildi");
 
         //Last name gir
-        pageBO.bullingLanstName.clear();
-        pageBO.bullingLanstName.sendKeys(ConfigReader.getProperty("lastName1"));
+        allovercommercePage.bullingLanstName1.clear();
+        allovercommercePage.bullingLanstName1.sendKeys(ConfigReader.getProperty("lastName1"));
         extentTest.info("Last name yazildi");
 
 
@@ -638,45 +642,45 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Sayfada bir page down assagi inildi.");
 
         //Country / Region gir
-        WebElement countrySelect = pageBO.billingCountrySelect;
+        WebElement countrySelect = allovercommercePage.billingCountrySelect1;
         Select select = new Select(countrySelect);
         select.selectByVisibleText("Turkey");
         extentTest.info("Country sekmesinde Turkey  secildi.");
 
         //Street address bos birak
-        pageBO.streetAddress.clear();
+        allovercommercePage.streetAddress1.clear();
         extentTest.info("Street adres bos birakildi.");
 
 
         //Postcode / ZIP gir
-        pageBO.postcode.clear();
-        pageBO.postcode.sendKeys(ConfigReader.getProperty("postcode"));
+        allovercommercePage.postcode.clear();
+        allovercommercePage.postcode.sendKeys(ConfigReader.getProperty("postcode1"));
         extentTest.info("Postcode verisi yazildi.");
 
         //Town / City gir
-        pageBO.city.clear();
-        pageBO.city.sendKeys(ConfigReader.getProperty("city1"));
+        allovercommercePage.city.clear();
+        allovercommercePage.city.sendKeys(ConfigReader.getProperty("city1"));
         extentTest.info("City verisi yazildi.");
 
         //Province gir
-        WebElement countrySelect1 = pageBO.bullingProvince;
+        WebElement countrySelect1 = allovercommercePage.bullingProvince1;
         Select select1 = new Select(countrySelect1);
         select1.selectByVisibleText("Adana");
         extentTest.info("Country acilir sekmede Adana secimi yapildi.");
 
         //Phone gir
-        pageBO.phone.clear();
-        pageBO.phone.sendKeys(ConfigReader.getProperty("phone1"));
+        allovercommercePage.phone.clear();
+        allovercommercePage.phone.sendKeys(ConfigReader.getProperty("phone1"));
         extentTest.info("Phone girisi yapildi.");
 
         //Email i gor
-        pageBO.emailKutusu.clear();
-        pageBO.emailKutusu.sendKeys(ConfigReader.getProperty("alloverEmail"));
-        Assert.assertTrue(pageBO.emailKutusu.isDisplayed());
+        allovercommercePage.emailKutusu1.clear();
+        allovercommercePage.emailKutusu1.sendKeys(ConfigReader.getProperty("alloverEmail"));
+        Assert.assertTrue(allovercommercePage.emailKutusu1.isDisplayed());
         extentTest.info("Email adresi goruldu.");
 
         //Save Address butona tikla
-        pageBO.saveAdress1Button.click();
+        allovercommercePage.saveAdress1Button1.click();
         extentTest.info("Save Address butonuna tiklandi.");
 
 
@@ -703,7 +707,7 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
 
 
         action =new Actions(Driver.getDriver());
-        pageBO = new PageBO();
+        allovercommercePage = new AllovercommercePage();
         reusableMethods = new ReusableMethods();
         extentTest =extentReports.createTest("TC_07_StreetAddressTekKarakterGirilmesi","Allovercommerce web sayfasi test raporu");
 
@@ -716,17 +720,17 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Login olundu");
 
         //Sing Out butona tikla
-        pageBO.singOutButton.click();
+        allovercommercePage.singOutButton1.click();
         extentTest.info("Sing Out butona tiklandi.");
 
 
         ReusableMethods.bekle(3);
         //"Are you sure you want to log out? Confirm and log out" yazisini dogrula
-        Assert.assertTrue(pageBO.dogrulamaYazisiAreYouSure.getText().contains("Are you sure you want to log out? Confirm and log out"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiAreYouSure1.getText().contains("Are you sure you want to log out? Confirm and log out"));
         extentTest.info("\"Are you sure you want to log out? Confirm and log out\" dogrulama yazsisi goruldu.");
 
         //Addresses butonuna tikla
-        pageBO.adressButton.click();
+        allovercommercePage.adressButton1.click();
         extentTest.info("Addresses butonuna tiklandi");
 
 
@@ -734,22 +738,22 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Sayfada bir page down assagi inildi.");
 
         //Add butonuna tikla
-        pageBO.editYourBillingAddressButton.click();
+        allovercommercePage.editYourBillingAddressButton1.click();
         extentTest.info("Adres bilgilerini kayit sayfasina gecis icin add butonuna tiklandi");
 
         ReusableMethods.bekle(3);
         //“Billing address” yazisini gor
-        Assert.assertTrue(pageBO.dogrulamaYazisiBullingAdress.getText().contains("Billing address"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiBullingAdress1.getText().contains("Billing address"));
         extentTest.info("\"Billing address\" yazisinin gorunulurlugu dogrulandi");
 
         //First name gir
-        pageBO.bullingFirstName.clear();
-        pageBO.bullingFirstName.sendKeys(ConfigReader.getProperty("firstName1"));
+        allovercommercePage.bullingFirstName1.clear();
+        allovercommercePage.bullingFirstName1.sendKeys(ConfigReader.getProperty("firstName1"));
         extentTest.info("First name yazildi");
 
         //Last name bos birak
-        pageBO.bullingLanstName.clear();
-        pageBO.bullingLanstName.sendKeys(ConfigReader.getProperty("lastName1"));
+        allovercommercePage.bullingLanstName1.clear();
+        allovercommercePage.bullingLanstName1.sendKeys(ConfigReader.getProperty("lastName1"));
         extentTest.info("Last name yazildi");
 
 
@@ -757,14 +761,14 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Sayfada bir page down assagi inildi.");
 
         //Country / Region gir
-        WebElement countrySelect = pageBO.billingCountrySelect;
+        WebElement countrySelect = allovercommercePage.billingCountrySelect1;
         Select select = new Select(countrySelect);
         select.selectByVisibleText("Turkey");
         extentTest.info("Country sekmesinde Turkey  secildi.");
 
         //Street address tek karaker gir  ("a")
-        pageBO.streetAddress.clear();
-        pageBO.streetAddress.sendKeys("a");
+        allovercommercePage.streetAddress1.clear();
+        allovercommercePage.streetAddress1.sendKeys("a");
         extentTest.fail("Street Address tek karakter ile giris yapildi. Adres tek karakter olamaz.");
 
         ReusableMethods.bekle(3);
@@ -772,40 +776,40 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Tum sayfa resmi alindi.");
 
         //Postcode / ZIP gir
-        pageBO.postcode.clear();
-        pageBO.postcode.sendKeys(ConfigReader.getProperty("postcode"));
+        allovercommercePage.postcode.clear();
+        allovercommercePage.postcode.sendKeys(ConfigReader.getProperty("postcode1"));
         extentTest.info("Postcode verisi yazildi.");
 
         //Town / City gir
-        pageBO.city.clear();
-        pageBO.city.sendKeys(ConfigReader.getProperty("city1"));
+        allovercommercePage.city.clear();
+        allovercommercePage.city.sendKeys(ConfigReader.getProperty("city1"));
         extentTest.info("City verisi yazildi.");
 
         //Province gir
-        WebElement countrySelect1 = pageBO.bullingProvince;
+        WebElement countrySelect1 = allovercommercePage.bullingProvince1;
         Select select1 = new Select(countrySelect1);
         select1.selectByVisibleText("Adana");
         extentTest.info("Country acilir sekmede Adana secimi yapildi.");
 
         //Phone gir
-        pageBO.phone.clear();
-        pageBO.phone.sendKeys(ConfigReader.getProperty("phone1"));
+        allovercommercePage.phone.clear();
+        allovercommercePage.phone.sendKeys(ConfigReader.getProperty("phone1"));
         extentTest.info("Phone girisi yapildi.");
 
         //Email i gor
-        pageBO.emailKutusu.clear();
-        pageBO.emailKutusu.sendKeys(ConfigReader.getProperty("alloverEmail"));
-        Assert.assertTrue(pageBO.emailKutusu.isDisplayed()); // burasi da uzun degil bu sekilde calisiyor
+        allovercommercePage.emailKutusu1.clear();
+        allovercommercePage.emailKutusu1.sendKeys(ConfigReader.getProperty("alloverEmail"));
+        Assert.assertTrue(allovercommercePage.emailKutusu1.isDisplayed()); // burasi da uzun degil bu sekilde calisiyor
         extentTest.info("Email adresi goruldu.");
 
         //Save Address butona tikla
-        pageBO.saveAdress1Button.click();
+        allovercommercePage.saveAdress1Button1.click();
         extentTest.info("Save Address butonuna tiklandi.");
 
 
         ReusableMethods.bekle(3);
         // “Address changed successfully.”  yazisinin gorunurlugunu dogrula
-        Assert.assertTrue(pageBO.dogrulaYazisiAddressChangedSuccessfully.isDisplayed());
+        Assert.assertTrue(allovercommercePage.dogrulaYazisiAddressChangedSuccessfully1.isDisplayed());
         extentTest.info("\"Address changed successfully.\" yazisi dogrulandi." );
 
         ReusableMethods.bekle(3);
@@ -823,7 +827,7 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
 
 
         action =new Actions(Driver.getDriver());
-        pageBO = new PageBO();
+        allovercommercePage = new AllovercommercePage();
         reusableMethods = new ReusableMethods();
         extentTest =extentReports.createTest("TC_08_StreetAddress500KarakterGirilmesi","Allovercommerce web sayfasi test raporu");
 
@@ -833,16 +837,16 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Login olundu");
 
         //Sing Out butona tikla
-        pageBO.singOutButton.click();
+        allovercommercePage.singOutButton1.click();
         extentTest.info("Sing Out butona tiklandi.");
 
         ReusableMethods.bekle(3);
         //"Are you sure you want to log out? Confirm and log out" yazisini dogrula
-        Assert.assertTrue(pageBO.dogrulamaYazisiAreYouSure.getText().contains("Are you sure you want to log out? Confirm and log out"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiAreYouSure1.getText().contains("Are you sure you want to log out? Confirm and log out"));
         extentTest.info("\"Are you sure you want to log out? Confirm and log out\" dogrulama yazsisi goruldu.");
 
         //Addresses butonuna tikla
-        pageBO.adressButton.click();
+        allovercommercePage.adressButton1.click();
         extentTest.info("Addresses butonuna tiklandi");
 
 
@@ -851,22 +855,22 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
 
 
         //Add butonuna tikla
-        pageBO.editYourBillingAddressButton.click();
+        allovercommercePage.editYourBillingAddressButton1.click();
         extentTest.info("Adres bilgilerini kayit sayfasina gecis icin add butonuna tiklandi");
 
         ReusableMethods.bekle(3);
         //“Billing address” yazisini gor
-        Assert.assertTrue(pageBO.dogrulamaYazisiBullingAdress.getText().contains("Billing address"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiBullingAdress1.getText().contains("Billing address"));
         extentTest.info("\"Billing address\" yazisinin gorunulurlugu dogrulandi");
 
         //First name gir
-        pageBO.bullingFirstName.clear();
-        pageBO.bullingFirstName.sendKeys(ConfigReader.getProperty("firstName1"));
+        allovercommercePage.bullingFirstName1.clear();
+        allovercommercePage.bullingFirstName1.sendKeys(ConfigReader.getProperty("firstName1"));
         extentTest.info("First name yazildi");
 
         //Last name bos birak
-        pageBO.bullingLanstName.clear();
-        pageBO.bullingLanstName.sendKeys(ConfigReader.getProperty("lastName1"));
+        allovercommercePage.bullingLanstName1.clear();
+        allovercommercePage.bullingLanstName1.sendKeys(ConfigReader.getProperty("lastName1"));
         extentTest.info("Last name yazildi");
 
 
@@ -874,14 +878,14 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Sayfada bir page down assagi inildi.");
 
         //Country / Region gir
-        WebElement countrySelect = pageBO.billingCountrySelect;
+        WebElement countrySelect = allovercommercePage.billingCountrySelect1;
         Select select = new Select(countrySelect);
         select.selectByVisibleText("Turkey");
         extentTest.info("Country sekmesinde Turkey  secildi.");
 
         //Street address i 500 karakter gir()
-        pageBO.streetAddress.clear();
-        pageBO.streetAddress.sendKeys("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" +
+        allovercommercePage.streetAddress1.clear();
+        allovercommercePage.streetAddress1.sendKeys("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" +
                 "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" +
                 "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
         extentTest.fail("Street address 500 karakter girisi yapildi. Adress 500 karakter olamaz");
@@ -892,40 +896,40 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
 
 
         //Postcode / ZIP gir
-        pageBO.postcode.clear();
-        pageBO.postcode.sendKeys(ConfigReader.getProperty("postcode"));
+        allovercommercePage.postcode.clear();
+        allovercommercePage.postcode.sendKeys(ConfigReader.getProperty("postcode1"));
         extentTest.info("Postcode verisi yazildi.");
 
         //Town / City gir
-        pageBO.city.clear();
-        pageBO.city.sendKeys(ConfigReader.getProperty("city1"));
+        allovercommercePage.city.clear();
+        allovercommercePage.city.sendKeys(ConfigReader.getProperty("city1"));
         extentTest.info("City verisi yazildi.");
 
         //Province gir
-        WebElement countrySelect1 = pageBO.bullingProvince;
+        WebElement countrySelect1 = allovercommercePage.bullingProvince1;
         Select select1 = new Select(countrySelect1);
         select1.selectByVisibleText("Adana");
         extentTest.info("Country acilir sekmede Adana secimi yapildi.");
 
         //Phone gir
-        pageBO.phone.clear();
-        pageBO.phone.sendKeys(ConfigReader.getProperty("phone1"));
+        allovercommercePage.phone.clear();
+        allovercommercePage.phone.sendKeys(ConfigReader.getProperty("phone1"));
         extentTest.info("Phone girisi yapildi.");
 
         //Email i gor
-        pageBO.emailKutusu.clear();
-        pageBO.emailKutusu.sendKeys(ConfigReader.getProperty("alloverEmail"));
-        Assert.assertTrue(pageBO.emailKutusu.isDisplayed()); // burasi da uzun degil bu sekilde calisiyor
+        allovercommercePage.emailKutusu1.clear();
+        allovercommercePage.emailKutusu1.sendKeys(ConfigReader.getProperty("alloverEmail"));
+        Assert.assertTrue(allovercommercePage.emailKutusu1.isDisplayed()); // burasi da uzun degil bu sekilde calisiyor
         extentTest.info("Email adresi goruldu.");
 
         //Save Address butona tikla
-        pageBO.saveAdress1Button.click();
+        allovercommercePage.saveAdress1Button1.click();
         extentTest.info("Save Address butonuna tiklandi.");
 
 
         ReusableMethods.bekle(3);
         // “Address changed successfully.”  yazisinin gorunurlugunu dogrula
-        Assert.assertTrue(pageBO.dogrulaYazisiAddressChangedSuccessfully.isDisplayed());
+        Assert.assertTrue(allovercommercePage.dogrulaYazisiAddressChangedSuccessfully1.isDisplayed());
         extentTest.info("\"Address changed successfully.\" yazisi dogrulandi." );
 
 
@@ -943,7 +947,7 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
 
 
         action =new Actions(Driver.getDriver());
-        pageBO = new PageBO();
+        allovercommercePage = new AllovercommercePage();
         reusableMethods = new ReusableMethods();
         extentTest =extentReports.createTest("TC_09_PostcodeBosBirakilmasi","Allovercommerce web sayfasi test raporu");
 
@@ -953,16 +957,16 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Login olundu");
 
         //Sing Out butona tikla
-        pageBO.singOutButton.click();
+        allovercommercePage.singOutButton1.click();
         extentTest.info("Sing Out butona tiklandi.");
 
         ReusableMethods.bekle(3);
         //"Are you sure you want to log out? Confirm and log out" yazisini dogrula
-        Assert.assertTrue(pageBO.dogrulamaYazisiAreYouSure.getText().contains("Are you sure you want to log out? Confirm and log out"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiAreYouSure1.getText().contains("Are you sure you want to log out? Confirm and log out"));
         extentTest.info("\"Are you sure you want to log out? Confirm and log out\" dogrulama yazsisi goruldu.");
 
         //Addresses butonuna tikla
-        pageBO.adressButton.click();
+        allovercommercePage.adressButton1.click();
         extentTest.info("Addresses butonuna tiklandi");
 
 
@@ -970,22 +974,22 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Sayfada bir page down assagi inildi.");
 
         //Add butonuna tikla
-        pageBO.editYourBillingAddressButton.click();
+        allovercommercePage.editYourBillingAddressButton1.click();
         extentTest.info("Adres bilgilerini kayit sayfasina gecis icin add butonuna tiklandi");
 
         ReusableMethods.bekle(3);
         //“Billing address” yazisini gor
-        Assert.assertTrue(pageBO.dogrulamaYazisiBullingAdress.getText().contains("Billing address"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiBullingAdress1.getText().contains("Billing address"));
         extentTest.info("\"Billing address\" yazisinin gorunulurlugu dogrulandi");
 
         //First name gir
-        pageBO.bullingFirstName.clear();
-        pageBO.bullingFirstName.sendKeys(ConfigReader.getProperty("firstName1"));
+        allovercommercePage.bullingFirstName1.clear();
+        allovercommercePage.bullingFirstName1.sendKeys(ConfigReader.getProperty("firstName1"));
         extentTest.info("First name yazildi");
 
         //Last name gir
-        pageBO.bullingLanstName.clear();
-        pageBO.bullingLanstName.sendKeys(ConfigReader.getProperty("lastName1"));
+        allovercommercePage.bullingLanstName1.clear();
+        allovercommercePage.bullingLanstName1.sendKeys(ConfigReader.getProperty("lastName1"));
         extentTest.info("Last name yazildi");
 
 
@@ -993,45 +997,45 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Sayfada bir page down assagi inildi.");
 
         //Country / Region gir
-        WebElement countrySelect = pageBO.billingCountrySelect;
+        WebElement countrySelect = allovercommercePage.billingCountrySelect1;
         Select select = new Select(countrySelect);
         select.selectByVisibleText("Turkey");
         extentTest.info("Country sekmesinde Turkey  secildi.");
 
         //Street address gir (Fatih mh 10. sk)
-        pageBO.streetAddress.clear();
-        pageBO.streetAddress.sendKeys(ConfigReader.getProperty("adress"));
+        allovercommercePage.streetAddress1.clear();
+        allovercommercePage.streetAddress1.sendKeys(ConfigReader.getProperty("adress"));
         extentTest.info("Street address verisi yazildi.");
 
         //Postcode / ZIP bos birak
-        pageBO.postcode.clear();
+        allovercommercePage.postcode.clear();
         extentTest.info("Postcode bos birakildi,");
 
 
         //Town / City gir
-        pageBO.city.clear();
-        pageBO.city.sendKeys(ConfigReader.getProperty("city1"));
+        allovercommercePage.city.clear();
+        allovercommercePage.city.sendKeys(ConfigReader.getProperty("city1"));
         extentTest.info("City verisi yazildi.");
 
         //Province gir
-        WebElement countrySelect1 = pageBO.bullingProvince;
+        WebElement countrySelect1 = allovercommercePage.bullingProvince1;
         Select select1 = new Select(countrySelect1);
         select1.selectByVisibleText("Adana");
         extentTest.info("Country acilir sekmede Adana secimi yapildi.");
 
         //Phone gir
-        pageBO.phone.clear();
-        pageBO.phone.sendKeys(ConfigReader.getProperty("phone1"));
+        allovercommercePage.phone.clear();
+        allovercommercePage.phone.sendKeys(ConfigReader.getProperty("phone1"));
         extentTest.info("Phone girisi yapildi.");
 
         //Email i gor
-        pageBO.emailKutusu.clear();
-        pageBO.emailKutusu.sendKeys(ConfigReader.getProperty("alloverEmail"));
-        Assert.assertTrue(pageBO.emailKutusu.isDisplayed()); // burasi da uzun degil bu sekilde calisiyor
+        allovercommercePage.emailKutusu1.clear();
+        allovercommercePage.emailKutusu1.sendKeys(ConfigReader.getProperty("alloverEmail"));
+        Assert.assertTrue(allovercommercePage.emailKutusu1.isDisplayed()); // burasi da uzun degil bu sekilde calisiyor
         extentTest.info("Email adresi goruldu.");
 
         //Save Address butona tikla
-        pageBO.saveAdress1Button.click();
+        allovercommercePage.saveAdress1Button1.click();
         extentTest.info("Save Address butonuna tiklandi.");
 
 
@@ -1054,7 +1058,7 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
     public void TC_10_PostcodeHarfKarakterGirilmesi() {
 
         action =new Actions(Driver.getDriver());
-        pageBO = new PageBO();
+        allovercommercePage = new AllovercommercePage();
         reusableMethods = new ReusableMethods();
         extentTest =extentReports.createTest("TC_10_PostcodeHarfKarakterGirilmesi","Allovercommerce web sayfasi test raporu");
 
@@ -1063,16 +1067,16 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Login olundu");
 
         //Sing Out butona tikla
-        pageBO.singOutButton.click();
+        allovercommercePage.singOutButton1.click();
         extentTest.info("Sing Out butona tiklandi.");
 
         ReusableMethods.bekle(3);
         //"Are you sure you want to log out? Confirm and log out" yazisini dogrula
-        Assert.assertTrue(pageBO.dogrulamaYazisiAreYouSure.getText().contains("Are you sure you want to log out? Confirm and log out"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiAreYouSure1.getText().contains("Are you sure you want to log out? Confirm and log out"));
         extentTest.info("\"Are you sure you want to log out? Confirm and log out\" dogrulama yazsisi goruldu.");
 
         //Addresses butonuna tikla
-        pageBO.adressButton.click();
+        allovercommercePage.adressButton1.click();
         extentTest.info("Addresses butonuna tiklandi");
 
 
@@ -1080,23 +1084,23 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Sayfada bir page down assagi inildi.");
 
         //Add butonuna tikla
-        pageBO.editYourBillingAddressButton.click();
+        allovercommercePage.editYourBillingAddressButton1.click();
         extentTest.info("Adres bilgilerini kayit sayfasina gecis icin add butonuna tiklandi");
 
         ReusableMethods.bekle(3);
         //“Billing address” yazisini gor
          ReusableMethods.bekle(3);
-        Assert.assertTrue(pageBO.dogrulamaYazisiBullingAdress.getText().contains("Billing address"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiBullingAdress1.getText().contains("Billing address"));
         extentTest.info("\"Billing address\" yazisinin gorunulurlugu dogrulandi");
 
         //First name gir
-        pageBO.bullingFirstName.clear();
-        pageBO.bullingFirstName.sendKeys(ConfigReader.getProperty("firstName1"));
+        allovercommercePage.bullingFirstName1.clear();
+        allovercommercePage.bullingFirstName1.sendKeys(ConfigReader.getProperty("firstName1"));
         extentTest.info("First name yazildi");
 
         //Last name bos birak
-        pageBO.bullingLanstName.clear();
-        pageBO.bullingLanstName.sendKeys(ConfigReader.getProperty("lastName1"));
+        allovercommercePage.bullingLanstName1.clear();
+        allovercommercePage.bullingLanstName1.sendKeys(ConfigReader.getProperty("lastName1"));
         extentTest.info("Last name yazildi");
 
 
@@ -1104,19 +1108,19 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Sayfada bir page down assagi inildi.");
 
         //Country / Region gir
-        WebElement countrySelect = pageBO.billingCountrySelect;
+        WebElement countrySelect = allovercommercePage.billingCountrySelect1;
         Select select = new Select(countrySelect);
         select.selectByVisibleText("Turkey");
         extentTest.info("Country sekmesinde Turkey  secildi.");
 
         //Street address gir(Fatih mh 10. sk)
-        pageBO.streetAddress.clear();
-        pageBO.streetAddress.sendKeys(ConfigReader.getProperty("adress"));
+        allovercommercePage.streetAddress1.clear();
+        allovercommercePage.streetAddress1.sendKeys(ConfigReader.getProperty("adress"));
         extentTest.info("Street address verisi yazildi.");
 
         //Postcode / ZIP harf karakter gir
-        pageBO.postcode.clear();
-        pageBO.postcode.sendKeys("aaaaaa");
+        allovercommercePage.postcode.clear();
+        allovercommercePage.postcode.sendKeys("aaaaaa");
         extentTest.fail("Postcode harf karakter ile giris yapildi. Postcode harf karakter olamaz.");
 
         ReusableMethods.bekle(3);
@@ -1124,35 +1128,35 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Tum sayfa resmi alindi.");
 
         //Town / City gir
-        pageBO.city.clear();
-        pageBO.city.sendKeys(ConfigReader.getProperty("city1"));
+        allovercommercePage.city.clear();
+        allovercommercePage.city.sendKeys(ConfigReader.getProperty("city1"));
         extentTest.info("City verisi yazildi.");
 
         //Province gir
-        WebElement countrySelect1 = pageBO.bullingProvince;
+        WebElement countrySelect1 = allovercommercePage.bullingProvince1;
         Select select1 = new Select(countrySelect1);
         select1.selectByVisibleText("Adana");
         extentTest.info("Country acilir sekmede Adana secimi yapildi.");
 
         //Phone gir
-        pageBO.phone.clear();
-        pageBO.phone.sendKeys(ConfigReader.getProperty("phone1"));
+        allovercommercePage.phone.clear();
+        allovercommercePage.phone.sendKeys(ConfigReader.getProperty("phone1"));
         extentTest.info("Phone girisi yapildi.");
 
         //Email i gor
-        pageBO.emailKutusu.clear();
-        pageBO.emailKutusu.sendKeys(ConfigReader.getProperty("alloverEmail"));
-        Assert.assertTrue(pageBO.emailKutusu.isDisplayed());
+        allovercommercePage.emailKutusu1.clear();
+        allovercommercePage.emailKutusu1.sendKeys(ConfigReader.getProperty("alloverEmail"));
+        Assert.assertTrue(allovercommercePage.emailKutusu1.isDisplayed());
         extentTest.info("Email adresi goruldu.");
 
         //Save Address butona tikla
-        pageBO.saveAdress1Button.click();
+        allovercommercePage.saveAdress1Button1.click();
         extentTest.info("Save Address butonuna tiklandi.");
 
 
         ReusableMethods.bekle(3);
         // “Address changed successfully.”  yazisinin gorunurlugunu dogrula
-        Assert.assertTrue(pageBO.dogrulaYazisiAddressChangedSuccessfully.isDisplayed());
+        Assert.assertTrue(allovercommercePage.dogrulaYazisiAddressChangedSuccessfully1.isDisplayed());
         extentTest.info("\"Address changed successfully.\" yazisi dogrulandi." );
 
 
@@ -1169,7 +1173,7 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
     public void TC_11_Phone25KarakterGirilmesi() {
 
         action =new Actions(Driver.getDriver());
-        pageBO = new PageBO();
+        allovercommercePage = new AllovercommercePage();
         reusableMethods = new ReusableMethods();
         extentTest =extentReports.createTest("TC_11_Phone25KarakterGirilmesi","Allovercommerce web sayfasi test raporu");
 
@@ -1179,16 +1183,16 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Login olundu");
 
         //Sing Out butona tikla
-        pageBO.singOutButton.click();
+        allovercommercePage.singOutButton1.click();
         extentTest.info("Sing Out butona tiklandi.");
 
         ReusableMethods.bekle(3);
         //"Are you sure you want to log out? Confirm and log out" yazisini dogrula
-        Assert.assertTrue(pageBO.dogrulamaYazisiAreYouSure.getText().contains("Are you sure you want to log out? Confirm and log out"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiAreYouSure1.getText().contains("Are you sure you want to log out? Confirm and log out"));
         extentTest.info("\"Are you sure you want to log out? Confirm and log out\" dogrulama yazsisi goruldu.");
 
         //Addresses butonuna tikla
-        pageBO.adressButton.click();
+        allovercommercePage.adressButton1.click();
         extentTest.info("Addresses butonuna tiklandi");
 
 
@@ -1196,22 +1200,22 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Sayfada bir page down assagi inildi.");
 
         //Add butonuna tikla
-        pageBO.editYourBillingAddressButton.click();
+        allovercommercePage.editYourBillingAddressButton1.click();
         extentTest.info("Adres bilgilerini kayit sayfasina gecis icin add butonuna tiklandi");
 
         ReusableMethods.bekle(3);
         //“Billing address” yazisini gor
-        Assert.assertTrue(pageBO.dogrulamaYazisiBullingAdress.getText().contains("Billing address"));
+        Assert.assertTrue(allovercommercePage.dogrulamaYazisiBullingAdress1.getText().contains("Billing address"));
         extentTest.info("\"Billing address\" yazisinin gorunulurlugu dogrulandi");
 
         //First name gir
-        pageBO.bullingFirstName.clear();
-        pageBO.bullingFirstName.sendKeys(ConfigReader.getProperty("firstName1"));
+        allovercommercePage.bullingFirstName1.clear();
+        allovercommercePage.bullingFirstName1.sendKeys(ConfigReader.getProperty("firstName1"));
         extentTest.info("First name yazildi");
 
         //Last name gir
-        pageBO.bullingLanstName.clear();
-        pageBO.bullingLanstName.sendKeys(ConfigReader.getProperty("lastName1"));
+        allovercommercePage.bullingLanstName1.clear();
+        allovercommercePage.bullingLanstName1.sendKeys(ConfigReader.getProperty("lastName1"));
         extentTest.info("Last name yazildi");
 
 
@@ -1219,34 +1223,34 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
         extentTest.info("Sayfada bir page down assagi inildi.");
 
         //Country / Region gir
-        WebElement countrySelect = pageBO.billingCountrySelect;
+        WebElement countrySelect = allovercommercePage.billingCountrySelect1;
         Select select = new Select(countrySelect);
         select.selectByVisibleText("Turkey");
         extentTest.info("Country sekmesinde Turkey  secildi.");
 
         //Street address gir(Fatih mh 10. sk)
-        pageBO.streetAddress.clear();
-        pageBO.streetAddress.sendKeys(ConfigReader.getProperty("adress"));
+        allovercommercePage.streetAddress1.clear();
+        allovercommercePage.streetAddress1.sendKeys(ConfigReader.getProperty("adress"));
         extentTest.info("Street address verisi yazildi.");
 
         //Postcode / ZIP gir
-        pageBO.postcode.clear();
-        pageBO.postcode.sendKeys(ConfigReader.getProperty("postcode"));
+        allovercommercePage.postcode.clear();
+        allovercommercePage.postcode.sendKeys(ConfigReader.getProperty("postcode"));
         extentTest.info("Postcode verisi yazildi.");
 
         //Town / City gir
-        pageBO.city.clear();
-        pageBO.city.sendKeys(ConfigReader.getProperty("city1"));
+        allovercommercePage.city.clear();
+        allovercommercePage.city.sendKeys(ConfigReader.getProperty("city1"));
         extentTest.info("City verisi yazildi.");
 
         //Province gir
-        WebElement countrySelect1 = pageBO.bullingProvince;
+        WebElement countrySelect1 = allovercommercePage.bullingProvince1;
         Select select1 = new Select(countrySelect1);
         select1.selectByVisibleText("Adana");
 
         //Phone 25 karakter gir
-        pageBO.phone.clear();
-        pageBO.phone.sendKeys("55555555555555555555555555");
+        allovercommercePage.phone.clear();
+        allovercommercePage.phone.sendKeys("55555555555555555555555555");
         ReusableMethods.bekle(2);
 
         ReusableMethods.bekle(3);
@@ -1255,22 +1259,22 @@ public class US_03_FaturaAdresiKayitYapabime extends ExtentReport {
 
 
         //Email i gor
-        pageBO.emailKutusu.clear();
-        pageBO.emailKutusu.sendKeys(ConfigReader.getProperty("alloverEmail"));
-        Assert.assertTrue(pageBO.emailKutusu.isDisplayed());
+        allovercommercePage.emailKutusu1.clear();
+        allovercommercePage.emailKutusu1.sendKeys(ConfigReader.getProperty("alloverEmail"));
+        Assert.assertTrue(allovercommercePage.emailKutusu1.isDisplayed());
         extentTest.info("Email adresi goruldu.");
 
         ReusableMethods.tumSayfaResmi("Phone 25 karakterle giris yapilabilmesi.");
 
         ReusableMethods.bekle(3);
         //Save Address butona tikla
-        pageBO.saveAdress1Button.click();
+        allovercommercePage.saveAdress1Button1.click();
         extentTest.info("Save Address butonuna tiklandi.");
 
 
         ReusableMethods.bekle(3);
         // “Address changed successfully.”  yazisinin gorunurlugunu dogrula
-        Assert.assertTrue(pageBO.dogrulaYazisiAddressChangedSuccessfully.isDisplayed());
+        Assert.assertTrue(allovercommercePage.dogrulaYazisiAddressChangedSuccessfully1.isDisplayed());
         extentTest.info("\"Address changed successfully.\" yazisi dogrulandi." );
 
 
