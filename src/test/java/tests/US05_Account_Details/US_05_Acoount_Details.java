@@ -1,4 +1,4 @@
-package tests.US_05_Account_Details;
+package tests.US05_Account_Details;
 
 import com.github.javafaker.Faker;
 import org.openqa.selenium.Keys;

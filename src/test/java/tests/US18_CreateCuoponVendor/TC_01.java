@@ -1,4 +1,4 @@
-package tests.US_18_CreateCuoponVendor;
+package tests.US18_CreateCuoponVendor;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;

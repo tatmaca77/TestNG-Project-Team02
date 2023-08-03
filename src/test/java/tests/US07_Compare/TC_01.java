@@ -1,4 +1,4 @@
-package tests.US_07_Compare;
+package tests.US07_Compare;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;

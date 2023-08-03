@@ -1,4 +1,4 @@
-package tests.US_06_Alisveris;
+package tests.US06_Alisveris;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
