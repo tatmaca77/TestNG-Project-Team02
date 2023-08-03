@@ -30,7 +30,7 @@ public class US_05_Acoount_Details extends ExtentReport {
         extentTest = extentReports.createTest("US05_TC01","Test Raporu");
         //Belirtilen adrese git.
         pageSA = new AllovercommercePage();
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Sign In butonuna tıkla.
         //Müşteri olarak sign in yap.
@@ -86,7 +86,7 @@ public class US_05_Acoount_Details extends ExtentReport {
         extentTest = extentReports.createTest("US05_TC02","Test Raporu");
         //Belirtilen adrese git.
         pageSA = new AllovercommercePage();
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
 
         //Sign In butonuna tıkla.
@@ -142,7 +142,7 @@ public class US_05_Acoount_Details extends ExtentReport {
         extentTest = extentReports.createTest("US05_TC03","Test Raporu");
         //Belirtilen adrese git.
         pageSA = new AllovercommercePage();
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Sign In butonuna tıkla.
         //Müşteri olarak sign in yap.
@@ -197,7 +197,7 @@ public class US_05_Acoount_Details extends ExtentReport {
         extentTest = extentReports.createTest("US05_TC04","Test Raporu");
         //Belirtilen adrese git.
         pageSA = new AllovercommercePage();
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Sign In butonuna tıkla.
         //Müşteri olarak sign in yap.
@@ -252,7 +252,7 @@ public class US_05_Acoount_Details extends ExtentReport {
         extentTest = extentReports.createTest("US05_TC05","Test Raporu");
         //Belirtilen adrese git.
         pageSA = new AllovercommercePage();
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Sign In butonuna tıkla.
         //Müşteri olarak sign in yap.
@@ -308,7 +308,7 @@ public class US_05_Acoount_Details extends ExtentReport {
         extentTest = extentReports.createTest("US05_TC06","Test Raporu");
         //Belirtilen adrese git.
         pageSA = new AllovercommercePage();
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Sign In butonuna tıkla.
         //Müşteri olarak sign in yap.
