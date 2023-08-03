@@ -3,19 +3,13 @@ package tests.US13_14;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import pages.AllovercommercePage;
-import utilities.ConfigReader;
-import utilities.Driver;
 import utilities.ExtentReport;
 import utilities.ReusableMethods;
 
-import javax.swing.*;
-
 import static pages.AllovercommercePage.*;
-import static tests.US_17_ShoppingVendor.TC_01.page;
 
 public class US_13 extends ExtentReport {
 

@@ -1,4 +1,4 @@
-package tests.US_0016;
+package tests.US16;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -10,7 +10,6 @@ import pages.AllovercommercePage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ExtentReport;
-import utilities.ReusableMethods;
 
 import java.util.List;
 

@@ -1,6 +1,5 @@
-package tests.US_04_TeslimatAdresiEkleme;
+package tests.US04_TeslimatAdresiEkleme;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
