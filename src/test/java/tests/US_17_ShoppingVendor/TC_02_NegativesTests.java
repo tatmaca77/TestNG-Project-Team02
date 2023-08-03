@@ -163,7 +163,7 @@ public class TC_02_NegativesTests extends ExtentReport {
         ReusableMethods.bekle(5);
 
         // Click on the "PLACE ORDER"
-        page.placeOrder.click();
+        ReusableMethods.click(page.placeOrder);
         extentTest.info("Siparisi tamamlamak icin Place Order butonuna tiklandi.");
 
         ReusableMethods.bekle(5);
