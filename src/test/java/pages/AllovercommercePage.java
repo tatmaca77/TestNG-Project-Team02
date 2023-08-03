@@ -1096,7 +1096,7 @@ public class AllovercommercePage {
 
     //aslı uzun
     @FindBy(xpath = "//*[@class='register inline-type']")
-    public WebElement register;//Registerin locati
+    public WebElement registerAU;//Registerin locati
     @FindBy(xpath = "(//*[@class='nav-link active'])[1]")
     public WebElement signUp;//Sign up locati
     @FindBy(xpath = "(//*[@href='https://allovercommerce.com/vendor-register/'])[2]")
@@ -1118,7 +1118,7 @@ public class AllovercommercePage {
     @FindBy(xpath = "//*[@id='email']")
     public WebElement fakeMail;//fakemail sitesinde mail kutusu locati
     @FindBy(xpath = "//*[@class='color cetc']")
-    public WebElement fakeMailCopy;//fake mail adresini kopyala
+    public WebElement fakeMailCopyAU;//fake mail adresini kopyala
     @FindBy(xpath = "(//*[@class='glyphicon glyphicon-download-alt'])[2]")
     public WebElement verificationcodeac;
     @FindBy(xpath = "//*[@id='predmet']")
