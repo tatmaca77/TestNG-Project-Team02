@@ -981,6 +981,71 @@ public class AllovercommercePage {
     @FindBy(xpath = "//img[@class='attachment-woocommerce_thumbnail size-woocommerce_thumbnail']")
     public WebElement ilkUrunzk;
 
+    //compare yanindaki wishlist
+    @FindBy(xpath = "(//a[@rel='nofollow'])[2]")
+    public WebElement wishlistzk;
+
+    //kullaninici add to card butonu
+    @FindBy(xpath = "//a[text()='Add to cart']")
+    public WebElement addToCartButonuzk;
+    //ilk urun
+    @FindBy(xpath = "(//img[@class='attachment-woocommerce_thumbnail size-woocommerce_thumbnail'])[1]")
+    public WebElement macbookzk;
+    //view cart butonu
+    @FindBy(xpath = "(//a[text()='View cart'])[2]")
+    public WebElement viewCartzk;
+    //proceed to checkout butonu
+    @FindBy(xpath = "//a[@class='checkout-button button alt wc-forward']")
+    public WebElement proceedtocheckoutzk;
+    //shoppinCard
+    @FindBy(xpath = "//a[text()='Shopping Cart']")
+    public WebElement shoppinCartzk;
+
+    //placeolder
+    @FindBy(xpath = "//button[@id='place_order']")
+    public WebElement placeOrderzk;
+    //Thank you. Your order has been received
+    @FindBy(xpath = "//p[@class='woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received order-success']")
+    public WebElement thankyoumsjzk;
+    //FirstName
+    @FindBy(xpath = "//input[@id='billing_first_name']")
+    public WebElement isimKutusu;
+    //dropDown
+    @FindBy(xpath = "//select[@id='billing_country']")
+    public WebElement ddmzk;
+    //city
+    @FindBy(xpath = "//input[@id='billing_city']")
+    public WebElement cityzk;
+    //country ddm
+    @FindBy(xpath = "//select[@id='billing_state']")
+    public WebElement countryselectzk;
+
+    @FindBy(xpath = "//input[@id='billing_state']")
+    public WebElement countryzk;
+
+    //poscode
+    @FindBy(xpath = "//input[@id='billing_postcode']")
+    public WebElement postcodezk;
+    //Phone
+    @FindBy(xpath = "//input[@id='billing_phone']")
+    public WebElement phonezk;
+
+    //Email Adrees
+    @FindBy(xpath = "//input[@id='billing_email']")
+    public WebElement emailAdreszk;
+
+    //  adress
+
+    @FindBy(xpath = "//input[@id='billing_address_1']")
+    public WebElement streetAdreezk;
+
+//pay at the door
+
+    @FindBy(xpath = "//input[@id='payment_method_cod']")
+    public WebElement payzk;
+    //EFT
+    @FindBy(xpath = "//input[@id='payment_method_bacs']")
+    public WebElement eftzk;
 
 
 
