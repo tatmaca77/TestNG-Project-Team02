@@ -21,7 +21,7 @@ public class US10_PasswordSeviye extends ExtentReport {
         Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Register a tıklar
-        pageAU.register.click();
+        pageAU.registerAU.click();
         extentTest.info("Register butonuna tıklandı.");
         //Register ekranından, Sign Up sekmesini kullanarak "Become a Vendor" linki ile giriş yapar
         pageAU.becomeAVendor.click();
@@ -31,7 +31,7 @@ public class US10_PasswordSeviye extends ExtentReport {
         Driver.getDriver().get(ConfigReader.getProperty("fakeMailUrl"));
         extentTest.info("Fake mail sitesi yeni bir sekmede açıldı.");
         //Fake maili kopyalar
-        pageAU.fakeMailCopy.click();
+        pageAU.fakeMailCopyAU.click();
         extentTest.info("Fake mail sitesinden fake mail kopyalandı.");
         //Gecerli e mail adresini girer
         ReusableMethods.switchToWindow(0);
@@ -109,7 +109,7 @@ public class US10_PasswordSeviye extends ExtentReport {
         Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Register a tıklar
-        pageAU.register.click();
+        pageAU.registerAU.click();
         extentTest.info("Register butonuna tıklandı.");
         //Register ekranından, Sign Up sekmesini kullanarak "Become a Vendor" linki ile giriş yapar
         pageAU.becomeAVendor.click();
@@ -119,7 +119,7 @@ public class US10_PasswordSeviye extends ExtentReport {
         Driver.getDriver().get(ConfigReader.getProperty("fakeMailUrl"));
         extentTest.info("Fake mail sitesi yeni bir sekmede açıldı.");
         //Fake maili kopyalar
-        pageAU.fakeMailCopy.click();
+        pageAU.fakeMailCopyAU.click();
         extentTest.info("Fake mail sitesinden fake mail kopyalandı.");
         //Gecerli e mail adresini girer
         ReusableMethods.switchToWindow(0);
@@ -193,7 +193,7 @@ public class US10_PasswordSeviye extends ExtentReport {
         Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Register a tıklar
-        pageAU.register.click();
+        pageAU.registerAU.click();
         extentTest.info("Register butonuna tıklandı.");
         //Register ekranından, Sign Up sekmesini kullanarak "Become a Vendor" linki ile giriş yapar
         pageAU.becomeAVendor.click();
@@ -203,7 +203,7 @@ public class US10_PasswordSeviye extends ExtentReport {
         Driver.getDriver().get(ConfigReader.getProperty("fakeMailUrl"));
         extentTest.info("Fake mail sitesi yeni bir sekmede açıldı.");
         //Fake maili kopyalar
-        pageAU.fakeMailCopy.click();
+        pageAU.fakeMailCopyAU.click();
         extentTest.info("Fake mail sitesinden fake mail kopyalandı.");
         //Gecerli e mail adresini girer
         ReusableMethods.switchToWindow(0);
@@ -297,7 +297,7 @@ public class US10_PasswordSeviye extends ExtentReport {
         Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Register a tıklar
-        pageAU.register.click();
+        pageAU.registerAU.click();
         extentTest.info("Register butonuna tıklandı.");
         //Register ekranından, Sign Up sekmesini kullanarak "Become a Vendor" linki ile giriş yapar
         pageAU.becomeAVendor.click();
@@ -307,7 +307,7 @@ public class US10_PasswordSeviye extends ExtentReport {
         Driver.getDriver().get(ConfigReader.getProperty("fakeMailUrl"));
         extentTest.info("Fake mail sitesi yeni bir sekmede açıldı.");
         //Fake maili kopyalar
-        pageAU.fakeMailCopy.click();
+        pageAU.fakeMailCopyAU.click();
         extentTest.info("Fake mail sitesinden fake mail kopyalandı.");
         //Gecerli e mail adresini girer
         ReusableMethods.switchToWindow(0);

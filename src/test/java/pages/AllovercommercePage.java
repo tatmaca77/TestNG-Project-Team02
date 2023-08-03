@@ -1095,8 +1095,8 @@ public class AllovercommercePage {
     //ZEYNEP GUL KAYA
 
     //aslı uzun
-//    @FindBy(xpath = "//*[@class='register inline-type']")
-//    public WebElement register;//Registerin locati
+    @FindBy(xpath = "//*[@class='register inline-type']")
+    public WebElement registerAU;//Registerin locati
     @FindBy(xpath = "(//*[@class='nav-link active'])[1]")
     public WebElement signUp;//Sign up locati
     @FindBy(xpath = "(//*[@href='https://allovercommerce.com/vendor-register/'])[2]")
@@ -1117,8 +1117,8 @@ public class AllovercommercePage {
     public WebElement welcomeToAllowerYazisi;//Welcome to allower conwers yazısının locati
     @FindBy(xpath = "//*[@id='email']")
     public WebElement fakeMail;//fakemail sitesinde mail kutusu locati
-//    @FindBy(xpath = "//*[@class='color cetc']")
-//    public WebElement fakeMailCopy;//fake mail adresini kopyala
+    @FindBy(xpath = "//*[@class='color cetc']")
+    public WebElement fakeMailCopyAU;//fake mail adresini kopyala
     @FindBy(xpath = "(//*[@class='glyphicon glyphicon-download-alt'])[2]")
     public WebElement verificationcodeac;
     @FindBy(xpath = "//*[@id='predmet']")
