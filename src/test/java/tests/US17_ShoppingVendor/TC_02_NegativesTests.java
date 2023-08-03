@@ -1,4 +1,4 @@
-package tests.US_17_ShoppingVendor;
+package tests.US17_ShoppingVendor;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
