@@ -301,6 +301,83 @@ public class AllovercommercePage {
     //BETUL OZDAS
     //EKREM ASLAN
 
+    @FindBy(xpath = "//span[normalize-space()='Sign In']")
+    public WebElement signIn1EA;
+
+    @FindBy(xpath = "//input[@id='username']")
+    public WebElement emailEA;
+
+    @FindBy(xpath = "//input[@id='password']")
+    public WebElement passwordEA;
+
+    @FindBy(xpath = "//button[@name='login']")
+    public WebElement signIn2EA;
+
+    @FindBy(xpath = "//a[contains(text(),'My Account')]")
+    public WebElement myAccountEA;
+
+    @FindBy(xpath = "//a[normalize-space()='Store Manager']")
+    public WebElement storeManagerEA;
+
+    @FindBy(xpath = "//span[@class='text'][normalize-space()='Products']")
+    public WebElement productEA;
+
+    @FindBy(xpath = "//span[contains(text(),'Add New')]")
+    public WebElement addNewEA;
+
+    @FindBy(xpath = "//div[@class='wcfm-tabWrap']")
+    public WebElement scroll7ThingsEA;
+
+    @FindBy(xpath = "//select[@id='backorders']")
+    public WebElement ddminventoryAllowBackordersEA;
+
+    @FindBy(xpath = "//input[@id='wcfm_products_simple_submit_button']")
+    public WebElement submitEA;
+
+    @FindBy(xpath = "//div[@class='wcfm-message wcfm-error']")
+    public WebElement uyariEA;
+
+    @FindBy(xpath = "//select[@id='shipping_class']")
+    public WebElement ddmShippingShippingClassEA;
+
+    @FindBy(xpath = "//select[@id='_wcfmmp_processing_time']")
+    public WebElement ddmShippingProcessingTimeEA;
+
+
+    @FindBy(xpath = "//span[@aria-expanded='true']//ul[@class='select2-selection__rendered']")
+    public WebElement ddmattributesColorYazmaKutusuEA;
+
+
+    @FindBy(xpath = "(//span[@class='dropdown-wrapper'])[3]")
+    public WebElement ddmattributesSizeYazmaKutusuEA;
+
+    @FindBy(xpath = "//select[@id='product_type']")
+    public WebElement ddmSimpleProductEA;
+
+    @FindBy(xpath = "//select[@id='product_type']")
+    public WebElement checkBoxVirtualEA;
+
+    @FindBy(xpath = "//select[@id='product_type']")
+    public WebElement checkBoxDownloadableEA;
+
+    @FindBy(xpath = "//input[@id='regular_price']")
+    public WebElement priceKutusuEA;
+
+    @FindBy(xpath = "//input[@id='sale_price']")
+    public WebElement salePriceKutusuEA;
+
+    @FindBy(xpath = "//input[@id='pro_title']")
+    public WebElement productTitleEA;
+
+    @FindBy(xpath = "//li[@id='select2-attributes_value_1-result-qkud-29']")
+    public WebElement colorBlackEA;
+
+    @FindBy(xpath = "//li[@id='select2-attributes_value_1-result-v84a-276']")
+    public WebElement colorRedEA;
+
+    @FindBy(xpath = "(//input[@class='select2-search__field'])[2]")
+    public WebElement colorYazmaKutusu;
+
 
 
 
