@@ -64,17 +64,20 @@ public class TC_02_NegativesTests extends ExtentReport {
         extentTest.info("Ürünleri sepete ekleyebilmek icin 'Add To Cart' butonunun görünürlügü dogrulandi.");
 
         // The user increases the number of products with "+" in the Quantity section  1->2
-        page.plus.click();
+        ReusableMethods.click(page.plus);
+        //page.plus.click();
         extentTest.info("Sepete eklemeden önce ürünün adedini belirlemek icin '+' butonuna basildi ve calistigi dogrulandi.");
 
         ReusableMethods.bekle(2);
 
         // The user decrease the number of products with "-" in the Quantity section   2->1
-        page.minus.click();
+        ReusableMethods.click(page.minus);
+        //page.minus.click();
         extentTest.info("Sepete eklemeden önce ürünün adedini belirlemek icin '-' butonuna basildi ve calistigi dogrulandi.");
 
         // Click on the "ADD TO CART"
-        page.addToCart.click();
+        ReusableMethods.click(page.addToCart);
+        //page.addToCart.click();
         extentTest.info("Aratilan Ürün Sepete eklendi.");
 
         // Verify that the Number in the Basket Icon has changed  Cart=1
@@ -82,7 +85,8 @@ public class TC_02_NegativesTests extends ExtentReport {
         extentTest.info("Sepete Ürün eklendigi dogrulandi.");
 
         // Click on the "Cart" icon above
-        page.cartIcon.click();
+        ReusableMethods.click(page.cartIcon);
+        //page.cartIcon.click();
         extentTest.pass("'Cart' icon'una tiklandi.");
 
         // Verify that the "SHOPPING CART" section opens on the right side
@@ -90,7 +94,8 @@ public class TC_02_NegativesTests extends ExtentReport {
         extentTest.pass("SHOPPING CART bölümünün acildigi dogrulandi.");
 
         // Click to "CHECKOUT" button
-        page.checkout.click();
+        ReusableMethods.click(page.checkout);
+        //page.checkout.click();
         extentTest.info("Checkout butonuna tiklandi.");
 
         // Verify the opening of the "BILLING DETAILS" page
@@ -150,20 +155,23 @@ public class TC_02_NegativesTests extends ExtentReport {
         ReusableMethods.bekle(2);
 
         // Select "Pay at the door"
-        page.payAtTheDoor.click();
+        ReusableMethods.click(page.payAtTheDoor);
+        //page.payAtTheDoor.click();
         extentTest.info("Pay at the door secildi.");
 
         // Verify that "Wire Transfer/EFT" has not been selected
         Assert.assertTrue(page.payAtTheDoor.isSelected());
         extentTest.info("Ayni anda iki seceneginde secilemeyecegi dogrulandi.");
         ReusableMethods.bekle(1);
-        page.wireTransfer.click();
+        ReusableMethods.click(page.wireTransfer);
+        //page.wireTransfer.click();
         extentTest.info("Pay at the door secildi.");
 
         ReusableMethods.bekle(5);
 
         // Click on the "PLACE ORDER"
-        page.placeOrder.click();
+        ReusableMethods.click(page.placeOrder);
+        //page.placeOrder.click();
         extentTest.info("Siparisi tamamlamak icin Place Order butonuna tiklandi.");
 
         ReusableMethods.bekle(5);
@@ -314,20 +322,23 @@ public class TC_02_NegativesTests extends ExtentReport {
         ReusableMethods.bekle(2);
 
         // Select "Pay at the door"
-        page.payAtTheDoor.click();
+        ReusableMethods.click(page.payAtTheDoor);
+        //page.payAtTheDoor.click();
         extentTest.info("Pay at the door secildi.");
 
         // Verify that "Wire Transfer/EFT" has not been selected
         Assert.assertTrue(page.payAtTheDoor.isSelected());
         extentTest.info("Ayni anda iki seceneginde secilemeyecegi dogrulandi.");
         ReusableMethods.bekle(1);
-        page.wireTransfer.click();
+        ReusableMethods.click(page.wireTransfer);
+        //page.wireTransfer.click();
         extentTest.info("Pay at the door secildi.");
 
         ReusableMethods.bekle(5);
 
         // Click on the "PLACE ORDER"
-        page.placeOrder.click();
+        ReusableMethods.click(page.placeOrder);
+        //page.placeOrder.click();
         extentTest.info("Siparisi tamamlamak icin Place Order butonuna tiklandi.");
 
         ReusableMethods.bekle(5);
@@ -478,20 +489,23 @@ public class TC_02_NegativesTests extends ExtentReport {
         ReusableMethods.bekle(2);
 
         // Select "Pay at the door"
-        page.payAtTheDoor.click();
+        ReusableMethods.click(page.payAtTheDoor);
+        //page.payAtTheDoor.click();
         extentTest.info("Pay at the door secildi.");
 
         // Verify that "Wire Transfer/EFT" has not been selected
         Assert.assertTrue(page.payAtTheDoor.isSelected());
         extentTest.info("Ayni anda iki seceneginde secilemeyecegi dogrulandi.");
         ReusableMethods.bekle(1);
-        page.wireTransfer.click();
+        ReusableMethods.click(page.wireTransfer);
+        //page.wireTransfer.click();
         extentTest.info("Pay at the door secildi.");
 
         ReusableMethods.bekle(5);
 
         // Click on the "PLACE ORDER"
-        page.placeOrder.click();
+        ReusableMethods.click(page.placeOrder);
+        //page.placeOrder.click();
         extentTest.info("Siparisi tamamlamak icin Place Order butonuna tiklandi.");
 
         ReusableMethods.bekle(5);
@@ -642,20 +656,23 @@ public class TC_02_NegativesTests extends ExtentReport {
         ReusableMethods.bekle(2);
 
         // Select "Pay at the door"
-        page.payAtTheDoor.click();
+        ReusableMethods.click(page.payAtTheDoor);
+        //page.payAtTheDoor.click();
         extentTest.info("Pay at the door secildi.");
 
         // Verify that "Wire Transfer/EFT" has not been selected
         Assert.assertTrue(page.payAtTheDoor.isSelected());
         extentTest.info("Ayni anda iki seceneginde secilemeyecegi dogrulandi.");
         ReusableMethods.bekle(1);
-        page.wireTransfer.click();
+        ReusableMethods.click(page.wireTransfer);
+        //page.wireTransfer.click();
         extentTest.info("Pay at the door secildi.");
 
         ReusableMethods.bekle(5);
 
         // Click on the "PLACE ORDER"
-        page.placeOrder.click();
+        ReusableMethods.click(page.placeOrder);
+        //page.placeOrder.click();
         extentTest.info("Siparisi tamamlamak icin Place Order butonuna tiklandi.");
 
         ReusableMethods.bekle(5);
@@ -806,20 +823,23 @@ public class TC_02_NegativesTests extends ExtentReport {
         ReusableMethods.bekle(2);
 
         // Select "Pay at the door"
-        page.payAtTheDoor.click();
+        ReusableMethods.click(page.payAtTheDoor);
+        //page.payAtTheDoor.click();
         extentTest.info("Pay at the door secildi.");
 
         // Verify that "Wire Transfer/EFT" has not been selected
         Assert.assertTrue(page.payAtTheDoor.isSelected());
         extentTest.info("Ayni anda iki seceneginde secilemeyecegi dogrulandi.");
         ReusableMethods.bekle(1);
-        page.wireTransfer.click();
+        ReusableMethods.click(page.wireTransfer);
+        //page.wireTransfer.click();
         extentTest.info("Pay at the door secildi.");
 
         ReusableMethods.bekle(5);
 
         // Click on the "PLACE ORDER"
-        page.placeOrder.click();
+        ReusableMethods.click(page.placeOrder);
+        //page.placeOrder.click();
         extentTest.info("Siparisi tamamlamak icin Place Order butonuna tiklandi.");
 
         ReusableMethods.bekle(5);

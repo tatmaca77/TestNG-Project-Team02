@@ -198,20 +198,23 @@ public class TC_01 extends ExtentReport {
         ReusableMethods.bekle(2);
 
         // Select "Pay at the door"
-        page.payAtTheDoor.click();
+        ReusableMethods.click(page.payAtTheDoor);
+        //page.payAtTheDoor.click();
         extentTest.info("Pay at the door secildi.");
 
         // Verify that "Wire Transfer/EFT" has not been selected
         Assert.assertTrue(page.payAtTheDoor.isSelected());
         extentTest.info("Ayni anda iki seceneginde secilemeyecegi dogrulandi.");
         ReusableMethods.bekle(1);
-        page.wireTransfer.click();
+        ReusableMethods.click(page.wireTransfer);
+        //page.wireTransfer.click();
         extentTest.info("Pay at the door secildi.");
 
         ReusableMethods.bekle(5);
 
         // Click on the "PLACE ORDER"
-        page.placeOrder.click();
+        ReusableMethods.click(page.placeOrder);
+        //page.placeOrder.click();
         extentTest.info("Siparisi tamamlamak icin Place Order butonuna tiklandi.");
 
         // After click on the place order. Verify the message "Thank you. Your order has been received."
@@ -219,11 +222,13 @@ public class TC_01 extends ExtentReport {
         extentTest.info("Siparisin basarili bir sekilde olusturuldugu dogrulandi.");
 
         // Click on the "Sign Out"
-        page.signOut.click();
+        ReusableMethods.click(page.signOut);
+        //page.signOut.click();
         extentTest.info("Sag üst kösedeki Sign Out kismina tiklandi.");
 
         // Click on the "Orders"
-        page.orders.click();
+        ReusableMethods.click(page.orders);
+        //page.orders.click();
         extentTest.info("Acilan Sayfada Siparislerin görülmesi icin Orders kismina tiklandi.");
 
         // Verify that the "My Account" text has been seen
@@ -235,7 +240,8 @@ public class TC_01 extends ExtentReport {
         extentTest.info("View butonunun görüldügü dogrulandi.");
 
         // Click on "VIEW" button
-        page.view.click();
+        ReusableMethods.click(page.view);
+        //page.view.click();
         extentTest.info("Siparisler altinda ürün detaylarini görmek icin View bölümüe tiklandi.");
 
         // Verify that "ORDER DETAILS" is open
