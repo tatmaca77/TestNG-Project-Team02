@@ -13,7 +13,8 @@ import utilities.ReusableMethods;
 
 import java.time.LocalDateTime;
 
-import static pages.AllovercommercePage.addNewCategoryButonu;
+
+import static pages.AllovercommercePage.addNewCategoryButonuB;
 
 public class US_14 extends ExtentReport {
     AllovercommercePage page;
@@ -28,79 +29,79 @@ public class US_14 extends ExtentReport {
         ReusableMethods.signInMethod("dametrius.rheece@fixedfor.com","Sifre123");
         extentTest.info("Sing in Login Butonu Tıklandı.");
         // Kullanıcı Sign Out butonuna tıklar
-        AllovercommercePage.singOutButonu.click();
+        AllovercommercePage.singOutButonuB.click();
         extentTest.info("Giris icin SignOut butonu tıklandı.");
         // Kullanıcı Store Manager butonunu tıklar
-        AllovercommercePage.storeManagerButonu.click();
+        AllovercommercePage.storeManagerButonuB.click();
         extentTest.info("Store Manager butonu tıklandı.");
         // Kullanıcı Product butonunu tıklar
-        AllovercommercePage.productsButonu.click();
+        AllovercommercePage.productsButonuB.click();
         extentTest.info("Product butonu tıklandı.");
         // Kullanıcı Add New butonunu tıklar
-        ReusableMethods.click(AllovercommercePage.addNewButonu);
+        ReusableMethods.click(AllovercommercePage.addNewButonuB);
         extentTest.info("Add New butonu tıklandı.");
         //Simple Product, Variable Product, Grouped Product, External - Affiliate Product seçenekleri olmalı
-        Select select = new Select(AllovercommercePage.simpleProductKutusu);
+        Select select = new Select(AllovercommercePage.simpleProductKutusuB);
         select.selectByVisibleText("Simple Product");
         select.selectByVisibleText("Variable Product");
         select.selectByVisibleText("Grouped Product");
         select.selectByVisibleText("External/Affiliate Product");
-        Assert.assertTrue(AllovercommercePage.simpleProductKutusu.isEnabled());
+        Assert.assertTrue(AllovercommercePage.simpleProductKutusuB.isEnabled());
         extentTest.info("Simple Product, Variable Product, Grouped Product, External - Affiliate Product seçenekleri görüldü.");
         //Kullanıcı Product Title'a yazı yazalabilmeli
-        AllovercommercePage.productTitleKutusu.sendKeys("Urun Baslıgı");
+        AllovercommercePage.productTitleKutusuB.sendKeys("Urun Baslıgı");
         extentTest.info("Product Title'a yazıldı.");
         Driver.getDriver().switchTo().frame("excerpt_ifr");
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         //Kullanıcı Short Description'a yazı yazalabilmeli
-        AllovercommercePage.shortDescriptionKutusu.sendKeys("Yeni Urun");
+        AllovercommercePage.shortDescriptionKutusuB.sendKeys("Yeni Urun");
         extentTest.info("Short Description'a yazıldı.");
         Driver.getDriver().switchTo().defaultContent();
         Driver.getDriver().switchTo().frame("description_ifr");
         //Kullanıcı Description'a yazı yazalabilmeli
-        AllovercommercePage.descriptionKutusu.sendKeys("Kullanıslı Urunler");
+        AllovercommercePage.descriptionKutusuB.sendKeys("Kullanıslı Urunler");
         extentTest.info("Description'a yazıldı.");
         Driver.getDriver().switchTo().parentFrame();
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        ReusableMethods.scroll(addNewCategoryButonu);
+        ReusableMethods.scroll(addNewCategoryButonuB);
         //Kullanıcı Categories seçebilmeli
-        AllovercommercePage.aaaSecenegi.click();
+        AllovercommercePage.aaaSecenegiB.click();
         extentTest.info("Categories'ten Besin Takviyesi Seçeneği tıklandı.");
         //Kullanıcı Yeni Categories ekleyebilmeli
-        addNewCategoryButonu.click();
+        addNewCategoryButonuB.click();
         String katagory="betuldesing"+ LocalDateTime.now();
-        AllovercommercePage.categoryNameKutusu.sendKeys(katagory);
-        AllovercommercePage.addButonu1.click();
+        AllovercommercePage.categoryNameKutusuB.sendKeys(katagory);
+        AllovercommercePage.addButonu1B.click();
         extentTest.info("Yeni Categories eklendi");
         ReusableMethods.bekle(10);
         //Kullanıcı Product Brands seçebilmeli
-        AllovercommercePage.yirmiBirGunTarhanaSecenegi.click();
+        AllovercommercePage.yirmiBirGunTarhanaSecenegiB.click();
         extentTest.info("21 gün Tarhana Seçeneği tıklandı.");
         //Kullanıcı Yeni Product Brands ekleyebilmeli
         String productName="Kıyafet"+ LocalDateTime.now();
-        AllovercommercePage.productBrandsNameKutusu.sendKeys(productName);
-        AllovercommercePage.addButonu2.click();
+        AllovercommercePage.productBrandsNameKutusuB.sendKeys(productName);
+        AllovercommercePage.addButonu2B.click();
         extentTest.info("Yeni Product Brands eklendi");
         ReusableMethods.bekle(2);
         //Ürün fotoğrafı eklenebilmeli
-        AllovercommercePage.buyukResimKutusu.click();
-        AllovercommercePage.selectFiles.click();
+        AllovercommercePage.buyukResimKutusuB.click();
+        AllovercommercePage.selectFilesB.click();
         ReusableMethods.uploadFileFromPc("src/test/java/resources/resim/c5f36799-95cb-4254-a516-f502f69abb0b kopyası.jpg");
         ReusableMethods.bekle(3);
-        AllovercommercePage.selectFilesButonu.click();
+        AllovercommercePage.selectFilesButonuB.click();
         Driver.getDriver().switchTo().parentFrame();
-        AllovercommercePage.kucukresimKutusu.click();
+        AllovercommercePage.kucukresimKutusuB.click();
         ReusableMethods.uploadFileFromPc("src/test/java/resources/resim/c5f36799-95cb-4254-a516-f502f69abb0b kopyası.jpg");
-        AllovercommercePage.selectFiles1.click();
+        AllovercommercePage.selectFiles1B.click();
         ReusableMethods.bekle(3);
-        AllovercommercePage.selectButonu1.click();
+        AllovercommercePage.selectButonu1B.click();
         ReusableMethods.tumSayfaResmi("Sayfa Resmi");
         ReusableMethods.bekle(1);
         Driver.getDriver().switchTo().frame("excerpt_ifr");
         extentTest.info("Ürün fotoğrafları eklendi yazıldı.");
         //Kullanıcı Submit yapabilmeli
-        AllovercommercePage.submitButonu.click();
+        AllovercommercePage.submitButonuB.click();
         extentTest.info("Submit Yapıldı");
         ReusableMethods.tumSayfaResmi("Submit");
 
