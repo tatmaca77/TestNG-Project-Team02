@@ -18,7 +18,7 @@ public class US10_PasswordSeviye extends ExtentReport {
     public void TestCase01() {
         extentTest = extentReports.createTest("ExtentReport", "TestCase01");
         //Kullanıcı adrese gider
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Register a tıklar
         pageAU.registerAU.click();
@@ -106,7 +106,7 @@ public class US10_PasswordSeviye extends ExtentReport {
     public void TestCase02() {
         extentTest = extentReports.createTest("ExtentReport", "TestCase02");
         //Kullanıcı adrese gider
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Register a tıklar
         pageAU.registerAU.click();
@@ -190,7 +190,7 @@ public class US10_PasswordSeviye extends ExtentReport {
     public void TestCase03() {
         extentTest = extentReports.createTest("ExtentReport", "TestCase03");
         //Kullanıcı adrese gider
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Register a tıklar
         pageAU.registerAU.click();
@@ -294,7 +294,7 @@ public class US10_PasswordSeviye extends ExtentReport {
     public void TestCase04() {
         extentTest = extentReports.createTest("ExtentReport", "TestCase04");
         //Kullanıcı adrese gider
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce sitesine gidildi.");
         //Register a tıklar
         pageAU.registerAU.click();
