@@ -1,4 +1,4 @@
-package tests.US_08_Wishlist;
+package tests.US08_Wishlist;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;

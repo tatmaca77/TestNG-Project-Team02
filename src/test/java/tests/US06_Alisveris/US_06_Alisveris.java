@@ -1,4 +1,4 @@
-package tests.US_06_Alisveris;
+package tests.US06_Alisveris;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -18,7 +18,7 @@ public class US_06_Alisveris extends ExtentReport {
     public void TC01_Sepete_Urun_Ekleme() {
         extentTest = extentReports.createTest("US06_TC01","Test Raporu");
         // Belirtilen adrese git.
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         pageSA = new AllovercommercePage();
         extentTest.info("Allovercommerce sitesine gidildi.");
         // Sign In butonuna tıkla.
@@ -53,7 +53,7 @@ public class US_06_Alisveris extends ExtentReport {
     public void TC02_Sepet_Urun_Miktari() {
         extentTest = extentReports.createTest("US06_TC02","Test Raporu");
         // Belirtilen adrese git.
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         pageSA = new AllovercommercePage();
         extentTest.info("Allovercommerce sitesine gidildi.");
         // Sign In butonuna tıkla.
@@ -124,7 +124,7 @@ public class US_06_Alisveris extends ExtentReport {
     public void TC03_Fatura_Adresi() {
         extentTest = extentReports.createTest("US06_TC03","Test Raporu");
         // Belirtilen adrese git.
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         pageSA = new AllovercommercePage();
         extentTest.info("Allovercommerce sitesine gidildi.");
         // Sign In butonuna tıkla.
@@ -165,7 +165,7 @@ public class US_06_Alisveris extends ExtentReport {
     public void TC04_Odeme_Secenekleri() {
         extentTest = extentReports.createTest("US06_TC04","Test Raporu");
         // Belirtilen adrese git.
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         pageSA = new AllovercommercePage();
         extentTest.info("Allovercommerce sitesine gidildi.");
         // Sign In butonuna tıkla.
@@ -223,7 +223,7 @@ public class US_06_Alisveris extends ExtentReport {
     public void testTC05_Odeme_Islemi() {
         extentTest = extentReports.createTest("US06_TC05","Test Raporu");
         // Belirtilen adrese git.
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         pageSA = new AllovercommercePage();
         extentTest.info("Allovercommerce sitesine gidildi.");
         // Sign In butonuna tıkla.
@@ -272,7 +272,7 @@ public class US_06_Alisveris extends ExtentReport {
     public void TC06_Odeme_Islemi() {
         extentTest = extentReports.createTest("US06_TC06","Test Raporu");
         // Belirtilen adrese git.
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         pageSA = new AllovercommercePage();
         extentTest.info("Allovercommerce sitesine gidildi.");
         // Sign In butonuna tıkla.

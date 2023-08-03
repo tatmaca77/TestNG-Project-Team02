@@ -1,6 +1,5 @@
 package tests.US_17_ShoppingVendor;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
