@@ -193,7 +193,7 @@ public class TC_02_NegativesTests extends ExtentReport {
         extentTest = extentReports.createTest("TestNGTeam02","Allovercommerce test edebilmeli");
 
         //  Go to HomePage
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce Sayfasina Gidildi.");
 
         // Click the "Sign In" button
@@ -360,7 +360,7 @@ public class TC_02_NegativesTests extends ExtentReport {
         extentTest = extentReports.createTest("TestNGTeam02","Allovercommerce test edebilmeli");
 
         //  Go to HomePage
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce Sayfasina Gidildi.");
 
         // Click the "Sign In" button
@@ -527,7 +527,7 @@ public class TC_02_NegativesTests extends ExtentReport {
         extentTest = extentReports.createTest("TestNGTeam02","Allovercommerce test edebilmeli");
 
         //  Go to HomePage
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce Sayfasina Gidildi.");
 
         // Click the "Sign In" button
@@ -694,7 +694,7 @@ public class TC_02_NegativesTests extends ExtentReport {
         extentTest = extentReports.createTest("TestNGTeam02","Allovercommerce test edebilmeli");
 
         //  Go to HomePage
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce Sayfasina Gidildi.");
 
         // Click the "Sign In" button
@@ -861,7 +861,7 @@ public class TC_02_NegativesTests extends ExtentReport {
         extentTest = extentReports.createTest("TestNGTeam02","Allovercommerce test edebilmeli");
 
         //  Go to HomePage
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerceUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("alloverCommerceUrl"));
         extentTest.info("Allovercommerce Sayfasina Gidildi.");
 
         // Click the "Sign In" button
